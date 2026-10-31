@@ -1,0 +1,29 @@
+{
+  "format": "BPS1",
+  "base": {
+    "name": "Pok\u00e9mon Modern Emerald (3.6).gba",
+    "bytes": 33554432,
+    "sha256": "bc7286dca750cf735480fece3ff68c7d86ecbf8391031b5ca2964da78fc945a1"
+  },
+  "target": {
+    "name": "pokeemerald_modern.gba",
+    "bytes": 33554432,
+    "sha256": "222c0ed588905745292a2bc291a3f159d695a749647ae9e01e6055fa84250626"
+  },
+  "patch": {
+    "name": "BeaconDex-ModernEmerald-playtest.bps",
+    "bytes": 21098456,
+    "sha256": "55e6c52a0ce12b01c16cd6dcaae7c370b355af8e45f3ff7b9c24472a24b86f39"
+  },
+  "zip": {
+    "name": "BeaconDex-ModernEmerald-playtest.bps.zip",
+    "bytes": 12631070,
+    "sha256": "16cd3b6417da443a856bba2c1c365ed6ebbbdd5e33058cc656cfdbf898a5afe5"
+  },
+  "validation": {
+    "independent_decoder_roundtrip_equal": true,
+    "independently_decoded_sha256": "222c0ed588905745292a2bc291a3f159d695a749647ae9e01e6055fa84250626",
+    "source_target_patch_crc32_verified": true,
+    "zip_crc_and_contents_verified": true
+  }
+}
