@@ -18,13 +18,20 @@ Hall storage is sufficient, so the save structure does not grow for this change.
 The legacy Hall ladder is labeled `STANDARD DOUBLE`; its separate Double record
 bucket remains available.
 
+The Hall opponent AI lookup receives the current battle number and performs
+the seven-entry-row offset exactly once. This keeps battles 6 through 10 within
+their intended trainer table instead of multiplying an already scaled offset.
+
 Fairy stays outside the Hall's fixed 17 selectable type categories. Fairy
 Pokémon can participate through their other type or the legacy category logic,
 while the nine-byte rank field remains unchanged.
 
 All affected C units, the Hall script, text, and the complete ROM compile.
 `tools/beacondex/frontier_doubles_audit.py` protects the reviewed format,
-selection, opponent-index, and party-size markers. Emulator testing remains for
-normal and Brain battles, Hall quicksave/resume, held-item restoration, and
-record updates. A vanilla save suspended inside an old one-Pokémon Hall run has
-no intentional second selection and should start a new challenge.
+selection, opponent-index, and party-size markers. Its 16 protected markers
+cover all five facilities. The logical Single challenge IDs still drive Brain
+scheduling, streaks, resume state, records, prints, dialogue, and rewards; the
+physical battle DTOs use Double Battles. Emulator testing remains for normal
+and Brain battles, Hall quicksave/resume, held-item restoration, and record
+updates. A vanilla save suspended inside an old one-Pokémon Hall run has no
+intentional second selection and should start a new challenge.

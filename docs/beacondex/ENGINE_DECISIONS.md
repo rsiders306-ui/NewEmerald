@@ -42,7 +42,8 @@ retaining its logical Single record bucket and Matron progression.
 Trainer JSON `double_battle` flags retain their vanilla meaning for paired
 overworld NPCs, dialogue, and approach animation. The global trainer format is
 forced at battle-DTO construction for offline trainer battles. Wild, catching
-tutorial, link, and temporarily Battle Hall battles are unaffected.
+tutorial, and link battles are unaffected. The Battle Frontier uses its own
+facility-specific Double Battle construction.
 
 Every regular trainer record is required to contain at least two Pokémon. Party
 data is expanded separately from the battle-format hook so story scripts do not

@@ -22,7 +22,7 @@ Development is organized around these goals:
 
 See [`INSTALL.md`](INSTALL.md) for the upstream build prerequisites. Project
 specific setup, source decisions, and validation records live in
-[`docs/beacondex`](docs/beacondex).
+[`docs/beacondex/README.md`](docs/beacondex/README.md).
 
 This repository contains source and build tooling. It does not distribute a
 commercial Pokémon Platinum ROM.
