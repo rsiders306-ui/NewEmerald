@@ -65,7 +65,7 @@
             ],
             [
                 17,
-                "MOVE_GUST"
+                "MOVE_FAIRY_WIND"
             ],
             [
                 21,
@@ -85,7 +85,7 @@
             ],
             [
                 37,
-                "MOVE_GIGA_DRAIN"
+                "MOVE_DAZZLING_GLEAM"
             ],
             [
                 41,
@@ -105,7 +105,7 @@
             ],
             [
                 61,
-                "MOVE_PSYCHIC"
+                "MOVE_MOONBLAST"
             ]
         ],
         "by_tm": [

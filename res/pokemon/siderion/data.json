@@ -53,7 +53,7 @@
             ],
             [
                 1,
-                "MOVE_GUST"
+                "MOVE_FAIRY_WIND"
             ],
             [
                 1,
@@ -65,7 +65,7 @@
             ],
             [
                 16,
-                "MOVE_BODY_SLAM"
+                "MOVE_FOCUS_ENERGY"
             ],
             [
                 20,
@@ -81,7 +81,7 @@
             ],
             [
                 32,
-                "MOVE_BODY_SLAM"
+                "MOVE_PLAY_ROUGH"
             ],
             [
                 36,

@@ -69,7 +69,7 @@
             ],
             [
                 16,
-                "MOVE_GUST"
+                "MOVE_FAIRY_WIND"
             ],
             [
                 20,
@@ -85,7 +85,7 @@
             ],
             [
                 32,
-                "MOVE_BODY_SLAM"
+                "MOVE_PLAY_ROUGH"
             ],
             [
                 36,

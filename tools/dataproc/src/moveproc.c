@@ -208,12 +208,12 @@ static void OrderExtraScripts(void)
 {
     // MATCH DETAIL: The retail game contains additional entries in the animation scripts archive that
     // must be present to produce a binary match.
-    for (size_t i = 468; i <= 474; i++) TextFile_Printf(F_ANIM_SCRIPTS, ".shared/anim_0468_0474\n");
+    for (size_t i = MAX_MOVES; i <= 474; i++) TextFile_Printf(F_ANIM_SCRIPTS, ".shared/anim_0468_0474\n");
     for (size_t i = 475; i <= 500; i++) TextFile_Printf(F_ANIM_SCRIPTS, ".shared/anim_0475_0500\n");
 
     // MATCH DETAIL: The retail game contains additional entries in the move scripts archive that
     // must be present to produce a binary match.
-    for (size_t i = 468; i <= 500; i++) TextFile_Printf(F_MOVE_SCRIPTS, ".shared/script_0468_0500\n");
+    for (size_t i = MAX_MOVES; i <= 500; i++) TextFile_Printf(F_MOVE_SCRIPTS, ".shared/script_0468_0500\n");
 }
 
 int main(int argc, char **argv)

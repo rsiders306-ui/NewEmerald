@@ -4,6 +4,7 @@
 
 #include "constants/flavor.h"
 #include "constants/heap.h"
+#include "constants/moves.h"
 #include "constants/overworld_weather.h"
 #include "constants/tv_broadcast.h"
 #include "generated/first_arrival_to_zones.h"
@@ -2769,7 +2770,7 @@ static int sub_0206F160(FieldSystem *fieldSystem, StringTemplate *template, TVEp
         }
     }
 
-    StringTemplate_SetMoveName(template, 3, (LCRNG_Next() % 467 - 2) + 1);
+    StringTemplate_SetMoveName(template, 3, (LCRNG_Next() % NUM_VALID_MOVES) + 1);
 
     return 17;
 }

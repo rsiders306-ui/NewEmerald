@@ -57,7 +57,7 @@
             ],
             [
                 9,
-                "MOVE_BODY_SLAM"
+                "MOVE_FAIRY_WIND"
             ],
             [
                 13,
@@ -73,11 +73,11 @@
             ],
             [
                 22,
-                "MOVE_BODY_SLAM"
+                "MOVE_DAZZLING_GLEAM"
             ],
             [
                 26,
-                "MOVE_BODY_SLAM"
+                "MOVE_WISH"
             ],
             [
                 30,
@@ -89,7 +89,7 @@
             ],
             [
                 38,
-                "MOVE_BODY_SLAM"
+                "MOVE_CALM_MIND"
             ],
             [
                 42,
@@ -97,7 +97,7 @@
             ],
             [
                 48,
-                "MOVE_PSYCHIC"
+                "MOVE_MOONBLAST"
             ],
             [
                 54,
@@ -105,7 +105,7 @@
             ],
             [
                 60,
-                "MOVE_BODY_SLAM"
+                "MOVE_ENCORE"
             ]
         ],
         "by_tm": [

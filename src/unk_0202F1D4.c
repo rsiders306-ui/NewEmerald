@@ -1,3 +1,5 @@
+#include "constants/moves.h"
+
 #include "unk_0202F1D4.h"
 
 #include <nitro.h>
@@ -403,7 +405,7 @@ static BOOL sub_0202F794(SaveData *saveData, const BattleRecording *battleRecord
                 }
 
                 for (v5 = 0; v5 < 4; v5++) {
-                    if (v6->unk_1C[v5] > 467) {
+                    if (v6->unk_1C[v5] > NUM_VALID_MOVES) {
                         return 0;
                     }
                 }

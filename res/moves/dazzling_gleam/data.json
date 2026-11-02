@@ -1,0 +1,28 @@
+{
+    "name": "Dazzling Gleam",
+    "description": [
+        "The user damages the\n",
+        "foes by emitting a\n",
+        "powerful flash.\n"
+    ],
+    "class": "CLASS_SPECIAL",
+    "type": "TYPE_FAIRY",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "effect": {
+        "type": "BATTLE_EFFECT_HIT",
+        "chance": 0
+    },
+    "range": "RANGE_ADJACENT_OPPONENTS",
+    "priority": 0,
+    "flags": [
+        "MOVE_FLAG_CAN_PROTECT",
+        "MOVE_FLAG_CAN_MIRROR_MOVE",
+        "MOVE_FLAG_TRIGGERS_KINGS_ROCK"
+    ],
+    "contest": {
+        "effect": "CONTEST_EFFECT_FIRST_PERFORMANCE_ADVANTAGE",
+        "type": "CONTEST_TYPE_BEAUTY"
+    }
+}

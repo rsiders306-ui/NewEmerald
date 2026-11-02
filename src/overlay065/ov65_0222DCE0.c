@@ -4,6 +4,7 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "constants/moves.h"
 #include "constants/species.h"
 #include "generated/journal_online_events.h"
 
@@ -3706,7 +3707,7 @@ static BOOL ov65_02231978(UnkStruct_0207E060 *param0)
             return 0;
         }
 
-        if (467 < param0->unk_0C[v0]) {
+        if (NUM_VALID_MOVES < param0->unk_0C[v0]) {
             return 0;
         }
     }

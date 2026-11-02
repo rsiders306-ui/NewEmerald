@@ -20,14 +20,87 @@ DEFAULT_PACK = REPO_ROOT.parent / "beacondex-pack" / "BeaconDex_63_Complete_Inte
 
 MOVE_SUBSTITUTIONS = {
     "Aurora Veil": ("Light Screen", "closest supported team-side special-damage screen"),
-    "Dazzling Gleam": ("Swift", "supported special spread attack for the doubles role"),
-    "Fairy Wind": ("Gust", "same 40 base power and wind motif"),
     "Heal Pulse": ("Wish", "closest supported healing move; it cannot directly target an ally"),
-    "Moonblast": ("Psychic", "supported 90-power special attack with a defensive-stat drop chance"),
-    "Play Rough": ("Body Slam", "supported contact physical attack of comparable power"),
     "Pollen Puff": ("Signal Beam", "supported special Bug attack; ally-healing behavior is unavailable"),
     "Quiver Dance": ("Calm Mind", "supported special Attack/Special Defense setup move"),
     "Struggle Bug": ("Silver Wind", "supported special Bug attack"),
+}
+
+
+FAIRY_STAB_ADDITIONS = {
+    "Gleamber": [[20, "Fairy Wind"]],
+    "Loambelle": [[20, "Fairy Wind"]],
+}
+
+
+# The handoff repeats Play Rough at several early levels, including on special
+# attackers. Keep the authored level slots, but turn them into a practical
+# four-move Fairy progression: Fairy Wind early, Dazzling Gleam from level 20,
+# then Play Rough or Moonblast for the appropriate attacking stat. A few
+# redundant slots become existing support moves instead of relearning the same
+# Fairy attack.
+FAIRY_LEARNSET_BALANCE = {
+    "Wardmane": {
+        (16, "Gust"): "Fairy Wind",
+    },
+    "Siderion": {
+        (1, "Gust"): "Fairy Wind",
+        (16, "Play Rough"): "Focus Energy",
+    },
+    "Trillkit": {
+        (9, "Play Rough"): "Fairy Wind",
+        (13, "Play Rough"): "Sweet Kiss",
+        (21, "Play Rough"): "Dazzling Gleam",
+    },
+    "Cantacat": {
+        (18, "Return"): "Fairy Wind",
+        (26, "Swift"): "Dazzling Gleam",
+    },
+    "Ariapurr": {
+        (36, "Sing"): "Dazzling Gleam",
+    },
+    "Sermedic": {
+        (36, "Heal Pulse"): "Dazzling Gleam",
+    },
+    "Groovette": {
+        (9, "Play Rough"): "Fairy Wind",
+        (21, "Play Rough"): "Dazzling Gleam",
+        (29, "Play Rough"): "Wish",
+        (45, "Play Rough"): "Calm Mind",
+    },
+    "Sautène": {
+        (9, "Play Rough"): "Fairy Wind",
+        (22, "Play Rough"): "Dazzling Gleam",
+        (26, "Play Rough"): "Wish",
+        (38, "Play Rough"): "Calm Mind",
+        (60, "Play Rough"): "Encore",
+    },
+    "Veloura": {
+        (1, "Play Rough"): "Fairy Wind",
+        (18, "Play Rough"): "Sweet Kiss",
+        (22, "Play Rough"): "Dazzling Gleam",
+        (34, "Play Rough"): "Wish",
+        (56, "Play Rough"): "Encore",
+        (64, "Play Rough"): "Helping Hand",
+    },
+    "Nestelle": {
+        (17, "Gust"): "Fairy Wind",
+        (37, "Giga Drain"): "Dazzling Gleam",
+    },
+    "Heartistle": {
+        (33, "Giga Drain"): "Dazzling Gleam",
+    },
+    "Tidelion": {
+        (36, "Fairy Wind"): "Play Rough",
+    },
+    "Hearthalo": {
+        (36, "Follow Me"): "Dazzling Gleam",
+        (44, "Dazzling Gleam"): "Follow Me",
+    },
+    "Meadowmira": {
+        (36, "Follow Me"): "Dazzling Gleam",
+        (40, "Dazzling Gleam"): "Follow Me",
+    },
 }
 
 
@@ -282,11 +355,23 @@ def main() -> None:
         substitutions = []
         for move in source.get("level_up_moves") or []:
             move_name = move["move"]
+            balanced_move = FAIRY_LEARNSET_BALANCE.get(source["name"], {}).get((move["level"], move_name))
+            if balanced_move is not None:
+                substitutions.append({
+                    "level": move["level"],
+                    "from": move_name,
+                    "to": balanced_move,
+                    "reason": "Fairy STAB balance: use low-power attacks early, match the stronger attack to the user's stats, and avoid duplicate Fairy moves",
+                })
+                move_name = balanced_move
             if move_name in MOVE_SUBSTITUTIONS:
                 replacement, reason = MOVE_SUBSTITUTIONS[move_name]
                 substitutions.append({"level": move["level"], "from": move_name, "to": replacement, "reason": reason})
                 move_name = replacement
             by_level.append([move["level"], move_by_name[normalized(move_name)]])
+        for level, move_name in FAIRY_STAB_ADDITIONS.get(source["name"], []):
+            by_level.append([level, move_by_name[normalized(move_name)]])
+        by_level.sort(key=lambda entry: entry[0])
         repeated = {move: levels for move, levels in ((move, [level for level, candidate in by_level if candidate == move])
                                                      for move in {candidate for _, candidate in by_level}) if len(levels) > 1}
         row["learnset"] = {
@@ -381,6 +466,8 @@ def main() -> None:
             conflicts.append("Selected spelling is Heartistle; old Hearthistle asset references are aliases only")
         if source["source_group"] == "original_27":
             conflicts.append("Legacy typing/learnset/machine data remain review candidates")
+        if source["name"] in FAIRY_STAB_ADDITIONS:
+            conflicts.append("Fairy Wind at level 20 is a documented STAB default added because the source learnset had no Fairy attack")
         row["conflicts_and_review"] = conflicts
         rows.append(row)
 
@@ -394,6 +481,7 @@ def main() -> None:
         },
         "runtime_policies": {
             "fairy_type": "retain and implement TYPE_FAIRY; never coerce to another type",
+            "fairy_moves": "Fairy Wind, Dazzling Gleam, Play Rough, and Moonblast use native TYPE_FAIRY move data with supported Gen-IV battle effects",
             "hidden_abilities": "Platinum has two ability slots and no hidden-ability mechanic; promote the six original-27 final-stage candidates into vacant slot 2, retain other hidden candidates as metadata",
             "localization": "English source text is a technical fallback for all required language banks, clearly marked untranslated",
             "habitat": "Platinum has no per-species habitat field; express habitat through encounters",
@@ -425,7 +513,7 @@ def main() -> None:
                 (pack / "source_palettes_27" / source["name"].lower() / "footprint.png").is_file()
                 for source in species if source["source_group"] == "original_27"
             ),
-            "fairy_engine_status": "TYPE_FAIRY absent from vanilla generated/pokemon_types.txt; engine work required",
+            "fairy_engine_status": "TYPE_FAIRY and four official Fairy moves integrated",
             "starter_names": ["Glimbark", "Calflank", "Zephylet", "Turtwig", "Chimchar", "Piplup"],
             "source_move_name_count": len({move["move"] for source in species for move in source.get("level_up_moves") or []}),
             "unsupported_source_move_names": sorted(MOVE_SUBSTITUTIONS),

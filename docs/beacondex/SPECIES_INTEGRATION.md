@@ -22,9 +22,16 @@ new postgame entries do not block the vanilla story transition.
 Each species has two type slots, base stats, supported ability slots, catch and
 experience data, EV yields, gender and breeding data, friendship, learnsets,
 TM/HM compatibility, evolution data, Pokédex display metadata, and Pal Park
-fallback data. Post-Gen-IV moves and abilities are mapped to documented
-Gen-IV-supported substitutes; this release adds no signature moves, custom
-abilities, or Mega Evolution mechanics.
+fallback data. Four official Fairy attacks are implemented with Gen-IV-supported
+battle effects: Fairy Wind, Dazzling Gleam, Play Rough, and Moonblast. Other
+post-Gen-IV moves and abilities remain mapped to documented substitutes; this
+release adds no signature moves, custom abilities, or Mega Evolution mechanics.
+All Fairy-typed BeaconDex species receive at least one Fairy attack by level-up.
+Early learnsets use Fairy Wind, special attackers progress through Dazzling
+Gleam to Moonblast, and physical attackers receive Play Rough later.
+Dazzling Gleam is level-up-only because Platinum’s fixed TM01–TM92 item range
+has no TM99 slot; adding a new machine item requires a separate bag/save/UI
+expansion.
 
 Adding 63 Pokédex bits expands save structures derived from the species count.
 Fresh saves are required until a vanilla-save migration has been implemented

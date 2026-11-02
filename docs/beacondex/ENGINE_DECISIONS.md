@@ -10,11 +10,26 @@ Save blocks that size arrays from `NATIONAL_DEX_COUNT` or `MAX_SPECIES` grow.
 Fresh BeaconDex saves are the initial compatibility target. Vanilla-save
 migration must be tested before existing saves are claimed to work.
 
+The compiled expanded Pokédex is 900 bytes. The normal save block is 53,132
+bytes in 13 4-KiB sectors, leaving 116 bytes; the PC block is 74,212 bytes in 19
+sectors, leaving 3,612 bytes. Together they use the complete 32-sector main-save
+budget. Battle Hall records occupy 3,372 bytes including their footer in a
+separate 4-KiB page, leaving 724 bytes. Fresh-save layout is valid, but any
+future change that adds more than 116 bytes to the normal block must first move
+or repack save data.
+
 ## Fairy
 
 Fairy is appended after Dark so all vanilla type IDs remain stable. Battles use
 the standard Fairy offense and defense relationships. Steel retains its Gen IV
 Ghost and Dark resistances so unrelated vanilla matchups stay unchanged.
+
+Fairy Wind, Dazzling Gleam, Play Rough, and Moonblast are appended as move
+IDs 468 through 471. They reuse compatible Platinum effects and animation
+resources, while retaining their official type, power, accuracy, PP, target
+range, and secondary-effect chances. The 9-bit level-up move field represents
+all four IDs. BeaconDex level-up sets avoid duplicate Fairy attacks and attacks
+above 60 power before level 20.
 
 Battle Hall retains its original selectable type categories. Its UI and packed
 rank data have a fixed 17-type design; Fairy Pokémon can battle there, but a

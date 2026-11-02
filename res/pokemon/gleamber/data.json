@@ -72,6 +72,10 @@
                 "MOVE_HELPING_HAND"
             ],
             [
+                20,
+                "MOVE_FAIRY_WIND"
+            ],
+            [
                 22,
                 "MOVE_WILL_O_WISP"
             ],
