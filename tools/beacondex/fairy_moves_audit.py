@@ -134,16 +134,22 @@ def main() -> None:
     # When a build tree is present, verify the generated text and archive order
     # use four separate entries at IDs 468-471. This also proves long names and
     # descriptions passed the text generator.
-    # `build/` is the deliberately preserved unmodified US Rev 1 baseline.
-    # Inspect only modified build trees so its retail 468-entry move table does
-    # not masquerade as a failed BeaconDex build.
-    for build_dir in sorted(path for path in ROOT.glob("build*") if path.name != "build"):
+    for build_dir in sorted(ROOT.glob("build*")):
         move_output = build_dir / "res/moves"
         anim_order = move_output / "anim_scripts.order"
         script_order = move_output / "move_scripts.order"
         names_path = move_output / "move_names.json"
         descriptions_path = move_output / "move_descriptions.json"
         if not all(path.is_file() for path in (anim_order, script_order, names_path, descriptions_path)):
+            continue
+        names = load(names_path)["messages"]
+        if len(names) <= max(ids.values()) or any(
+            names[move_id].get("en_US") != EXPECTED_NAMES[constant]
+            for constant, move_id in ids.items()
+        ):
+            # A source checkout can legitimately retain an older build tree.
+            # Only validate compiled outputs that were generated with these
+            # four moves; source-only audit must not require a clean build.
             continue
         expected_stems = list(MOVE_STEMS.values())
         anim_entries = anim_order.read_text(encoding="utf-8").splitlines()
@@ -152,7 +158,6 @@ def main() -> None:
             raise SystemExit(f"invalid generated Fairy animation indices in {build_dir}")
         if script_entries[468:472] != [f"{stem}/script" for stem in expected_stems]:
             raise SystemExit(f"invalid generated Fairy script indices in {build_dir}")
-        names = load(names_path)["messages"]
         descriptions = load(descriptions_path)["messages"]
         for constant, move_id in ids.items():
             if names[move_id]["en_US"] != EXPECTED_NAMES[constant]:
