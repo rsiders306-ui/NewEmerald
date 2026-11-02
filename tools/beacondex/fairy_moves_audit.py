@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from collections import Counter
 from pathlib import Path
@@ -34,7 +35,19 @@ def load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--build-dir",
+        action="append",
+        type=Path,
+        help="require and validate this generated build tree (repeatable)",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     species_header = (ROOT / "include/struct_defs/species.h").read_text(encoding="utf-8")
     if f"#define MAX_LEARNSET_ENTRIES        {MAX_LEARNSET_ENTRIES}" not in species_header:
         raise SystemExit("unexpected engine learnset-entry limit")
@@ -134,23 +147,32 @@ def main() -> None:
     # When a build tree is present, verify the generated text and archive order
     # use four separate entries at IDs 468-471. This also proves long names and
     # descriptions passed the text generator.
-    for build_dir in sorted(ROOT.glob("build*")):
+    build_dirs = args.build_dir if args.build_dir is not None else sorted(ROOT.glob("build*"))
+    compiled_builds_checked = 0
+    for build_dir in build_dirs:
+        if not build_dir.is_absolute():
+            build_dir = ROOT / build_dir
         move_output = build_dir / "res/moves"
         anim_order = move_output / "anim_scripts.order"
         script_order = move_output / "move_scripts.order"
         names_path = move_output / "move_names.json"
         descriptions_path = move_output / "move_descriptions.json"
-        if not all(path.is_file() for path in (anim_order, script_order, names_path, descriptions_path)):
+        generated_paths = (anim_order, script_order, names_path, descriptions_path)
+        if not all(path.is_file() for path in generated_paths):
+            if args.build_dir is not None:
+                raise SystemExit(f"required Fairy build outputs are missing in {build_dir}")
             continue
         names = load(names_path)["messages"]
         if len(names) <= max(ids.values()) or any(
             names[move_id].get("en_US") != EXPECTED_NAMES[constant]
             for constant, move_id in ids.items()
         ):
+            if args.build_dir is not None:
+                raise SystemExit(f"required build does not contain the Fairy move table: {build_dir}")
             # A source checkout can legitimately retain an older build tree.
-            # Only validate compiled outputs that were generated with these
-            # four moves; source-only audit must not require a clean build.
+            # Only auto-detect outputs generated with these four moves.
             continue
+        compiled_builds_checked += 1
         expected_stems = list(MOVE_STEMS.values())
         anim_entries = anim_order.read_text(encoding="utf-8").splitlines()
         script_entries = script_order.read_text(encoding="utf-8").splitlines()
@@ -167,6 +189,7 @@ def main() -> None:
 
     print(f"Fairy moves: {len(MOVE_STEMS)} (IDs 468-471)")
     print(f"Fairy BeaconDex species with level-up STAB: {len(fairy_species)}")
+    print(f"Compiled Fairy build trees checked: {compiled_builds_checked}")
     print("Fairy move audit: PASS")
 
 
