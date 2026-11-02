@@ -1,6 +1,7 @@
 # Build directory
 /build/
 /build-cloud-*/
+/dist/
 
 # Metroskrew artifacts
 /metroskrew-*.tar.xz
