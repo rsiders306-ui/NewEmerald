@@ -26,6 +26,21 @@ static void SetRoamingMoltresState(VarsFlags *varsFlags, u16 state);
 static void SetRoamingZapdosState(VarsFlags *varsFlags, u16 state);
 static void SetRoamingArticunoState(VarsFlags *varsFlags, u16 state);
 
+static BOOL IsBeaconDexStarter(u16 species)
+{
+    switch (species) {
+    case SPECIES_GLIMBARK:
+    case SPECIES_CALFLANK:
+    case SPECIES_ZEPHYLET:
+    case SPECIES_TURTWIG:
+    case SPECIES_CHIMCHAR:
+    case SPECIES_PIPLUP:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 static BOOL TrySetVarToValue(VarsFlags *varsFlags, u16 varID, u16 value)
 {
     u16 *varAddress = VarsFlags_GetVarAddress(varsFlags, varID);
@@ -72,10 +87,20 @@ u16 SystemVars_GetPlayerStarter(VarsFlags *varsFlags)
     return TryGetVarValue(varsFlags, VAR_PLAYER_STARTER);
 }
 
+u16 SystemVars_GetPlayerSecondStarter(VarsFlags *varsFlags)
+{
+    return TryGetVarValue(varsFlags, VAR_PLAYER_SECOND_STARTER);
+}
+
 u16 SystemVars_GetRivalStarter(VarsFlags *varsFlags)
 {
     u16 rivalStarter;
     u16 playerStarter = TryGetVarValue(varsFlags, VAR_PLAYER_STARTER);
+
+    rivalStarter = TryGetVarValue(varsFlags, VAR_RIVAL_STARTER);
+    if (IsBeaconDexStarter(rivalStarter)) {
+        return rivalStarter;
+    }
 
     if (playerStarter == SPECIES_TURTWIG) {
         rivalStarter = SPECIES_CHIMCHAR;
@@ -86,6 +111,21 @@ u16 SystemVars_GetRivalStarter(VarsFlags *varsFlags)
     }
 
     return rivalStarter;
+}
+
+u16 SystemVars_GetRivalSecondStarter(VarsFlags *varsFlags)
+{
+    u16 rivalStarter = TryGetVarValue(varsFlags, VAR_RIVAL_SECOND_STARTER);
+
+    return IsBeaconDexStarter(rivalStarter) ? rivalStarter : SPECIES_NONE;
+}
+
+BOOL SystemVars_HasRivalStarterPair(VarsFlags *varsFlags)
+{
+    u16 first = TryGetVarValue(varsFlags, VAR_RIVAL_STARTER);
+    u16 second = TryGetVarValue(varsFlags, VAR_RIVAL_SECOND_STARTER);
+
+    return IsBeaconDexStarter(first) && IsBeaconDexStarter(second) && first != second;
 }
 
 u16 SystemVars_GetPlayerCounterpartStarter(VarsFlags *varsFlags)

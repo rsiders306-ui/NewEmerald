@@ -19,10 +19,21 @@
 #include "savedata.h"
 #include "savedata_misc.h"
 #include "string_gf.h"
+#include "system_vars.h"
 
-static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID heapID);
+static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *saveData, enum HeapID heapID);
+static u16 TrainerData_GetPartySpecies(
+    FieldBattleDTO *dto,
+    int battler,
+    int partySlot,
+    u16 defaultSpecies,
+    u8 level,
+    SaveData *saveData,
+    BOOL *useLevelUpMoves);
+static u16 TrainerData_EvolveRivalStarter(u16 species, u8 level);
+static BOOL TrainerData_IsLegacyRivalStarter(u16 species);
 
-void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, enum HeapID heapID)
+void Trainer_Encounter(FieldBattleDTO *dto, SaveData *saveData, enum HeapID heapID)
 {
     Trainer trdata;
     MessageLoader *msgLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_NPC_TRAINER_NAMES, heapID);
@@ -44,7 +55,7 @@ void Trainer_Encounter(FieldBattleDTO *dto, const SaveData *saveData, enum HeapI
             String_Free(trainerName);
         }
 
-        TrainerData_BuildParty(dto, i, heapID);
+        TrainerData_BuildParty(dto, i, saveData, heapID);
     }
 
     dto->battleType |= trdata.header.battleType;
@@ -173,13 +184,14 @@ u8 TrainerClass_Gender(int trclass)
  * @param battler       Which battler's party is to be loaded.
  * @param heapID        Heap on which to perform any allocations.
  */
-static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID heapID)
+static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *saveData, enum HeapID heapID)
 {
     // must make declarations C89-style to match
     void *buf;
     int i, j;
     u32 genderMod, rnd, oldSeed;
     u8 ivs;
+    BOOL useLevelUpMoves;
     Pokemon *mon;
 
     oldSeed = LCRNG_GetSeed();
@@ -200,7 +212,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_BASE: {
         TrainerMonBase *trmon = (TrainerMonBase *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            u16 species = trmon[i].species & 0x3FF;
+            u16 species = TrainerData_GetPartySpecies(
+                dto, battler, i, trmon[i].species & 0x3FF, trmon[i].level, saveData, &useLevelUpMoves);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -225,7 +238,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_WITH_MOVES: {
         TrainerMonWithMoves *trmon = (TrainerMonWithMoves *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            u16 species = trmon[i].species & 0x3FF;
+            u16 species = TrainerData_GetPartySpecies(
+                dto, battler, i, trmon[i].species & 0x3FF, trmon[i].level, saveData, &useLevelUpMoves);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -240,8 +254,10 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
 
-            for (j = 0; j < 4; j++) {
-                Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+            if (useLevelUpMoves == FALSE) {
+                for (j = 0; j < 4; j++) {
+                    Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+                }
             }
 
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -255,7 +271,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_WITH_ITEM: {
         TrainerMonWithItem *trmon = (TrainerMonWithItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            u16 species = trmon[i].species & 0x3FF;
+            u16 species = TrainerData_GetPartySpecies(
+                dto, battler, i, trmon[i].species & 0x3FF, trmon[i].level, saveData, &useLevelUpMoves);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -281,7 +298,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_WITH_MOVES_AND_ITEM: {
         TrainerMonWithMovesAndItem *trmon = (TrainerMonWithMovesAndItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            u16 species = trmon[i].species & 0x3FF;
+            u16 species = TrainerData_GetPartySpecies(
+                dto, battler, i, trmon[i].species & 0x3FF, trmon[i].level, saveData, &useLevelUpMoves);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -297,8 +315,10 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
 
-            for (j = 0; j < 4; j++) {
-                Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+            if (useLevelUpMoves == FALSE) {
+                for (j = 0; j < 4; j++) {
+                    Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+                }
             }
 
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -313,4 +333,82 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     Heap_Free(buf);
     Heap_Free(mon);
     LCRNG_SetSeed(oldSeed);
+}
+
+static u16 TrainerData_GetPartySpecies(
+    FieldBattleDTO *dto,
+    int battler,
+    int partySlot,
+    u16 defaultSpecies,
+    u8 level,
+    SaveData *saveData,
+    BOOL *useLevelUpMoves)
+{
+    VarsFlags *varsFlags;
+    u16 species;
+
+    *useLevelUpMoves = FALSE;
+
+    if (dto->trainer[battler].header.trainerType != TRAINER_CLASS_RIVAL) {
+        return defaultSpecies;
+    }
+
+    varsFlags = SaveData_GetVarsFlags(saveData);
+    if (SystemVars_HasRivalStarterPair(varsFlags) == FALSE) {
+        return defaultSpecies;
+    }
+
+    if (partySlot < 2) {
+        species = partySlot == 0
+            ? SystemVars_GetRivalStarter(varsFlags)
+            : SystemVars_GetRivalSecondStarter(varsFlags);
+        *useLevelUpMoves = TRUE;
+
+        return TrainerData_EvolveRivalStarter(species, level);
+    }
+
+    if (TrainerData_IsLegacyRivalStarter(defaultSpecies)) {
+        *useLevelUpMoves = TRUE;
+        return level >= 34 ? SPECIES_STARAPTOR : SPECIES_STARAVIA;
+    }
+
+    return defaultSpecies;
+}
+
+static u16 TrainerData_EvolveRivalStarter(u16 species, u8 level)
+{
+    switch (species) {
+    case SPECIES_GLIMBARK:
+        return level >= 36 ? SPECIES_SIDERION : (level >= 16 ? SPECIES_WARDMANE : species);
+    case SPECIES_CALFLANK:
+        return level >= 36 ? SPECIES_OXGUARD : (level >= 16 ? SPECIES_GRIDIRUFF : species);
+    case SPECIES_ZEPHYLET:
+        return level >= 36 ? SPECIES_TERRAPTOR : (level >= 16 ? SPECIES_GALECREST : species);
+    case SPECIES_TURTWIG:
+        return level >= 32 ? SPECIES_TORTERRA : (level >= 18 ? SPECIES_GROTLE : species);
+    case SPECIES_CHIMCHAR:
+        return level >= 36 ? SPECIES_INFERNAPE : (level >= 14 ? SPECIES_MONFERNO : species);
+    case SPECIES_PIPLUP:
+        return level >= 36 ? SPECIES_EMPOLEON : (level >= 16 ? SPECIES_PRINPLUP : species);
+    default:
+        return species;
+    }
+}
+
+static BOOL TrainerData_IsLegacyRivalStarter(u16 species)
+{
+    switch (species) {
+    case SPECIES_TURTWIG:
+    case SPECIES_GROTLE:
+    case SPECIES_TORTERRA:
+    case SPECIES_CHIMCHAR:
+    case SPECIES_MONFERNO:
+    case SPECIES_INFERNAPE:
+    case SPECIES_PIPLUP:
+    case SPECIES_PRINPLUP:
+    case SPECIES_EMPOLEON:
+        return TRUE;
+    default:
+        return FALSE;
+    }
 }

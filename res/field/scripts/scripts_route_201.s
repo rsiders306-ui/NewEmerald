@@ -273,23 +273,53 @@ Route201_GoOnChoosePokemon:
 
 Route201_Briefcase:
     LockAll
+Route201_SelectFirstStarter:
+    Message Route201_Text_ChooseFirstStarter
+    InitLocalTextListMenu 1, 1, 0, VAR_0x8000, NO_EXIT_ON_B
+    AddListMenuEntry Route201_Text_StarterGlimbark, 0
+    AddListMenuEntry Route201_Text_StarterCalflank, 1
+    AddListMenuEntry Route201_Text_StarterZephylet, 2
+    AddListMenuEntry Route201_Text_StarterTurtwig, 3
+    AddListMenuEntry Route201_Text_StarterChimchar, 4
+    AddListMenuEntry Route201_Text_StarterPiplup, 5
+    ShowListMenu
+    Call Route201_MapStarterMenuSelection
+    SetVar VAR_PLAYER_STARTER, VAR_0x8000
+Route201_SelectSecondStarter:
+    Message Route201_Text_ChooseSecondStarter
+    InitLocalTextListMenu 1, 1, 0, VAR_0x8000, NO_EXIT_ON_B
+    AddListMenuEntry Route201_Text_StarterGlimbark, 0
+    AddListMenuEntry Route201_Text_StarterCalflank, 1
+    AddListMenuEntry Route201_Text_StarterZephylet, 2
+    AddListMenuEntry Route201_Text_StarterTurtwig, 3
+    AddListMenuEntry Route201_Text_StarterChimchar, 4
+    AddListMenuEntry Route201_Text_StarterPiplup, 5
+    ShowListMenu
+    Call Route201_MapStarterMenuSelection
+    GoToIfEq VAR_0x8000, VAR_PLAYER_STARTER, Route201_StarterMustBeDifferent
+    SetVar VAR_PLAYER_SECOND_STARTER, VAR_0x8000
+    BufferSpeciesNameFromVar 0, VAR_PLAYER_STARTER, 0, 0
+    BufferSpeciesNameFromVar 1, VAR_PLAYER_SECOND_STARTER, 0, 0
+    Message Route201_Text_ConfirmStarterPair
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, Route201_SelectFirstStarter
+    Call Route201_ChooseRivalStarterPair
+    CloseMessage
     FadeScreenOut
     WaitFadeScreen
     SetFlag FLAG_HIDE_ROUTE_201_BRIEFCASE
     RemoveObject LOCALID_BRIEFCASE
-    StartChooseStarterScene
-    SaveChosenStarter
-    ReturnToField
+    GivePokemon VAR_PLAYER_STARTER, 5, ITEM_NONE, VAR_RESULT
+    GivePokemon VAR_PLAYER_SECOND_STARTER, 5, ITEM_NONE, VAR_RESULT
     FadeScreenIn
     WaitFadeScreen
-    GetPlayerStarterSpecies VAR_0x8000
-    GivePokemon VAR_0x8000, 5, ITEM_NONE, VAR_RESULT
     ApplyMovement LOCALID_PROF_ROWAN, Route201_Movement_ProfRowanFacePlayerSouth
     ApplyMovement LOCALID_RIVAL, Route201_Movement_RivalFaceWest
     ApplyMovement LOCALID_PLAYER, Route201_Movement_PlayerFaceProfRowanNorth
     WaitMovement
     BufferRivalName 0
-    BufferRivalStarterSpeciesName 2
+    BufferSpeciesNameFromVar 2, VAR_RIVAL_STARTER, 0, 0
+    BufferSpeciesNameFromVar 3, VAR_RIVAL_SECOND_STARTER, 0, 0
     Message Route201_Text_ImPickingThisStarter
     Message Route201_Text_IHopeYoullDoWell
     Message Route201_Text_ComeSeeMeInSandgemTown
@@ -304,6 +334,73 @@ Route201_Briefcase:
     GoToIfEq VAR_RESULT, GENDER_MALE, Route201_DawnLeave
     GoTo Route201_LucasLeave
     End
+
+Route201_StarterMustBeDifferent:
+    Message Route201_Text_StartersMustBeDifferent
+    GoTo Route201_SelectSecondStarter
+    End
+
+Route201_MapStarterMenuSelection:
+    GoToIfEq VAR_0x8000, 0, Route201_SetMenuSelectionGlimbark
+    GoToIfEq VAR_0x8000, 1, Route201_SetMenuSelectionCalflank
+    GoToIfEq VAR_0x8000, 2, Route201_SetMenuSelectionZephylet
+    GoToIfEq VAR_0x8000, 3, Route201_SetMenuSelectionTurtwig
+    GoToIfEq VAR_0x8000, 4, Route201_SetMenuSelectionChimchar
+    SetVar VAR_0x8000, SPECIES_PIPLUP
+    Return
+
+Route201_SetMenuSelectionGlimbark:
+    SetVar VAR_0x8000, SPECIES_GLIMBARK
+    Return
+
+Route201_SetMenuSelectionCalflank:
+    SetVar VAR_0x8000, SPECIES_CALFLANK
+    Return
+
+Route201_SetMenuSelectionZephylet:
+    SetVar VAR_0x8000, SPECIES_ZEPHYLET
+    Return
+
+Route201_SetMenuSelectionTurtwig:
+    SetVar VAR_0x8000, SPECIES_TURTWIG
+    Return
+
+Route201_SetMenuSelectionChimchar:
+    SetVar VAR_0x8000, SPECIES_CHIMCHAR
+    Return
+
+Route201_ChooseRivalStarterPair:
+    SetVar VAR_RIVAL_STARTER, SPECIES_NONE
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_NONE
+    SetVar VAR_0x8000, SPECIES_GLIMBARK
+    Call Route201_TryAddRivalStarter
+    SetVar VAR_0x8000, SPECIES_CALFLANK
+    Call Route201_TryAddRivalStarter
+    SetVar VAR_0x8000, SPECIES_ZEPHYLET
+    Call Route201_TryAddRivalStarter
+    SetVar VAR_0x8000, SPECIES_TURTWIG
+    Call Route201_TryAddRivalStarter
+    SetVar VAR_0x8000, SPECIES_CHIMCHAR
+    Call Route201_TryAddRivalStarter
+    SetVar VAR_0x8000, SPECIES_PIPLUP
+    Call Route201_TryAddRivalStarter
+    Return
+
+Route201_TryAddRivalStarter:
+    GoToIfEq VAR_0x8000, VAR_PLAYER_STARTER, Route201_ReturnFromRivalStarterCheck
+    GoToIfEq VAR_0x8000, VAR_PLAYER_SECOND_STARTER, Route201_ReturnFromRivalStarterCheck
+    GoToIfEq VAR_RIVAL_STARTER, SPECIES_NONE, Route201_SetFirstRivalStarter
+    GoToIfEq VAR_RIVAL_SECOND_STARTER, SPECIES_NONE, Route201_SetSecondRivalStarter
+Route201_ReturnFromRivalStarterCheck:
+    Return
+
+Route201_SetFirstRivalStarter:
+    SetVar VAR_RIVAL_STARTER, VAR_0x8000
+    Return
+
+Route201_SetSecondRivalStarter:
+    SetVar VAR_RIVAL_SECOND_STARTER, VAR_0x8000
+    Return
 
 Route201_DawnLeave:
     Message Route201_Text_DawnWaitForMe

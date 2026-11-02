@@ -279,14 +279,14 @@
       "id": "Route201_Text_GoOnChooseAPokemon",
       "en_US": [
         "Go on! Open the briefcase and choose\n",
-        "a Pokémon!\r"
+        "two Pokémon!\r"
       ]
     },
     {
       "id": "Route201_Text_RowanGoOnChooseAPokemon",
       "en_US": [
         "Rowan: Go on! Open the briefcase and\n",
-        "choose a Pokémon!"
+        "choose two Pokémon!"
       ]
     },
     {
@@ -302,7 +302,7 @@
       "id": "Route201_Text_YouCanChooseFirst",
       "en_US": [
         "Hey, {STRVAR_1 3, 1, 0}.\n",
-        "You can choose first.\r",
+        "You can choose your two first.\r",
         "Hey, I’m practically a grown-up.\n",
         "I have to show some class here."
       ]
@@ -311,21 +311,64 @@
       "id": "Route201_Text_PickAPokemon",
       "en_US": [
         "{STRVAR_1 3, 0, 0}: What’s up with you?\n",
-        "Open the briefcase and pick a Pokémon!\r"
+        "Open the briefcase and pick two Pokémon!\r"
       ]
+    },
+    {
+      "id": "Route201_Text_ChooseFirstStarter",
+      "en_US": "Choose your first partner.\r"
+    },
+    {
+      "id": "Route201_Text_ChooseSecondStarter",
+      "en_US": "Now choose a different second partner.\r"
+    },
+    {
+      "id": "Route201_Text_StartersMustBeDifferent",
+      "en_US": "Your two partners must be different.\r"
+    },
+    {
+      "id": "Route201_Text_ConfirmStarterPair",
+      "en_US": [
+        "You chose {STRVAR_1 0, 0, 0} and\n",
+        "{STRVAR_1 0, 1, 0}. Is that right?"
+      ]
+    },
+    {
+      "id": "Route201_Text_StarterGlimbark",
+      "en_US": "GLIMBARK  Fighting"
+    },
+    {
+      "id": "Route201_Text_StarterCalflank",
+      "en_US": "CALFLANK  Rock"
+    },
+    {
+      "id": "Route201_Text_StarterZephylet",
+      "en_US": "ZEPHYLET  Flying"
+    },
+    {
+      "id": "Route201_Text_StarterTurtwig",
+      "en_US": "TURTWIG  Grass"
+    },
+    {
+      "id": "Route201_Text_StarterChimchar",
+      "en_US": "CHIMCHAR  Fire"
+    },
+    {
+      "id": "Route201_Text_StarterPiplup",
+      "en_US": "PIPLUP  Water"
     },
     {
       "id": "Route201_Text_ImPickingThisStarter",
       "en_US": [
-        "{STRVAR_1 3, 0, 0}: Then, I choose you!\n",
-        "I’m picking this {STRVAR_1 0, 2, 0}!\r"
+        "{STRVAR_1 3, 0, 0}: Then, I choose you two!\n",
+        "{STRVAR_1 0, 2, 0} and {STRVAR_1 0, 3, 0}!\r"
       ]
     },
     {
       "id": "Route201_Text_IHopeYoullDoWell",
       "en_US": [
         "Rowan: Very well! Both of you have\n",
-        "chosen a good Pokémon, it seems.\r",
+        "chosen good partners, it seems.\r",
         "Now, listen well!\r",
         "The Pokémon you have been entrusted\n",
         "with are unfamiliar with the world.\r",
@@ -380,7 +423,7 @@
       "id": "Route201_Text_OnlyOneThingToDo",
       "en_US": [
         "Heheh, {STRVAR_1 3, 1, 0}!\n",
-        "We’ve both got Pokémon now.\r",
+        "We’ve both got our teams now.\r",
         "There’s only one thing to do, right?\n",
         "Are you up for this?\r"
       ]
@@ -412,7 +455,7 @@
         "{STRVAR_1 3, 0, 0}: Whew!\n",
         "Let’s go home.\r",
         "I’m beat after that battle.\n",
-        "My Pokémon needs rest, too.\r",
+        "My team needs rest, too.\r",
         "See ya, {STRVAR_1 3, 1, 0}!\r"
       ]
     },
@@ -427,7 +470,7 @@
         "awesomely fun!\r",
         "OK, let’s go home.\r",
         "I’m beat after that battle.\n",
-        "My Pokémon needs rest, too.\r",
+        "My team needs rest, too.\r",
         "See ya, {STRVAR_1 3, 1, 0}!\r"
       ]
     },

@@ -46,9 +46,9 @@ active AI partner satisfies the check. Automatic sight trainers wait until the
 party is eligible so their approach script cannot repeatedly retrigger and trap
 the player.
 
-Route 201's three first-battle commands are deliberately marked deferred in the
-flow audit. They become safe only when the starter milestone atomically grants
-both selected starters before Barry's battle.
+Route 201's three first-battle commands are safe: the selection event grants
+both distinct level-five starters while the event is locked and before any
+Barry battle branch can run.
 
 ## Dialogue and sequential battles
 
@@ -66,14 +66,14 @@ automatic room event returns an ineligible player to the preceding elevator.
 The following checks passed on 2026-11-02:
 
 - `trainer_party_audit.py`: 928 records, zero minimum-party violations
-- `trainer_battle_flow_audit.py`: 104 calls, 101 safe, 3 deferred Route 201
-  first-battle variants, zero violations
+- `trainer_battle_flow_audit.py`: 104 calls, 104 safe, zero deferred, zero
+  violations
 - all trainer JSON parsed with unique message types
 - all changed C, battle scripts, field scripts, text banks, and trainer archives
   compiled
 - the complete modified US Rev 1 ROM linked successfully
 
-The resulting intermediate ROM is 134,217,728 bytes with SHA-1
-`0e725d96dd0fd56ebd43042b79bcae99a20267f7`. It is a compile checkpoint, not a
-playable Milestone B release: the Route 201 two-starter grant is still required
-before the first forced Double Battle can be run safely.
+The original doubles-only checkpoint ROM was 134,217,728 bytes with SHA-1
+`0e725d96dd0fd56ebd43042b79bcae99a20267f7`. The later integrated starter,
+Fairy, and 63-species checkpoint also links successfully; Route 201 is no longer
+deferred.

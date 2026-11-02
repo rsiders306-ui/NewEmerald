@@ -167,6 +167,23 @@ def main() -> int:
     if len(first_calls) != 3 or {Path(call["file"]).name for call in first_calls} != {ROUTE_201_FILE}:
         violations.append("StartFirstBattle inventory changed; review the two-starter atomic grant")
 
+    route_201_source = (SCRIPT_ROOT / ROUTE_201_FILE).read_text()
+    route_201_markers = (
+        "GoToIfEq VAR_0x8000, VAR_PLAYER_STARTER, Route201_StarterMustBeDifferent",
+        "GivePokemon VAR_PLAYER_STARTER, 5, ITEM_NONE, VAR_RESULT",
+        "GivePokemon VAR_PLAYER_SECOND_STARTER, 5, ITEM_NONE, VAR_RESULT",
+    )
+    route_201_pair_safe = all(marker in route_201_source for marker in route_201_markers)
+    if route_201_pair_safe:
+        first_grant = route_201_source.index(route_201_markers[1])
+        second_grant = route_201_source.index(route_201_markers[2])
+        first_battle = route_201_source.index("StartFirstBattle ")
+        route_201_pair_safe = first_grant < second_grant < first_battle
+    if not route_201_pair_safe:
+        violations.append(
+            "Route 201 no longer grants two distinct starters before its first trainer battle"
+        )
+
     tag_calls = [call for call in calls if call["command"] == "StartTagBattle"]
     if len(tag_calls) != 4:
         violations.append(f"expected 4 reviewed tag battles, found {len(tag_calls)}")
@@ -177,8 +194,12 @@ def main() -> int:
             call["status"] = "safe"
             call["reason"] = "tag battle supplies an AI partner"
         elif call["command"] == "StartFirstBattle":
-            call["status"] = "deferred"
-            call["reason"] = "Route 201 must atomically grant the selected starter pair"
+            call["status"] = "safe" if route_201_pair_safe else "unsafe"
+            call["reason"] = (
+                "Route 201 grants two distinct level-five starters before the battle"
+                if route_201_pair_safe
+                else "Route 201 starter-pair grant failed its structural audit"
+            )
         else:
             result = next((item for item in file_results if Path(item["file"]).name == name), None)
             call["status"] = result["status"] if result else "unsafe"
