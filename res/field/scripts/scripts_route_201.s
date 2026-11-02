@@ -372,34 +372,135 @@ Route201_SetMenuSelectionChimchar:
 Route201_ChooseRivalStarterPair:
     SetVar VAR_RIVAL_STARTER, SPECIES_NONE
     SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_NONE
-    SetVar VAR_0x8000, SPECIES_GLIMBARK
-    Call Route201_TryAddRivalStarter
-    SetVar VAR_0x8000, SPECIES_CALFLANK
-    Call Route201_TryAddRivalStarter
-    SetVar VAR_0x8000, SPECIES_ZEPHYLET
-    Call Route201_TryAddRivalStarter
-    SetVar VAR_0x8000, SPECIES_TURTWIG
-    Call Route201_TryAddRivalStarter
-    SetVar VAR_0x8000, SPECIES_CHIMCHAR
-    Call Route201_TryAddRivalStarter
-    SetVar VAR_0x8000, SPECIES_PIPLUP
-    Call Route201_TryAddRivalStarter
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_GLIMBARK, Route201_ChooseRivalPairFromGlimbark
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_CALFLANK, Route201_ChooseRivalPairFromCalflank
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_ZEPHYLET, Route201_ChooseRivalPairFromZephylet
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_TURTWIG, Route201_ChooseRivalPairFromTurtwig
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_CHIMCHAR, Route201_ChooseRivalPairFromChimchar
+    GoToIfEq VAR_PLAYER_STARTER, SPECIES_PIPLUP, Route201_ChooseRivalPairFromPiplup
     Return
 
-Route201_TryAddRivalStarter:
-    GoToIfEq VAR_0x8000, VAR_PLAYER_STARTER, Route201_ReturnFromRivalStarterCheck
-    GoToIfEq VAR_0x8000, VAR_PLAYER_SECOND_STARTER, Route201_ReturnFromRivalStarterCheck
-    GoToIfEq VAR_RIVAL_STARTER, SPECIES_NONE, Route201_SetFirstRivalStarter
-    GoToIfEq VAR_RIVAL_SECOND_STARTER, SPECIES_NONE, Route201_SetSecondRivalStarter
-Route201_ReturnFromRivalStarterCheck:
+Route201_ChooseRivalPairFromGlimbark:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CALFLANK, Route201_SetRivalPair_Glimbark_Calflank
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_ZEPHYLET, Route201_SetRivalPair_Glimbark_Zephylet
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_TURTWIG, Route201_SetRivalPair_Glimbark_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CHIMCHAR, Route201_SetRivalPair_Glimbark_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_PIPLUP, Route201_SetRivalPair_Glimbark_Piplup
     Return
 
-Route201_SetFirstRivalStarter:
-    SetVar VAR_RIVAL_STARTER, VAR_0x8000
+Route201_ChooseRivalPairFromCalflank:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_GLIMBARK, Route201_SetRivalPair_Glimbark_Calflank
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_ZEPHYLET, Route201_SetRivalPair_Calflank_Zephylet
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_TURTWIG, Route201_SetRivalPair_Calflank_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CHIMCHAR, Route201_SetRivalPair_Calflank_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_PIPLUP, Route201_SetRivalPair_Calflank_Piplup
     Return
 
-Route201_SetSecondRivalStarter:
-    SetVar VAR_RIVAL_SECOND_STARTER, VAR_0x8000
+Route201_ChooseRivalPairFromZephylet:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_GLIMBARK, Route201_SetRivalPair_Glimbark_Zephylet
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CALFLANK, Route201_SetRivalPair_Calflank_Zephylet
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_TURTWIG, Route201_SetRivalPair_Zephylet_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CHIMCHAR, Route201_SetRivalPair_Zephylet_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_PIPLUP, Route201_SetRivalPair_Zephylet_Piplup
+    Return
+
+Route201_ChooseRivalPairFromTurtwig:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_GLIMBARK, Route201_SetRivalPair_Glimbark_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CALFLANK, Route201_SetRivalPair_Calflank_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_ZEPHYLET, Route201_SetRivalPair_Zephylet_Turtwig
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CHIMCHAR, Route201_SetRivalPair_Turtwig_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_PIPLUP, Route201_SetRivalPair_Turtwig_Piplup
+    Return
+
+Route201_ChooseRivalPairFromChimchar:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_GLIMBARK, Route201_SetRivalPair_Glimbark_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CALFLANK, Route201_SetRivalPair_Calflank_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_ZEPHYLET, Route201_SetRivalPair_Zephylet_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_TURTWIG, Route201_SetRivalPair_Turtwig_Chimchar
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_PIPLUP, Route201_SetRivalPair_Chimchar_Piplup
+    Return
+
+Route201_ChooseRivalPairFromPiplup:
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_GLIMBARK, Route201_SetRivalPair_Glimbark_Piplup
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CALFLANK, Route201_SetRivalPair_Calflank_Piplup
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_ZEPHYLET, Route201_SetRivalPair_Zephylet_Piplup
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_TURTWIG, Route201_SetRivalPair_Turtwig_Piplup
+    GoToIfEq VAR_PLAYER_SECOND_STARTER, SPECIES_CHIMCHAR, Route201_SetRivalPair_Chimchar_Piplup
+    Return
+
+Route201_SetRivalPair_Glimbark_Calflank:
+    SetVar VAR_RIVAL_STARTER, SPECIES_TURTWIG
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CHIMCHAR
+    Return
+
+Route201_SetRivalPair_Glimbark_Zephylet:
+    SetVar VAR_RIVAL_STARTER, SPECIES_CALFLANK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CHIMCHAR
+    Return
+
+Route201_SetRivalPair_Glimbark_Turtwig:
+    SetVar VAR_RIVAL_STARTER, SPECIES_CHIMCHAR
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_PIPLUP
+    Return
+
+Route201_SetRivalPair_Glimbark_Chimchar:
+    SetVar VAR_RIVAL_STARTER, SPECIES_ZEPHYLET
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_TURTWIG
+    Return
+
+Route201_SetRivalPair_Glimbark_Piplup:
+    SetVar VAR_RIVAL_STARTER, SPECIES_ZEPHYLET
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CHIMCHAR
+    Return
+
+Route201_SetRivalPair_Calflank_Zephylet:
+    SetVar VAR_RIVAL_STARTER, SPECIES_CHIMCHAR
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_PIPLUP
+    Return
+
+Route201_SetRivalPair_Calflank_Turtwig:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_PIPLUP
+    Return
+
+Route201_SetRivalPair_Calflank_Chimchar:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_ZEPHYLET
+    Return
+
+Route201_SetRivalPair_Calflank_Piplup:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_ZEPHYLET
+    Return
+
+Route201_SetRivalPair_Zephylet_Turtwig:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CHIMCHAR
+    Return
+
+Route201_SetRivalPair_Zephylet_Chimchar:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_PIPLUP
+    Return
+
+Route201_SetRivalPair_Zephylet_Piplup:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_TURTWIG
+    Return
+
+Route201_SetRivalPair_Turtwig_Chimchar:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CALFLANK
+    Return
+
+Route201_SetRivalPair_Turtwig_Piplup:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CHIMCHAR
+    Return
+
+Route201_SetRivalPair_Chimchar_Piplup:
+    SetVar VAR_RIVAL_STARTER, SPECIES_GLIMBARK
+    SetVar VAR_RIVAL_SECOND_STARTER, SPECIES_CALFLANK
     Return
 
 Route201_DawnLeave:

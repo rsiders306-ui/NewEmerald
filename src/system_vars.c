@@ -137,8 +137,10 @@ u16 SystemVars_GetPlayerCounterpartStarter(VarsFlags *varsFlags)
         counterpartStarter = SPECIES_PIPLUP;
     } else if (playerStarter == SPECIES_CHIMCHAR) {
         counterpartStarter = SPECIES_TURTWIG;
-    } else {
+    } else if (playerStarter == SPECIES_PIPLUP) {
         counterpartStarter = SPECIES_CHIMCHAR;
+    } else {
+        counterpartStarter = SPECIES_PIPLUP;
     }
 
     return counterpartStarter;

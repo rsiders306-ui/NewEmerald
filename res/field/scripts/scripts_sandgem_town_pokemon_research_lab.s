@@ -141,6 +141,9 @@ SandgemTownLab_OnFrame_GetPokedex:
     SetVar VAR_0x8004, 0
     GetPartyMonSpecies VAR_0x8004, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
+    GoToIfEq VAR_0x8008, SPECIES_GLIMBARK, SandgemTownLab_PokemonSeemsRatherHappy
+    GoToIfEq VAR_0x8008, SPECIES_CALFLANK, SandgemTownLab_PokemonSeemsRatherHappy
+    GoToIfEq VAR_0x8008, SPECIES_ZEPHYLET, SandgemTownLab_PokemonSeemsRatherHappy
     GoToIfEq VAR_0x8008, SPECIES_TURTWIG, SandgemTownLab_PokemonSeemsRatherHappy
     GoToIfEq VAR_0x8008, SPECIES_CHIMCHAR, SandgemTownLab_PokemonSeemsRatherHappy
     GoToIfEq VAR_0x8008, SPECIES_PIPLUP, SandgemTownLab_PokemonSeemsRatherHappy

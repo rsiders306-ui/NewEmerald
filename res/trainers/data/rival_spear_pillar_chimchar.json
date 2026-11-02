@@ -10,15 +10,15 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MUNCHLAX",
+            "species": "SPECIES_ROSERADE",
             "form": 0,
             "level": 40,
             "item": null,
             "moves": [
-                "MOVE_BODY_SLAM",
-                "MOVE_STOCKPILE",
-                "MOVE_SWALLOW",
-                "MOVE_SCREECH"
+                "MOVE_GIGA_DRAIN",
+                "MOVE_TOXIC",
+                "MOVE_INGRAIN",
+                "MOVE_GRASS_WHISTLE"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -38,15 +38,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_ROSERADE",
+            "species": "SPECIES_MUNCHLAX",
             "form": 0,
             "level": 40,
             "item": null,
             "moves": [
-                "MOVE_GIGA_DRAIN",
-                "MOVE_TOXIC",
-                "MOVE_INGRAIN",
-                "MOVE_GRASS_WHISTLE"
+                "MOVE_BODY_SLAM",
+                "MOVE_STOCKPILE",
+                "MOVE_SWALLOW",
+                "MOVE_SCREECH"
             ],
             "iv_scale": 200,
             "ball_seal": 0

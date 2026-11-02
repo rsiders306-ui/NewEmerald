@@ -83,6 +83,7 @@ PastoriaCity_ParasolLady:
     LockAll
     FacePlayer
     GoToIfSet FLAG_RECEIVED_PASTORIA_CITY_ACCESSORY_STARTER_MASK, PastoriaCity_ICookedPoffins
+    SetVar VAR_0x8004, ACCESSORY_CHIMCHAR_MASK
     GetPlayerStarterSpecies VAR_RESULT
     CallIfEq VAR_RESULT, SPECIES_TURTWIG, PastoriaCity_SetAccessoryChimcharMask
     CallIfEq VAR_RESULT, SPECIES_CHIMCHAR, PastoriaCity_SetAccessoryPiplupMask

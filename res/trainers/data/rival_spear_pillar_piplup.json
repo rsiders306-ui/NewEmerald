@@ -10,15 +10,15 @@
     "double_battle": false,
     "party": [
         {
-            "species": "SPECIES_MUNCHLAX",
+            "species": "SPECIES_FLOATZEL",
             "form": 0,
             "level": 40,
             "item": null,
             "moves": [
-                "MOVE_BODY_SLAM",
-                "MOVE_STOCKPILE",
-                "MOVE_SWALLOW",
-                "MOVE_SCREECH"
+                "MOVE_AQUA_JET",
+                "MOVE_PURSUIT",
+                "MOVE_BRICK_BREAK",
+                "MOVE_IRON_TAIL"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -38,15 +38,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_FLOATZEL",
+            "species": "SPECIES_MUNCHLAX",
             "form": 0,
             "level": 40,
             "item": null,
             "moves": [
-                "MOVE_AQUA_JET",
-                "MOVE_PURSUIT",
-                "MOVE_BRICK_BREAK",
-                "MOVE_IRON_TAIL"
+                "MOVE_BODY_SLAM",
+                "MOVE_STOCKPILE",
+                "MOVE_SWALLOW",
+                "MOVE_SCREECH"
             ],
             "iv_scale": 200,
             "ball_seal": 0
