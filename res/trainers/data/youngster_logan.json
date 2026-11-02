@@ -17,6 +17,17 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RATTATA",
+            "form": 0,
+            "level": 5,
+            "item": null,
+            "moves": [
+                "MOVE_TACKLE"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

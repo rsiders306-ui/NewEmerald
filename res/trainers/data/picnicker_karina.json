@@ -20,6 +20,18 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BIDOOF",
+            "form": 0,
+            "level": 14,
+            "item": null,
+            "moves": [
+                "MOVE_BUBBLE",
+                "MOVE_PECK"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

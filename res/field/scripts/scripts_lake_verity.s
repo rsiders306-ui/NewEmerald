@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/lake_verity.h"
 #include "res/field/events/events_lake_verity.h"
 
@@ -193,6 +194,8 @@ LakeVerity_Mars:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, LakeVerity_NotEnoughPokemon
     ApplyMovement LOCALID_COUNTERPART, LakeVerity_Movement_CounterpartWalkOnSpotEast
     WaitMovement
     Message LakeVerity_Text_MarsIntro
@@ -232,6 +235,13 @@ LakeVerity_Mars:
 
 LakeVerity_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+LakeVerity_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

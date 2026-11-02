@@ -22,6 +22,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_RAICHU",
+            "form": 0,
+            "level": 54,
+            "item": null,
+            "moves": [
+                "MOVE_HYDRO_PUMP",
+                "MOVE_DRILL_PECK",
+                "MOVE_METAL_CLAW",
+                "MOVE_AQUA_JET"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

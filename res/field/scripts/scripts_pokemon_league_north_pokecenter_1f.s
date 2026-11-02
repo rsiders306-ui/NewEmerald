@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_north_pokecenter_1f.h"
 #include "res/field/events/events_pokemon_league_north_pokecenter_1f.h"
 
@@ -107,6 +108,8 @@ PokemonLeagueNorthPokecenter1F_VendorSpecial:
 
 PokemonLeagueNorthPokecenter1F_CoordEvent_Rival:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueNorthPokecenter1F_NotEnoughPokemon
     ClearFlag FLAG_HIDE_POKEMON_LEAGUE_NORTH_POKECENTER_1F_RIVAL
     AddObject LOCALID_LEAGUE_NORTH_RIVAL
     Common_SetRivalBGM
@@ -193,6 +196,13 @@ PokemonLeagueNorthPokecenter1F_RemoveRival:
 PokemonLeagueNorthPokecenter1F_BlackOutFromRivalBattle:
     SetFlag FLAG_HIDE_POKEMON_LEAGUE_NORTH_POKECENTER_1F_RIVAL
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueNorthPokecenter1F_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

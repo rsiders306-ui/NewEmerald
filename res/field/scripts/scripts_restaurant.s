@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/restaurant.h"
 #include "res/field/events/events_restaurant.h"
 
@@ -188,8 +189,8 @@ Restaurant_ArtistIsmael:
     LockAll
     CheckTrainerFlag TRAINER_ARTIST_ISMAEL
     GoToIfDefeated TRAINER_ARTIST_ISMAEL, Restaurant_IsmaelDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_IsmaelNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_IsmaelNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ISMAEL_HARLEY
     GoToIfEq VAR_0x8008, 0, Restaurant_IsmaelAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_IsmaelAskBattle1
@@ -293,7 +294,7 @@ Restaurant_IsmaelDefeated2:
 
 Restaurant_IsmaelNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_IsmaelNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_IsmaelFaceEast
@@ -310,8 +311,8 @@ Restaurant_BeautyHarley:
     LockAll
     CheckTrainerFlag TRAINER_BEAUTY_HARLEY
     GoToIfDefeated TRAINER_BEAUTY_HARLEY, Restaurant_HarleyDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_HarleyNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_HarleyNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ISMAEL_HARLEY
     GoToIfEq VAR_0x8008, 0, Restaurant_HarleyAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_HarleyAskBattle1
@@ -415,7 +416,7 @@ Restaurant_HarleyDefeated2:
 
 Restaurant_HarleyNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_HarleyNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_HarleyFaceWest
@@ -432,8 +433,8 @@ Restaurant_RichBoyRoman:
     LockAll
     CheckTrainerFlag TRAINER_RICH_BOY_ROMAN
     GoToIfDefeated TRAINER_RICH_BOY_ROMAN, Restaurant_RomanDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_RomanNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_RomanNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ROMAN_KYLIE
     GoToIfEq VAR_0x8008, 0, Restaurant_RomanAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_RomanAskBattle1
@@ -537,7 +538,7 @@ Restaurant_RomanDefeated2:
 
 Restaurant_RomanNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_RomanNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_RomanFaceEast
@@ -554,8 +555,8 @@ Restaurant_LadyKylie:
     LockAll
     CheckTrainerFlag TRAINER_LADY_KYLIE
     GoToIfDefeated TRAINER_LADY_KYLIE, Restaurant_KylieDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_KylieNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_KylieNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ROMAN_KYLIE
     GoToIfEq VAR_0x8008, 0, Restaurant_KylieAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_KylieAskBattle1
@@ -659,7 +660,7 @@ Restaurant_KylieDefeated2:
 
 Restaurant_KylieNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_KylieNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_KylieFaceWest
@@ -676,8 +677,8 @@ Restaurant_GentlemanLeonardo:
     LockAll
     CheckTrainerFlag TRAINER_GENTLEMAN_LEONARDO
     GoToIfDefeated TRAINER_GENTLEMAN_LEONARDO, Restaurant_LeonardoDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_LeonardoNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_LeonardoNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_LEONARDO_REBECCA
     GoToIfEq VAR_0x8008, 0, Restaurant_LeonardoAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_LeonardoAskBattle1
@@ -781,7 +782,7 @@ Restaurant_LeonardoDefeated2:
 
 Restaurant_LeonardoNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_LeonardoNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_LeonardoFaceEast
@@ -798,8 +799,8 @@ Restaurant_SocialiteRebecca:
     LockAll
     CheckTrainerFlag TRAINER_SOCIALITE_REBECCA
     GoToIfDefeated TRAINER_SOCIALITE_REBECCA, Restaurant_RebeccaDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_RebeccaNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_RebeccaNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_LEONARDO_REBECCA
     GoToIfEq VAR_0x8008, 0, Restaurant_RebeccaAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_RebeccaAskBattle1
@@ -903,7 +904,7 @@ Restaurant_RebeccaDefeated2:
 
 Restaurant_RebeccaNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_RebeccaNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_RebeccaFaceWest
@@ -920,8 +921,8 @@ Restaurant_CollectorEugene:
     LockAll
     CheckTrainerFlag TRAINER_COLLECTOR_EUGENE
     GoToIfDefeated TRAINER_COLLECTOR_EUGENE, Restaurant_EugeneDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_EugeneNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_EugeneNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EUGENE_ALISON
     GoToIfEq VAR_0x8008, 0, Restaurant_EugeneAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_EugeneAskBattle1
@@ -1025,7 +1026,7 @@ Restaurant_EugeneDefeated2:
 
 Restaurant_EugeneNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_EugeneNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_EugeneFaceEast
@@ -1042,8 +1043,8 @@ Restaurant_AromaLadyAlison:
     LockAll
     CheckTrainerFlag TRAINER_AROMA_LADY_ALISON
     GoToIfDefeated TRAINER_AROMA_LADY_ALISON, Restaurant_AlisonDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_AlisonNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_AlisonNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EUGENE_ALISON
     GoToIfEq VAR_0x8008, 0, Restaurant_AlisonAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_AlisonAskBattle1
@@ -1147,7 +1148,7 @@ Restaurant_AlisonDefeated2:
 
 Restaurant_AlisonNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_AlisonNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_AlisonFaceWest
@@ -1164,8 +1165,8 @@ Restaurant_SchoolKidEsteban:
     LockAll
     CheckTrainerFlag TRAINER_SCHOOL_KID_ESTEBAN
     GoToIfDefeated TRAINER_SCHOOL_KID_ESTEBAN, Restaurant_EstebanDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_EstebanNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_EstebanNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ESTEBAN_MEREDITH
     GoToIfEq VAR_0x8008, 0, Restaurant_EstebanAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_EstebanAskBattle1
@@ -1269,7 +1270,7 @@ Restaurant_EstebanDefeated2:
 
 Restaurant_EstebanNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_EstebanNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_EstebanFaceEast
@@ -1286,8 +1287,8 @@ Restaurant_PokefanMeredith:
     LockAll
     CheckTrainerFlag TRAINER_POKEFAN_MEREDITH
     GoToIfDefeated TRAINER_POKEFAN_MEREDITH, Restaurant_MeredithDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_MeredithNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_MeredithNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_ESTEBAN_MEREDITH
     GoToIfEq VAR_0x8008, 0, Restaurant_MeredithAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_MeredithAskBattle1
@@ -1391,7 +1392,7 @@ Restaurant_MeredithDefeated2:
 
 Restaurant_MeredithNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_MeredithNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_MeredithFaceWest
@@ -1408,8 +1409,8 @@ Restaurant_VeteranEmanuel:
     LockAll
     CheckTrainerFlag TRAINER_VETERAN_EMANUEL
     GoToIfDefeated TRAINER_VETERAN_EMANUEL, Restaurant_EmanuelDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_EmanuelNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_EmanuelNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EMANUEL_BLYTHE
     GoToIfEq VAR_0x8008, 0, Restaurant_EmanuelAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_EmanuelAskBattle1
@@ -1513,7 +1514,7 @@ Restaurant_EmanuelDefeated2:
 
 Restaurant_EmanuelNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_EmanuelNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_EmanuelFaceEast
@@ -1530,8 +1531,8 @@ Restaurant_LassBlythe:
     LockAll
     CheckTrainerFlag TRAINER_LASS_BLYTHE
     GoToIfDefeated TRAINER_LASS_BLYTHE, Restaurant_BlytheDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_BlytheNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_BlytheNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EMANUEL_BLYTHE
     GoToIfEq VAR_0x8008, 0, Restaurant_BlytheAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_BlytheAskBattle1
@@ -1635,7 +1636,7 @@ Restaurant_BlytheDefeated2:
 
 Restaurant_BlytheNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_BlytheNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_BlytheFaceWest
@@ -1652,8 +1653,8 @@ Restaurant_CameramanDarryl:
     LockAll
     CheckTrainerFlag TRAINER_CAMERAMAN_DARRYL
     GoToIfDefeated TRAINER_CAMERAMAN_DARRYL, Restaurant_DarrylDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_DarrylNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_DarrylNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_DARRYL_VALERIE
     GoToIfEq VAR_0x8008, 0, Restaurant_DarrylAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_DarrylAskBattle1
@@ -1757,7 +1758,7 @@ Restaurant_DarrylDefeated2:
 
 Restaurant_DarrylNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_DarrylNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_DarrylFaceEast
@@ -1774,8 +1775,8 @@ Restaurant_ReporterValerie:
     LockAll
     CheckTrainerFlag TRAINER_REPORTER_VALERIE
     GoToIfDefeated TRAINER_REPORTER_VALERIE, Restaurant_ValerieDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_ValerieNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_ValerieNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_DARRYL_VALERIE
     GoToIfEq VAR_0x8008, 0, Restaurant_ValerieAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_ValerieAskBattle1
@@ -1879,7 +1880,7 @@ Restaurant_ValerieDefeated2:
 
 Restaurant_ValerieNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_ValerieNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_ValerieFaceWest
@@ -1896,8 +1897,8 @@ Restaurant_PIKendrick:
     LockAll
     CheckTrainerFlag TRAINER_PI_KENDRICK
     GoToIfDefeated TRAINER_PI_KENDRICK, Restaurant_KendrickDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_KendrickNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_KendrickNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_KENDRICK_GABRIELLA
     GoToIfEq VAR_0x8008, 0, Restaurant_KendrickAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_KendrickAskBattle1
@@ -2001,7 +2002,7 @@ Restaurant_KendrickDefeated2:
 
 Restaurant_KendrickNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_KendrickNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_KendrickFaceEast
@@ -2018,8 +2019,8 @@ Restaurant_BeautyGabriella:
     LockAll
     CheckTrainerFlag TRAINER_BEAUTY_GABRIELLA
     GoToIfDefeated TRAINER_BEAUTY_GABRIELLA, Restaurant_GabriellaDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_GabriellaNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_GabriellaNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_KENDRICK_GABRIELLA
     GoToIfEq VAR_0x8008, 0, Restaurant_GabriellaAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_GabriellaAskBattle1
@@ -2123,7 +2124,7 @@ Restaurant_GabriellaDefeated2:
 
 Restaurant_GabriellaNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_GabriellaNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_GabriellaFaceWest
@@ -2140,8 +2141,8 @@ Restaurant_ScientistEmilio:
     LockAll
     CheckTrainerFlag TRAINER_SCIENTIST_EMILIO
     GoToIfDefeated TRAINER_SCIENTIST_EMILIO, Restaurant_EmilioDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_EmilioNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_EmilioNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EMILIO_KAYLEE
     GoToIfEq VAR_0x8008, 0, Restaurant_EmilioAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_EmilioAskBattle1
@@ -2245,7 +2246,7 @@ Restaurant_EmilioDefeated2:
 
 Restaurant_EmilioNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_EmilioNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_EmilioFaceEast
@@ -2262,8 +2263,8 @@ Restaurant_BreederKaylee:
     LockAll
     CheckTrainerFlag TRAINER_BREEDER_KAYLEE
     GoToIfDefeated TRAINER_BREEDER_KAYLEE, Restaurant_KayleeDefeated
-    CountAliveMonsExcept VAR_RESULT, 6
-    GoToIfEq VAR_RESULT, 1, Restaurant_KayleeNeedMultiplePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Restaurant_KayleeNeedMultiplePokemon
     SetVar VAR_0x8008, VAR_RESTAURANT_RANDOM_MESSAGE_EMILIO_KAYLEE
     GoToIfEq VAR_0x8008, 0, Restaurant_KayleeAskBattle0
     GoToIfEq VAR_0x8008, 1, Restaurant_KayleeAskBattle1
@@ -2367,7 +2368,7 @@ Restaurant_KayleeDefeated2:
 
 Restaurant_KayleeNeedMultiplePokemon:
     FacePlayer
-    Message Restaurant_Text_KayleeNeedMultiplePokemon
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitButton
     CloseMessage
     Call Restaurant_KayleeFaceWest

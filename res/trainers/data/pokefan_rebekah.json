@@ -18,6 +18,15 @@
             "moves": null,
             "iv_scale": 0,
             "ball_seal": 6
+        },
+        {
+            "species": "SPECIES_PACHIRISU",
+            "form": 0,
+            "level": 23,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": null,
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

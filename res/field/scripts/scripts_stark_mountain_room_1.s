@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/stark_mountain_room_1.h"
 #include "res/field/events/events_stark_mountain_room_1.h"
 
@@ -14,6 +15,8 @@ StarkMountainOutside_OnTransition:
 
 StarkMountainOutside_OnFrame_TeamGalactic:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, StarkMountainRoom1_NotEnoughPokemon
     ApplyMovement LOCALID_MARS, StarkMountainRoom1_Movement_MarsWalkOnSpotSouth
     WaitMovement
     Message StarkMountainRoom1_Text_IllMakeYouTalk
@@ -23,6 +26,7 @@ StarkMountainOutside_OnFrame_TeamGalactic:
     StartTrainerBattle TRAINER_COMMANDER_MARS_STARK_MOUNTAIN
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, StarkMountainRoom1_LostBattle
+    HealParty
     Message StarkMountainRoom1_Text_PokemonLetMeDown
     CloseMessage
     ApplyMovement LOCALID_MARS, StarkMountainRoom1_Movement_MarsWalkBack
@@ -85,6 +89,18 @@ StarkMountainOutside_OnFrame_TeamGalactic:
 
 StarkMountainRoom1_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+StarkMountainRoom1_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
+    FadeScreenOut
+    WaitFadeScreen
+    Warp MAP_HEADER_STARK_MOUNTAIN_OUTSIDE, 750, 232, DIR_SOUTH
+    FadeScreenIn
+    WaitFadeScreen
     ReleaseAll
     End
 

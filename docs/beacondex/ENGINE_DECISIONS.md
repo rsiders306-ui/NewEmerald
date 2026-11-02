@@ -31,6 +31,14 @@ Every regular trainer record is required to contain at least two Pokémon. Party
 data is expanded separately from the battle-format hook so story scripts do not
 depend on paired-trainer messages that do not exist.
 
+Talking to a trainer or requesting a rematch requires two usable party members
+and shows one shared explanation when that requirement is not met. An active AI
+partner supplies the second battler and satisfies this check. Sight trainers,
+including the Hearthome Gym's custom sight system, temporarily do not engage
+while the player has fewer than two usable party members. Triggering their
+refusal script automatically would repeat before the player could move away and
+could prevent the player from returning to heal.
+
 ## Starter order
 
 Custom starter species must exist before the selection scene can refer to them.

@@ -98,6 +98,16 @@
                 "Please come back when you have\n",
                 "at least two Pokémon!\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Pat: You and your Pokémon will gain\n",
+                "power by helping each other out.\n",
+                "\r",
+                "Jo: You and your Pokémon make\n",
+                "a beautiful combination!\n"
+            ]
         }
     ]
 }

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/valley_windworks_building.h"
 #include "res/field/events/events_valley_windworks_building.h"
 
@@ -63,6 +64,8 @@ ValleyWindworksBuilding_GruntM:
 
 ValleyWindworksBuilding_CoordEvent_Mars:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, ValleyWindworksBuilding_NotEnoughPokemon
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     GoToIfEq VAR_0x8005, 6, ValleyWindworksBuilding_MarsNoticeAndWalkToPlayer
     GoToIfEq VAR_0x8005, 7, ValleyWindworksBuilding_MarsNoticePlayer
@@ -190,6 +193,13 @@ ValleyWindworksBuilding_BalloonPokemonWillVisitAgain:
 
 ValleyWindworksBuilding_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+ValleyWindworksBuilding_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

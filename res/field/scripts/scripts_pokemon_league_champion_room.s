@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_champion_room.h"
 #include "res/field/events/events_pokemon_league_champion_room.h"
 
@@ -12,6 +13,9 @@ PokemonLeagueChampionRoom_OnTransition:
     End
 
 PokemonLeagueChampionRoom_OnFrame_EnterRoom:
+    LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueChampionRoom_NotEnoughPokemon
     ApplyMovement LOCALID_PLAYER, PokemonLeagueChampionRoom_Movement_PlayerApproachCynthia
     WaitMovement
     PlayTrainerEncounterBGM TRAINER_CHAMPION_CYNTHIA
@@ -78,6 +82,18 @@ PokemonLeagueChampionRoom_CreateJournalEventDefeatedRematchCynthia:
 PokemonLeagueChampionRoom_BlackOut:
     ClearFlag FLAG_ALT_MUSIC_CHAMPION_ROOM
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueChampionRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
+    FadeScreenOut
+    WaitFadeScreen
+    Warp MAP_HEADER_POKEMON_LEAGUE_ELEVATOR_TO_CHAMPION_ROOM, 4, 3, DIR_SOUTH
+    FadeScreenIn
+    WaitFadeScreen
     ReleaseAll
     End
 

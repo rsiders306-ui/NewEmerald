@@ -187,6 +187,7 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
 
         if (FieldSystem_CheckForTrainersWantingBattle(fieldSystem, hasTwoAliveMons) == TRUE
             || (PersistedMapFeatures_IsCurrentDynamicMap(fieldSystem, DYNAMIC_MAP_FEATURES_HEARTHOME_GYM) == TRUE
+                && hasTwoAliveMons
                 && HearthomeGym_CheckIfPlayerSeesTrainer(fieldSystem) == TRUE)) {
 
             PlayerAvatar_ClearMoveState(fieldSystem->playerAvatar);

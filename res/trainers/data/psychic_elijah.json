@@ -18,6 +18,19 @@
             ],
             "iv_scale": 20,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MEDITITE",
+            "form": 0,
+            "level": 17,
+            "item": null,
+            "moves": [
+                "MOVE_CONFUSION",
+                "MOVE_BIDE",
+                "MOVE_MEDITATE"
+            ],
+            "iv_scale": 20,
+            "ball_seal": 0
         }
     ],
     "messages": [

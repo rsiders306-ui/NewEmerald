@@ -22,6 +22,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HOOTHOOT",
+            "form": 0,
+            "level": 24,
+            "item": null,
+            "moves": [
+                "MOVE_BUBBLE_BEAM",
+                "MOVE_PECK",
+                "MOVE_POUND",
+                "MOVE_GROWL"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

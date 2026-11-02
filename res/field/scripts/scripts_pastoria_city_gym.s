@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pastoria_city_gym.h"
 
 
@@ -44,6 +45,8 @@ PastoriaGym_Wake:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_FEN, PastoriaGym_WakeAlreadyHaveFenBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PastoriaGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_PASTORIA_CITY_GYM
     Message PastoriaGym_Text_WakeIntro
     CloseMessage
@@ -101,6 +104,13 @@ PastoriaGym_WakeAlreadyHaveFenBadge:
 
 PastoriaGym_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PastoriaGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

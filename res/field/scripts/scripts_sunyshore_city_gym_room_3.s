@@ -1,5 +1,6 @@
 #include "macros/scrcmd.inc"
 #include "constants/sunyshore_gym_buttons.h"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/sunyshore_city_gym_room_3.h"
 
 
@@ -27,6 +28,8 @@ SunyshoreGymRoom3_Volkner:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_BEACON, SunyshoreGymRoom3_VolknerAlreadyHaveBeaconBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, SunyshoreGymRoom3_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_SUNYSHORE_CITY_GYM_ROOM_3
     Message SunyshoreGymRoom3_Text_VolknerIntro
     CloseMessage
@@ -84,5 +87,12 @@ SunyshoreGymRoom3_VolknerAlreadyHaveBeaconBadge:
 
 SunyshoreGymRoom3_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+SunyshoreGymRoom3_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End

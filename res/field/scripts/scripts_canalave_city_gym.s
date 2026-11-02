@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/canalave_city_gym.h"
 
 
@@ -17,6 +18,8 @@ CanalaveGym_Byron:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_MINE, CanalaveGym_ByronAfterBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CanalaveGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_CANALAVE_CITY_GYM
     Message CanalaveGym_Text_ByronIntro
     CloseMessage
@@ -79,6 +82,13 @@ CanalaveGym_ByronAfterBadge:
 
 CanalaveGym_Lostbattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+CanalaveGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

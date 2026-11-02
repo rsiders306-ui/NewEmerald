@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pastoria_city.h"
 #include "res/field/events/events_pastoria_city.h"
 
@@ -370,6 +371,8 @@ PastoriaCity_Movement_RivalWalkOnSpotSouth:
 
 PastoriaCity_CoordEvent_RivalBattle:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PastoriaCity_NotEnoughPokemon
     ClearFlag FLAG_HIDE_PASTORIA_CITY_RIVAL
     SetObjectEventPos LOCALID_RIVAL, 595, 819
     SetObjectEventMovementType LOCALID_RIVAL, MOVEMENT_TYPE_LOOK_WEST
@@ -421,6 +424,13 @@ PastoriaCity_RivalPostBattle:
 PastoriaCity_BlackOut:
     SetFlag FLAG_HIDE_PASTORIA_CITY_RIVAL
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PastoriaCity_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

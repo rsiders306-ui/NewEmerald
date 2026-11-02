@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_lucian_room.h"
 #include "res/field/events/events_pokemon_league_lucian_room.h"
 
@@ -12,6 +13,8 @@ PokemonLeagueLucianRoom_Lucian:
     LockAll
     FacePlayer
     GoToIfSet FLAG_DEFEATED_LUCIAN, PokemonLeagueLucianRoom_LucianPostBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueLucianRoom_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_ELITE_FOUR_LUCIAN
     Message PokemonLeagueLucianRoom_Text_LucianIntro
     CloseMessage
@@ -48,6 +51,13 @@ PokemonLeagueLucianRoom_CreateJournalEventDefeatedRematchLucian:
 
 PokemonLeagueLucianRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueLucianRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

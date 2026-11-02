@@ -21,6 +21,20 @@
             ],
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HITMONLEE",
+            "form": 0,
+            "level": 60,
+            "item": null,
+            "moves": [
+                "MOVE_CROSS_CHOP",
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH"
+            ],
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": [

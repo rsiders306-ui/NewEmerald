@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/snowpoint_city_gym.h"
 
 
@@ -21,6 +22,8 @@ SnowpointGym_Candice:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_ICICLE, SnowpointGym_CandiceAfterBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, SnowpointGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_SNOWPOINT_CITY_GYM
     Message SnowpointGym_Text_CandiceIntro
     CloseMessage
@@ -75,6 +78,13 @@ SnowpointGym_CandiceAfterBadge:
 
 SnowpointGym_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+SnowpointGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

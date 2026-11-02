@@ -22,6 +22,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_AMPHAROS",
+            "form": 0,
+            "level": 61,
+            "item": null,
+            "moves": [
+                "MOVE_DISCHARGE",
+                "MOVE_POWER_GEM",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_FIRE_PUNCH"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

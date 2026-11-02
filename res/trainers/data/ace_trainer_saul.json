@@ -22,6 +22,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 12
+        },
+        {
+            "species": "SPECIES_FLOATZEL",
+            "form": 0,
+            "level": 61,
+            "item": null,
+            "moves": [
+                "MOVE_AQUA_JET",
+                "MOVE_SWIFT",
+                "MOVE_CRUNCH",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

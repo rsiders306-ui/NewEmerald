@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/valor_cavern.h"
 #include "res/field/events/events_valor_cavern.h"
 
@@ -69,6 +70,8 @@ ValorCavern_LostBattleAzelf:
 ValorCavern_Saturn:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, ValorCavern_NotEnoughPokemon
     Message ValorCavern_Text_SaturnMissionIsProceeding
     CloseMessage
     FacePlayer
@@ -99,6 +102,13 @@ ValorCavern_Movement_SaturnExclamationMark:
 
 ValorCavern_LostBattleCommanderSaturn:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+ValorCavern_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

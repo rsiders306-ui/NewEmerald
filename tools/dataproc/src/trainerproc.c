@@ -174,8 +174,8 @@ static TrainerHeader ProcTrainer(dp_node root, size_t index)
 {
     const dp_node party = dp_at(root, ".party");
     size_t        size  = dp_arr_len(party);
-    if (index != TRAINER_NONE && size < 1) {
-        dp_error(party, "expected trainer party size to be at least 1");
+    if (index != TRAINER_NONE && size < 2) {
+        dp_error(party, "expected trainer party size to be at least 2");
     } else if (size > MAX_PARTY_SIZE) {
         dp_warn(party, "more than %d party members defined; the rest will be ignored!", MAX_PARTY_SIZE);
         size = MAX_PARTY_SIZE;

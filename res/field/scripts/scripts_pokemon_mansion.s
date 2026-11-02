@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_mansion.h"
 #include "res/field/events/events_pokemon_mansion.h"
 
@@ -82,6 +83,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     SetFlag FLAG_STARTED_FIVE_MAID_KNOCKOUT_CHALLENGE
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, PokemonMansion_DontDoChallenge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonBeforeChallenge
     SetTrainerFlag TRAINER_RICH_BOY_LIAM
     SetTrainerFlag TRAINER_LADY_CELESTE
     Message PokemonMansion_Text_OurFirstMaid
@@ -104,6 +107,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     CloseMessage
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerLeave
     WaitMovement
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonDuringChallenge
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerEnter
     WaitMovement
     Message PokemonMansion_Text_Maid2Intro
@@ -116,6 +121,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     CloseMessage
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerLeave
     WaitMovement
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonDuringChallenge
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerEnter
     WaitMovement
     Message PokemonMansion_Text_Maid3Intro
@@ -128,6 +135,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     CloseMessage
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerLeave
     WaitMovement
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonDuringChallenge
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerEnter
     WaitMovement
     Message PokemonMansion_Text_Maid4Intro
@@ -140,6 +149,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     CloseMessage
     ApplyMovement LOCALID_FIVE_MAID_KNOCKOUT_MAID, PokemonMansion_Movement_KnockoutTrainerLeave
     WaitMovement
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonDuringChallenge
     ApplyMovement LOCALID_MAID_FAR_WEST, PokemonMansion_Movement_MaidFarWestMoveBackInPlace
     WaitMovement
     BufferNumber 0, VAR_FIVE_MAID_KNOCKOUT_TURN_TARGET
@@ -167,6 +178,8 @@ PokemonMansion_FiveMaidKnockoutChallenge:
     BufferNumber 1, VAR_0x8005
     Message PokemonMansion_Text_TargetedTurnsYourTurns
     GoToIfNe VAR_0x8005, VAR_FIVE_MAID_KNOCKOUT_TURN_TARGET, PokemonMansion_FailedChallenge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonMansion_NotEnoughPokemonAfterMaids
     GetRandom VAR_0x8006, 2
     CallIfEq VAR_0x8006, 0, PokemonMansion_SetOpponentLiam
     CallIfEq VAR_0x8006, 1, PokemonMansion_SetOpponentCeleste
@@ -308,6 +321,26 @@ PokemonMansion_TargetedTurnsIsThis:
 
 PokemonMansion_DontDoChallenge:
     Message PokemonMansion_Text_HowDisappointing
+    GoTo PokemonMansion_MaidChallengeEnd
+    End
+
+PokemonMansion_NotEnoughPokemonBeforeChallenge:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    GoTo PokemonMansion_MaidChallengeEnd
+    End
+
+PokemonMansion_NotEnoughPokemonDuringChallenge:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitButton
+    CloseMessage
+    RemoveObject LOCALID_FIVE_MAID_KNOCKOUT_MAID
+    ApplyMovement LOCALID_MAID_FAR_WEST, PokemonMansion_Movement_MaidFarWestMoveBackInPlace
+    WaitMovement
+    ReleaseAll
+    End
+
+PokemonMansion_NotEnoughPokemonAfterMaids:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     GoTo PokemonMansion_MaidChallengeEnd
     End
 

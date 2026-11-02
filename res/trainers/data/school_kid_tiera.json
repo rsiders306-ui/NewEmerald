@@ -23,6 +23,20 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DRIFLOON",
+            "form": 0,
+            "level": 47,
+            "item": null,
+            "moves": [
+                "MOVE_PAYBACK",
+                "MOVE_GUST",
+                "MOVE_ASTONISH",
+                "MOVE_MINIMIZE"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_flint_room.h"
 #include "res/field/events/events_pokemon_league_flint_room.h"
 
@@ -12,6 +13,8 @@ PokemonLeagueFlintRoom_Flint:
     LockAll
     FacePlayer
     GoToIfSet FLAG_DEFEATED_FLINT, PokemonLeagueFlintRoom_PostBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueFlintRoom_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_ELITE_FOUR_FLINT
     CallIfUnset FLAG_GAME_COMPLETED, PokemonLeagueFlintRoom_FlintIntro
     CallIfSet FLAG_GAME_COMPLETED, PokemonLeagueFlintRoom_FlintGameCompletedIntro
@@ -50,6 +53,13 @@ PokemonLeagueFlintRoom_CreateJournalEventDefeatedRematchFlint:
 
 PokemonLeagueFlintRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueFlintRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

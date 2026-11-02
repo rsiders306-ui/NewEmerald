@@ -19,6 +19,19 @@
             ],
             "iv_scale": 20,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_WORMADAM",
+            "form": 0,
+            "level": 19,
+            "item": null,
+            "moves": [
+                "MOVE_MEGA_DRAIN",
+                "MOVE_POISON_STING",
+                "MOVE_STUN_SPORE"
+            ],
+            "iv_scale": 20,
+            "ball_seal": 0
         }
     ],
     "messages": [

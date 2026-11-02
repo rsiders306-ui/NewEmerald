@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/valley_windworks_outside.h"
 #include "res/field/events/events_valley_windworks_outside.h"
 
@@ -62,6 +63,8 @@ ValleyWindworksOutside_GruntM:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, ValleyWindworksOutside_NotEnoughPokemon
     Message ValleyWindworksOutside_Text_BattleMeForIt
     CloseMessage
     StartTrainerBattle TRAINER_GALACTIC_GRUNT_VALLEY_WINDWORKS_1
@@ -87,6 +90,13 @@ ValleyWindworksOutside_GruntM:
 
 ValleyWindworksOutside_BlackOutGrunt:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+ValleyWindworksOutside_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

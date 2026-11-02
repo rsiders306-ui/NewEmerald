@@ -94,6 +94,16 @@
                 "Tia: Yay!\n",
                 "We’re all going to battle again!\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Teri: We tried really hard together,\n",
+                "but we lost anyway.\n",
+                "\r",
+                "Tia: We tried really hard together,\n",
+                "but we couldn’t win anyway.\n"
+            ]
         }
     ]
 }

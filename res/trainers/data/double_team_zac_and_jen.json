@@ -99,6 +99,16 @@
                 "Jen: Here comes our Trainer!\n",
                 "Are you ready this time?\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Zac: Wow. Someone that’s even\n",
+                "better than Jen...\n",
+                "\r",
+                "Jen: I just got embarrassed in front\n",
+                "of my little buddy here...\n"
+            ]
         }
     ]
 }

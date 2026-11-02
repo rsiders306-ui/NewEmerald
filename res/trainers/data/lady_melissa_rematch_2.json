@@ -22,6 +22,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BLISSEY",
+            "form": 0,
+            "level": 45,
+            "item": null,
+            "moves": [
+                "MOVE_FLING",
+                "MOVE_SOFTBOILED",
+                "MOVE_EGG_BOMB",
+                "MOVE_PSYCHIC"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

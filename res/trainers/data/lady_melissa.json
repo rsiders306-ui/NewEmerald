@@ -17,6 +17,15 @@
             "moves": null,
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CLEFAIRY",
+            "form": 0,
+            "level": 27,
+            "item": null,
+            "moves": null,
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

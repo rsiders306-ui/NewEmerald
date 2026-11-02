@@ -22,6 +22,20 @@
             ],
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ELECTRODE",
+            "form": 0,
+            "level": 59,
+            "item": null,
+            "moves": [
+                "MOVE_HYPER_BEAM",
+                "MOVE_THUNDER",
+                "MOVE_THUNDER_WAVE",
+                "MOVE_DOUBLE_TEAM"
+            ],
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": []

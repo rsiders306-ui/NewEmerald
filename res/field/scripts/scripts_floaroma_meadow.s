@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/floaroma_meadow.h"
 #include "res/field/events/events_floaroma_meadow.h"
 
@@ -18,11 +19,14 @@ FloaromaMeadow_OnTransition:
 
 FloaromaMeadow_CoordEvent_Grunts:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FloaromaMeadow_NotEnoughPokemon
     Call FloaromaMeadow_GruntsNoticePlayer
     StartTrainerBattle TRAINER_GALACTIC_GRUNT_FLOAROMA_MEADOW_1
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FloaromaMeadow_BlackOut
     Call FloaromaMeadow_DefeatedGrunt1
+    HealParty
     StartTrainerBattle TRAINER_GALACTIC_GRUNT_FLOAROMA_MEADOW_2
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FloaromaMeadow_BlackOut
@@ -33,6 +37,13 @@ FloaromaMeadow_CoordEvent_Grunts:
 
 FloaromaMeadow_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+FloaromaMeadow_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

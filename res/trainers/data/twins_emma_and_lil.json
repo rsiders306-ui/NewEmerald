@@ -93,6 +93,14 @@
                 "Lil: You munched us all up last\n",
                 "time, but it’s our turn now!\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Emma: Waaah!\n",
+                "\r",
+                "Lil: Hwaaah!\n"
+            ]
         }
     ]
 }

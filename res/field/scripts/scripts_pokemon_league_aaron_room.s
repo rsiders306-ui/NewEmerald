@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_aaron_room.h"
 #include "res/field/events/events_pokemon_league_aaron_room.h"
 
@@ -12,6 +13,8 @@ PokemonLeagueAaronRoom_Aaron:
     LockAll
     FacePlayer
     GoToIfSet FLAG_DEFEATED_AARON, PokemonLeagueAaronRoom_AaronPostBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueAaronRoom_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_ELITE_FOUR_AARON
     Message PokemonLeagueAaronRoom_Text_AaronIntro
     CloseMessage
@@ -48,6 +51,13 @@ PokemonLeagueAaronRoom_CreateJournalEventDefeatedRematchAaron:
 
 PokemonLeagueAaronRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueAaronRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

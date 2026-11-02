@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/distortion_world_b7f.h"
 
     ScriptEntry DistortionWorldB7F_OnTransition
@@ -51,6 +52,8 @@ DistortionWorldB7F_Cyrus:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, DistortionWorldB7F_NotEnoughPokemon
     Message DistortionWorldB7F_Text_IWontLose
     CloseMessage
     StartTrainerBattle TRAINER_GALACTIC_BOSS_CYRUS_DISTORTION_WORLD
@@ -120,6 +123,13 @@ DistortionWorldB7F_GiratinaIsEnraged:
 DistortionWorldB7F_LostBattle:
     SetVar VAR_DISTORTION_WORLD_PROGRESS, DIST_WORLD_PROGRESS_LISTENED_TO_CYNTHIA_CYRUS
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+DistortionWorldB7F_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

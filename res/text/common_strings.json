@@ -873,6 +873,13 @@
         "It will be fixed if you enter the\n",
         "Hall of Fame again.\r"
       ]
+    },
+    {
+      "id": "CommonStrings_Text_BeaconDexTwoPokemonRequired",
+      "en_US": [
+        "You need at least two Pokémon able to\n",
+        "battle before challenging a Trainer."
+      ]
     }
   ]
 }

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/battleground.h"
 #include "res/field/events/events_battleground.h"
 
@@ -227,6 +228,8 @@ Battleground_Trainer1:
     CallIfSet LOCAL_FLAG_DECLINED_BATTLE_TRAINER_1, Battleground_CallAskBattleAgain
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, Battleground_DeclinedBattleTrainer1
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Battleground_NotEnoughPokemon
     Call Battleground_DoBattle
     GoToIfEq VAR_0x8000, FALSE, Battleground_LostBattle
     SetFlag FLAG_DEFEATED_BATTLEGROUND_TRAINER_1
@@ -262,6 +265,11 @@ Battleground_TrainerEnd:
     WaitButton
     CloseMessage
     ReleaseAll
+    End
+
+Battleground_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    GoTo Battleground_TrainerEnd
     End
 
 Battleground_DeclinedBattleTrainer1:
@@ -302,6 +310,8 @@ Battleground_Trainer2:
     CallIfSet LOCAL_FLAG_DECLINED_BATTLE_TRAINER_2, Battleground_CallAskBattleAgain
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, Battleground_DeclinedBattleTrainer2
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Battleground_NotEnoughPokemon
     Call Battleground_DoBattle
     GoToIfEq VAR_0x8000, FALSE, Battleground_LostBattle
     SetFlag FLAG_DEFEATED_BATTLEGROUND_TRAINER_2
@@ -328,6 +338,8 @@ Battleground_Trainer3:
     CallIfSet LOCAL_FLAG_DECLINED_BATTLE_TRAINER_3, Battleground_CallAskBattleAgain
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, Battleground_DeclinedBattleTrainer3
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Battleground_NotEnoughPokemon
     Call Battleground_DoBattle
     GoToIfEq VAR_0x8000, FALSE, Battleground_LostBattle
     SetFlag FLAG_DEFEATED_BATTLEGROUND_TRAINER_3
@@ -354,6 +366,8 @@ Battleground_Trainer4:
     CallIfSet LOCAL_FLAG_DECLINED_BATTLE_TRAINER_4, Battleground_CallAskBattleAgain
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, Battleground_DeclinedBattleTrainer4
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Battleground_NotEnoughPokemon
     Call Battleground_DoBattle
     GoToIfEq VAR_0x8000, FALSE, Battleground_LostBattle
     SetFlag FLAG_DEFEATED_BATTLEGROUND_TRAINER_4

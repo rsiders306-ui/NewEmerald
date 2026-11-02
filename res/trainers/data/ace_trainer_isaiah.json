@@ -22,6 +22,18 @@
             ],
             "iv_scale": 60,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLALIE",
+            "form": 0,
+            "level": 44,
+            "item": null,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_CRUNCH"
+            ],
+            "iv_scale": 60,
+            "ball_seal": 0
         }
     ],
     "messages": [

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/oreburgh_city_gym.h"
 
 
@@ -12,6 +13,8 @@ OreburghGym_Roark:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COAL, OreburghGym_AlreadyHaveCoalBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, OreburghGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_OREBURGH_CITY_GYM
     Message OreburghGym_Text_RoarkIntro
     CloseMessage
@@ -73,6 +76,13 @@ OreburghGym_AlreadyHaveCoalBadge:
 
 OreburghGym_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+OreburghGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

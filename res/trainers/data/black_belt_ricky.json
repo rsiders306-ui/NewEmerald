@@ -21,6 +21,20 @@
             ],
             "iv_scale": 40,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TOXICROAK",
+            "form": 0,
+            "level": 38,
+            "item": null,
+            "moves": [
+                "MOVE_IRON_TAIL",
+                "MOVE_TAUNT",
+                "MOVE_TORMENT",
+                "MOVE_SCREECH"
+            ],
+            "iv_scale": 40,
+            "ball_seal": 0
         }
     ],
     "messages": [

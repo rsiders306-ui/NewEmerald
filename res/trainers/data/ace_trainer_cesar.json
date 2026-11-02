@@ -22,6 +22,20 @@
             ],
             "iv_scale": 60,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HIPPOPOTAS",
+            "form": 0,
+            "level": 40,
+            "item": null,
+            "moves": [
+                "MOVE_METAL_CLAW",
+                "MOVE_X_SCISSOR",
+                "MOVE_SLASH",
+                "MOVE_PURSUIT"
+            ],
+            "iv_scale": 60,
+            "ball_seal": 0
         }
     ],
     "messages": [

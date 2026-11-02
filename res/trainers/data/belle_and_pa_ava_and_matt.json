@@ -98,6 +98,15 @@
                 "I can take a break from work if I’m\n",
                 "battling Pokémon. Lucky for me!\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Matt: Parent-and-child power couldn’t\n",
+                "get the job done.\n",
+                "\r",
+                "Ava: Oh, sheesh!\n"
+            ]
         }
     ]
 }

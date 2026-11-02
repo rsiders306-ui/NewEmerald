@@ -21,6 +21,20 @@
             ],
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DRIFBLIM",
+            "form": 0,
+            "level": 20,
+            "item": null,
+            "moves": [
+                "MOVE_TOXIC",
+                "MOVE_OMINOUS_WIND",
+                "MOVE_FLY",
+                "MOVE_PROTECT"
+            ],
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": []

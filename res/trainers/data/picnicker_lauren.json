@@ -21,6 +21,19 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_HOOTHOOT",
+            "form": 0,
+            "level": 22,
+            "item": null,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

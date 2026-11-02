@@ -22,6 +22,20 @@
             ],
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ABSOL",
+            "form": 0,
+            "level": 41,
+            "item": null,
+            "moves": [
+                "MOVE_PSYCHO_CUT",
+                "MOVE_NIGHT_SLASH",
+                "MOVE_SWORDS_DANCE",
+                "MOVE_QUICK_ATTACK"
+            ],
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": []

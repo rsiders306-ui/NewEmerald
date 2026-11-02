@@ -84,6 +84,15 @@
                 "You haven’t got yerself two\n",
                 "Pokémon?\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "You’ve got a lot of giddyap and go\n",
+                "in you!\n",
+                "\r",
+                "Well! Aren’t you the lively one!"
+            ]
         }
     ]
 }

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/galactic_hq_4f.h"
 #include "res/text/bank/menu_entries.h"
 #include "res/field/events/events_galactic_hq_4f.h"
@@ -12,6 +13,8 @@
 
 GalacticHQ4F_CoordEvent_Cyrus:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, GalacticHQ4F_NotEnoughPokemon
     ApplyMovement LOCALID_CYRUS, GalacticHQ4F_Movement_CyrusWalkOnSpotSouth
     WaitMovement
     Message GalacticHQ4F_Text_SpeechWasBigLie
@@ -63,6 +66,13 @@ GalacticHQ4F_GiveMasterBall:
 
 GalacticHQ4F_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+GalacticHQ4F_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

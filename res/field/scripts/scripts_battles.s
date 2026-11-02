@@ -16,8 +16,6 @@ Battles_Trainer:
     CallIfEq VAR_0x8001, MOVEMENT_TYPE_DISGUISE_ROCK, Battles_RevealTrainer
     CallIfEq VAR_0x8001, MOVEMENT_TYPE_DISGUISE_GRASS, Battles_RevealTrainer
     GoToIfDefeated VAR_0x8004, Battles_TryRematch
-    CheckIsTrainerDoubleBattle VAR_RESULT
-    GoToIfNe VAR_RESULT, TRUE, Battles_StartTrainerEncounter
     CheckHasTwoAliveMons VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, Battles_NotEnoughPokemonMessage
     GoTo Battles_StartTrainerEncounter
@@ -58,8 +56,6 @@ Battles_PostBattleMessage:
 
 Battles_Rematch:
     SetVar VAR_0x8007, VAR_RESULT
-    CheckIsTrainerDoubleBattle VAR_RESULT
-    GoToIfNe VAR_RESULT, TRUE, Battles_StartRematchEncounter
     CheckHasTwoAliveMons VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, Battles_NotEnoughPokemonMessage
     GoTo Battles_StartRematchEncounter
@@ -80,10 +76,8 @@ Battles_LostBattle:
     End
 
 Battles_NotEnoughPokemonMessage:
-    GetTrainerID VAR_0x8004
     OpenMessage
-    GetTrainerMessageTypes VAR_0x8000, VAR_0x8001, VAR_0x8002
-    PrintTrainerDialogue VAR_0x8004, VAR_0x8002
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     WaitABPress
     CloseMessage
     ReleaseAll

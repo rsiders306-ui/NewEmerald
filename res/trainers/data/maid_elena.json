@@ -20,6 +20,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CLEFAIRY",
+            "form": 0,
+            "level": 31,
+            "item": null,
+            "moves": [
+                "MOVE_METRONOME",
+                "MOVE_SWAGGER",
+                "MOVE_METEOR_MASH",
+                "MOVE_ENDURE"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

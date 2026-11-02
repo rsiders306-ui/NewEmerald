@@ -82,6 +82,16 @@
                 "Nat: You do have at least two\n",
                 "Pokémon, don’t you?\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Mike: Awww, jeez.\n",
+                "Man, that’s a downer...\n",
+                "\r",
+                "Nat: This makes me feel hollow\n",
+                "inside... Oh, so hollow...\n"
+            ]
         }
     ]
 }

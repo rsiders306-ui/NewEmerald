@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/route_203.h"
 #include "res/field/events/events_route_203.h"
 
@@ -33,6 +34,8 @@ Route203_TrainerTipsSignpostWest:
 
 Route203_CoordEvent_Rival:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Route203_NotEnoughPokemon
     ApplyMovement LOCALID_RIVAL, Route203_Movement_RivalNoticePlayer
     WaitMovement
     Common_SetRivalBGM
@@ -126,6 +129,13 @@ Route203_RemoveRival:
 
 Route203_BlackOutRivalBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+Route203_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

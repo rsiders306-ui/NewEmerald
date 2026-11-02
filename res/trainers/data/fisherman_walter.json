@@ -18,6 +18,18 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BARBOACH",
+            "form": 0,
+            "level": 33,
+            "item": null,
+            "moves": [
+                "MOVE_WATER_PULSE",
+                "MOVE_MAGNITUDE"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

@@ -19,6 +19,18 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GOLDEEN",
+            "form": 0,
+            "level": 31,
+            "item": null,
+            "moves": [
+                "MOVE_HORN_DRILL",
+                "MOVE_FLAIL"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

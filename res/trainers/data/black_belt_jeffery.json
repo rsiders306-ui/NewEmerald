@@ -20,6 +20,19 @@
             ],
             "iv_scale": 40,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MACHOKE",
+            "form": 0,
+            "level": 28,
+            "item": null,
+            "moves": [
+                "MOVE_SUBMISSION",
+                "MOVE_LEER",
+                "MOVE_FORESIGHT"
+            ],
+            "iv_scale": 40,
+            "ball_seal": 0
         }
     ],
     "messages": [

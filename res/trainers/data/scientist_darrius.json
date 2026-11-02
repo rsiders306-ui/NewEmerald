@@ -23,6 +23,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_KADABRA",
+            "form": 0,
+            "level": 42,
+            "item": null,
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_SIGNAL_BEAM",
+                "MOVE_ICE_BEAM",
+                "MOVE_TRI_ATTACK"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

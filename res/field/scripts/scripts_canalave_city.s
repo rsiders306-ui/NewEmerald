@@ -1,5 +1,6 @@
 #include "macros/scrcmd.inc"
 #include "generated/distribution_events.h"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/canalave_city.h"
 #include "res/text/bank/menu_entries.h"
 #include "res/field/events/events_canalave_city.h"
@@ -117,6 +118,8 @@ CanalaveCity_SetHarborInnDoorClosed:
 
 CanalaveCity_CoordEvent_Rival:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CanalaveCity_NotEnoughPokemon
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     GoToIfEq VAR_0x8005, 723, CanalaveCity_SetRivalBridgePositionZ707
     GoToIfEq VAR_0x8005, 724, CanalaveCity_SetRivalBridgePositionZ708
@@ -191,6 +194,13 @@ CanalaveCity_PostRivalBattle:
 CanalaveCity_BlackOut:
     SetFlag FLAG_HIDE_CANALAVE_CITY_RIVAL_BRIDGE
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+CanalaveCity_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

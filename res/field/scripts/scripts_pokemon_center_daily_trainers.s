@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_center_daily_trainers.h"
 
 #define ARTURO         10
@@ -196,10 +197,7 @@ PokemonCenterDailyTrainers_SecondNPC:
     End
 
 PokemonCenterDailyTrainers_IntroMessage:
-    SetVar VAR_TWO_MONS, TRUE
-    GetCurrentMapID VAR_MAP_ID
-    CallIfEq VAR_MAP_ID, MAP_HEADER_ETERNA_CITY_POKECENTER_1F, PokemonCenterDailyTrainers_CheckDoubleBattleTwoAliveMons
-    CallIfEq VAR_MAP_ID, MAP_HEADER_VEILSTONE_CITY_POKECENTER_1F, PokemonCenterDailyTrainers_CheckDoubleBattleTwoAliveMons
+    CheckHasTwoAliveMons VAR_TWO_MONS
     GoToIfEq VAR_TWO_MONS, FALSE, PokemonCenterDailyTrainers_NotEnoughAliveMons
     GoToIfEq VAR_IS_NPC_2, TRUE, PokemonCenterDailyTrainers_IntroMessageSecondNPC
     CallIfEq VAR_NPC_1, GRACE, PokemonCenterDailyTrainers_GraceIntroMessage
@@ -228,23 +226,9 @@ PokemonCenterDailyTrainers_AskForBattle:
     End
 
 PokemonCenterDailyTrainers_NotEnoughAliveMons:
-    GoToIfEq VAR_IS_NPC_2, TRUE, PokemonCenterDailyTrainers_OliNotEnoughAliveMons
-    Call PokemonCenterDailyTrainers_RoxyNotEnoughAliveMonsMessage
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
     GoTo PokemonCenterDailyTrainers_CloseMessage
     End
-
-PokemonCenterDailyTrainers_OliNotEnoughAliveMons:
-    Call PokemonCenterDailyTrainers_OliNotEnoughAliveMonsMessage
-    GoTo PokemonCenterDailyTrainers_CloseMessage
-    End
-
-PokemonCenterDailyTrainers_CheckDoubleBattleTwoAliveMons:
-    GoToIfEq VAR_NPC_1, ROXY_AND_OLI_1, PokemonCenterDailyTrainers_CheckHasTwoAliveMons
-    Return
-
-PokemonCenterDailyTrainers_CheckHasTwoAliveMons:
-    CheckHasTwoAliveMons VAR_TWO_MONS
-    Return
 
 PokemonCenterDailyTrainers_BattleAccepted:
     GoToIfEq VAR_IS_NPC_2, TRUE, PokemonCenterDailyTrainers_BattleAcceptedSecondNPC

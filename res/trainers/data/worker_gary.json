@@ -18,6 +18,18 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_STEELIX",
+            "form": 0,
+            "level": 37,
+            "item": null,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_MAGNET_BOMB"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

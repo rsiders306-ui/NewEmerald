@@ -67,6 +67,11 @@ FieldBattleDTO *FieldBattleDTO_New(enum HeapID heapID, u32 battleType)
     FieldBattleDTO *dto = Heap_Alloc(heapID, sizeof(FieldBattleDTO));
     MI_CpuClear8(dto, sizeof(FieldBattleDTO));
 
+    if ((battleType & BATTLE_TYPE_TRAINER)
+        && !(battleType & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER))) {
+        battleType |= BATTLE_TYPE_DOUBLES;
+    }
+
     dto->battleType = battleType;
     dto->battleStatusMask = 0;
     dto->resultMask = 0;

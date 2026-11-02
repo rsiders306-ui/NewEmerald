@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/celestic_town.h"
 #include "res/field/events/events_celestic_town.h"
 
@@ -25,6 +26,8 @@ CelesticTown_GruntM:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CelesticTown_NotEnoughPokemon
     Message CelesticTown_Text_WillYouMessWithMe
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, CelesticTown_GruntMBattle
@@ -108,6 +111,13 @@ CelesticTown_GiveOldCharm:
 
 CelesticTown_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+CelesticTown_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

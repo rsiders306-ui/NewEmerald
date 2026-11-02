@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/hearthome_city_dp_gym_leader_room.h"
 #include "res/field/events/events_hearthome_city_dp_gym_leader_room.h"
 
@@ -13,6 +14,9 @@ HearthomeCityDPGymLeaderRoom_Fantina:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    GoToIfBadgeAcquired BADGE_ID_RELIC, HearthomeCityDPGymLeaderRoom_FantinaPostBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, HearthomeCityDPGymLeaderRoom_NotEnoughPokemon
     GetPlayerDir VAR_RESULT
     GoToIfEq VAR_RESULT, DIR_NORTH, HearthomeCityDPGymLeaderRoom_FantinaSpinNorth
     GoToIfEq VAR_RESULT, DIR_SOUTH, HearthomeCityDPGymLeaderRoom_FantinaSpinSouth
@@ -132,6 +136,13 @@ HearthomeCityDPGymLeaderRoom_Movement_FantinaSpinEast:
 
 HearthomeCityDPGymLeaderRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+HearthomeCityDPGymLeaderRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

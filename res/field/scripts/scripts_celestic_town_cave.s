@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/celestic_town_cave.h"
 #include "res/field/events/events_celestic_town_cave.h"
 
@@ -25,6 +26,8 @@ CelesticTownCave_ExaminePainting:
     End
 
 CelesticTownCave_EnterCyrus:
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CelesticTownCave_NotEnoughPokemon
     BufferPlayerName 0
     Message CelesticTownCave_Text_WhatsThisAbout
     CloseMessage
@@ -225,6 +228,14 @@ CelesticTownCave_Blackout:
     End
 
     .balign 4, 0
+CelesticTownCave_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
+    ReleaseAll
+    End
+
+    .balign 4, 0
 CelesticTownCave_Movement_CyrusEnterX9:
     WalkNormalNorth 6
     WalkNormalEast
@@ -416,6 +427,8 @@ CelesticTownCave_Cyrus:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CelesticTownCave_NotEnoughPokemon
     Message CelesticTownCave_Text_WellChallengeMe
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_NO, CelesticTownCave_YouChoseCoward

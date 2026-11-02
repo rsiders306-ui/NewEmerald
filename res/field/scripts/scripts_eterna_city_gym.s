@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/eterna_city_gym.h"
 #include "res/field/events/events_eterna_city_gym.h"
 
@@ -62,6 +63,8 @@ EternaGym_Gardenia:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_FOREST, EternaGym_Gardenia_AlreadyHaveForestbadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, EternaGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_ETERNA_CITY_GYM
     Message EternaGym_Text_GardeniaIntro
     CloseMessage
@@ -140,11 +143,20 @@ EternaGym_LostBattle:
     ReleaseAll
     End
 
+EternaGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
+    ReleaseAll
+    End
+
 EternaGym_LassCaroline:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
     GoToIfGe VAR_ETERNA_GYM_TRAINERS_BEATEN, 1, EternaGym_LassCarolineBeaten
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, EternaGym_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_LASS_CAROLINE
     Message EternaGym_Text_LassCarolineBeforeBattle
     CloseMessage
@@ -171,6 +183,8 @@ EternaGym_AromaLadyJenna:
     LockAll
     FacePlayer
     GoToIfGe VAR_ETERNA_GYM_TRAINERS_BEATEN, 2, EternaGym_AromaLadyJennaBeaten
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, EternaGym_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_AROMA_LADY_JENNA
     SetVar VAR_0x8007, LOCALID_AROMA_LADY_JENNA
     Call EternaGym_LookTowardsPlayer
@@ -199,6 +213,8 @@ EternaGym_AromaLadyAngela:
     LockAll
     FacePlayer
     GoToIfGe VAR_ETERNA_GYM_TRAINERS_BEATEN, 3, EternaGym_AromaLadyAngelaBeaten
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, EternaGym_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_AROMA_LADY_ANGELA
     SetVar VAR_0x8007, LOCALID_AROMA_LADY_ANGELA
     Call EternaGym_LookTowardsPlayer

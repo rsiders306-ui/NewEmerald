@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/survival_area.h"
 #include "res/field/events/events_survival_area.h"
 
@@ -140,6 +141,8 @@ SurvivalArea_RivalEnd:
 
 SurvivalArea_RivalBattle:
     GoToIfSet FLAG_DAILY_DEFEATED_SURVIVAL_AREA_RIVAL, SurvivalArea_PostRivalBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, SurvivalArea_NotEnoughPokemon
     BufferRivalName 0
     BufferPlayerName 1
     Message SurvivalArea_Text_IllProveImTougher
@@ -216,6 +219,13 @@ SurvivalArea_PostRivalBattle:
 
 SurvivalArea_LostRivalBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+SurvivalArea_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

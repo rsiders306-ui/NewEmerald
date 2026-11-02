@@ -20,6 +20,20 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SHELLOS",
+            "form": 1,
+            "level": 32,
+            "item": null,
+            "moves": [
+                "MOVE_WATER_GUN",
+                "MOVE_ROLLOUT",
+                "MOVE_HYPER_FANG",
+                "MOVE_YAWN"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

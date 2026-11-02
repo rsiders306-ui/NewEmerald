@@ -22,6 +22,20 @@
             ],
             "iv_scale": 250,
             "ball_seal": 27
+        },
+        {
+            "species": "SPECIES_CHERRIM",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_FLING",
+                "MOVE_SOFTBOILED",
+                "MOVE_EGG_BOMB",
+                "MOVE_PSYCHIC"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
         }
     ],
     "messages": [

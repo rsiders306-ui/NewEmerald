@@ -97,6 +97,16 @@
                 "Kay: You’re really going through\n",
                 "Victory Road with only one Pokémon?\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Al: You! You’re an expert\n",
+                "double battler, too!\n",
+                "\r",
+                "Kay: My goodness!\n",
+                "You’re great at doubles, too!"
+            ]
         }
     ]
 }

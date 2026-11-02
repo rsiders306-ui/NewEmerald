@@ -82,6 +82,16 @@
                 "Oh, no. What we’re looking for is you\n",
                 "to battle with two Pokémon!\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "The camera is our witness!\n",
+                "It’s recorded our defeat...\n",
+                "\r",
+                "You have a superstar quality!\n",
+                "You sure could become a celebrity!\n"
+            ]
         }
     ]
 }

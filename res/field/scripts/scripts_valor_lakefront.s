@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/valor_lakefront.h"
 #include "res/field/events/events_valor_lakefront.h"
 
@@ -83,6 +84,8 @@ ValorLakefront_MoveGruntMNorth:
 ValorLakefront_GruntMNorth:
     GetPlayerDir VAR_0x8000
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, ValorLakefront_NotEnoughPokemon
     Message ValorLakefront_Text_MyPokemonWillKOYou
     CloseMessage
     StartTrainerBattle TRAINER_GALACTIC_GRUNT_VALOR_LAKEFRONT
@@ -121,6 +124,13 @@ ValorLakefront_RemoveGruntM:
 
 ValorLakefront_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+ValorLakefront_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/pokemon_league_bertha_room.h"
 #include "res/field/events/events_pokemon_league_bertha_room.h"
 
@@ -12,6 +13,8 @@ PokemonLeagueBerthaRoom_Bertha:
     LockAll
     FacePlayer
     GoToIfSet FLAG_DEFEATED_BERTHA, PokemonLeagueBerthaRoom_BerthaPostBattle
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, PokemonLeagueBerthaRoom_NotEnoughPokemon
     PlayTrainerEncounterBGM TRAINER_ELITE_FOUR_BERTHA
     Message PokemonLeagueBerthaRoom_Text_BerthaIntro
     CloseMessage
@@ -48,6 +51,13 @@ PokemonLeagueBerthaRoom_CreateJournalEventDefeatedRematchBertha:
 
 PokemonLeagueBerthaRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+PokemonLeagueBerthaRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

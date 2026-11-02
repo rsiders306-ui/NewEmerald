@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/galactic_hq_control_room.h"
 #include "res/field/events/events_galactic_hq_control_room.h"
 
@@ -38,6 +39,8 @@ GalacticHQControlRoom_Saturn:
     FacePlayer
     GoToIfSet FLAG_FREED_GALACTIC_HQ_POKEMON, GalacticHQControlRoom_BossCraftedRedChain
     GoToIfSet FLAG_DEFEATED_GALACTIC_HQ_CONTROL_ROOM_SATURN, GalacticHQControlRoom_PressButtonAndFreePokemon
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, GalacticHQControlRoom_NotEnoughPokemon
     Message GalacticHQControlRoom_Text_SaturnIntro
     CloseMessage
     StartTrainerBattle TRAINER_COMMANDER_SATURN_GALACTIC_HQ
@@ -89,6 +92,13 @@ GalacticHQControlRoom_PressButtonAndFreePokemon:
 
 GalacticHQControlRoom_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+GalacticHQControlRoom_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

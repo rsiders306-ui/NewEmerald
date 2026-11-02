@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/trainers_school.h"
 #include "res/text/bank/menu_entries.h"
 #include "res/field/events/events_trainers_school.h"
@@ -137,6 +138,8 @@ TrainersSchool_SchoolKidHarrison:
     FacePlayer
     GoToIfSet FLAG_RECEIVED_TRAINERS_SCHOOL_POTION, TrainersSchool_PotionRestoresHP
     GoToIfSet FLAG_DEFEATED_TRAINERS_SCHOOL_SCHOOL_KID_HARRISON, TrainersSchool_TryGivePotion
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, TrainersSchool_NotEnoughPokemon
     Message TrainersSchool_Text_CanWeBattleYou
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, TrainersSchool_BattleSchoolKidHarrison
@@ -230,6 +233,8 @@ TrainersSchool_SchoolKidChristine:
     LockAll
     FacePlayer
     GoToIfSet FLAG_DEFEATED_TRAINERS_SCHOOL_SCHOOL_KID_CHRISTINE, TrainersSchool_PostBattleChristine
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, TrainersSchool_NotEnoughPokemon
     Message TrainersSchool_Text_MayWeBattle
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, TrainersSchool_BattleSchoolKidChristine
@@ -299,6 +304,13 @@ TrainersSchool_DefeatedChristineAndHarrison:
 
 TrainersSchool_LostBattleChristine:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+TrainersSchool_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

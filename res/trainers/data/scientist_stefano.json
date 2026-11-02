@@ -23,6 +23,18 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_MAGNEMITE",
+            "form": 0,
+            "level": 30,
+            "item": null,
+            "moves": [
+                "MOVE_SPARK",
+                "MOVE_MAGNET_BOMB"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

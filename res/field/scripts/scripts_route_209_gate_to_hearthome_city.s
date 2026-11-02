@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/route_209_gate_to_hearthome_city.h"
 #include "res/field/events/events_route_209_gate_to_hearthome_city.h"
 
@@ -13,6 +14,8 @@ Route209GateToHearthomeCity_BattleGirl:
 
 Route209GateToHearthomeCity_CoordEvent_Rival:
     LockAll
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, Route209GateToHearthomeCity_NotEnoughPokemon
     ApplyMovement LOCALID_RIVAL, Route209GateToHearthomeCity_Movement_RivalNoticePlayer
     WaitMovement
     Common_SetRivalBGM
@@ -69,6 +72,13 @@ Route209GateToHearthomeCity_PostRivalBattle:
 
 Route209GateToHearthomeCity_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+Route209GateToHearthomeCity_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

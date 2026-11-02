@@ -22,6 +22,20 @@
             ],
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_DUSKNOIR",
+            "form": 0,
+            "level": 63,
+            "item": null,
+            "moves": [
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ICE_PUNCH",
+                "MOVE_THUNDER_PUNCH",
+                "MOVE_SHADOW_BALL"
+            ],
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": []

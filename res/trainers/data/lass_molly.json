@@ -19,6 +19,18 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_BONSLY",
+            "form": 0,
+            "level": 23,
+            "item": null,
+            "moves": [
+                "MOVE_BLOCK",
+                "MOVE_ROCK_THROW"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

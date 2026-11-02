@@ -91,6 +91,14 @@
                 "Liz: We’re the best in our class.\n",
                 "We can’t be losers all the time!\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Liv: Oh, oh, oh?\n",
+                "\r",
+                "Liz: Oh, but, wait!\n"
+            ]
         }
     ]
 }

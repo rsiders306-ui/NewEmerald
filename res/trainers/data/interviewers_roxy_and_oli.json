@@ -40,6 +40,16 @@
                 "You have a superstar quality!\n",
                 "You sure could become a celebrity!\n"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "The camera is our witness!\n",
+                "It has recorded our defeat...\n",
+                "\r",
+                "You have a superstar quality!\n",
+                "You sure could become a celebrity!\n"
+            ]
         }
     ]
 }

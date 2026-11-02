@@ -58,6 +58,10 @@
         {
             "type": "TRMSG_DOUBLE_BATTLE_NOT_ENOUGH_POKEMON_2",
             "garbage": 16
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": "We were defeated!\r"
         }
     ]
 }

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/veilstone_city_gym.h"
 
 
@@ -20,6 +21,8 @@ VeilstoneGym_Maylene:
     LockAll
     FacePlayer
     GoToIfBadgeAcquired BADGE_ID_COBBLE, VeilstoneGym_MayleneAfterBadge
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, VeilstoneGym_NotEnoughPokemon
     CreateJournalEvent LOCATION_EVENT_GYM_WAS_TOO_TOUGH, MAP_HEADER_VEILSTONE_CITY_GYM
     Message VeilstoneGym_Text_MayleneIntro
     CloseMessage
@@ -77,6 +80,13 @@ VeilstoneGym_MayleneAfterBadge:
 
 VeilstoneGym_LostBattle:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+VeilstoneGym_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

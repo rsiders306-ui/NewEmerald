@@ -106,6 +106,15 @@
                 "Sue: Oh, it’s you again!\n",
                 "I’ll battle if I can team with Ty!\r"
             ]
+        },
+        {
+            "type": "TRMSG_DEFEAT",
+            "en_US": [
+                "Ty: I only have eyes for Sue.\n",
+                "Maybe that’s why we lost?\n",
+                "\r",
+                "Sue: I’m sorry, Ty!\n"
+            ]
         }
     ]
 }

@@ -23,6 +23,20 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_QUAGSIRE",
+            "form": 0,
+            "level": 23,
+            "item": null,
+            "moves": [
+                "MOVE_MUD_BOMB",
+                "MOVE_SLAM",
+                "MOVE_WATER_GUN",
+                "MOVE_AMNESIA"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

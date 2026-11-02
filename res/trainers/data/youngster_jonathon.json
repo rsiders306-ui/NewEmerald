@@ -18,6 +18,19 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ONIX",
+            "form": 0,
+            "level": 11,
+            "item": null,
+            "moves": [
+                "MOVE_ROCK_THROW",
+                "MOVE_TACKLE",
+                "MOVE_HARDEN"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [

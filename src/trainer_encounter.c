@@ -87,6 +87,10 @@ BOOL FieldSystem_CheckForTrainersWantingBattle(FieldSystem *fieldSystem, BOOL ha
     MapObjectManager *mapObjMan = fieldSystem->mapObjMan;
     PlayerAvatar *playerAvatar = fieldSystem->playerAvatar;
 
+    if (!hasTwoAliveMons) {
+        return FALSE;
+    }
+
     if (!FindUndefeatedTrainerInSight(fieldSystem, mapObjMan, playerAvatar, NULL, &trainer)) {
         return FALSE;
     }
@@ -96,7 +100,7 @@ BOOL FieldSystem_CheckForTrainersWantingBattle(FieldSystem *fieldSystem, BOOL ha
 
         ScriptManager_Set(fieldSystem, SCRIPT_ID(SINGLE_BATTLES, MAX_TRAINERS), trainer.trainerMapObj);
 
-        if (!hasTwoAliveMons || !FindUndefeatedTrainerInSight(fieldSystem, mapObjMan, playerAvatar, trainer.trainerMapObj, &trainerTwo)) {
+        if (!FindUndefeatedTrainerInSight(fieldSystem, mapObjMan, playerAvatar, trainer.trainerMapObj, &trainerTwo)) {
             ScriptManager_SetApproachingTrainer(fieldSystem, trainer.trainerMapObj, trainer.distance, trainer.direction, trainer.script, trainer.trainerID, APPROACH_TYPE_SINGLES, 0);
             return TRUE;
         }
@@ -110,10 +114,6 @@ BOOL FieldSystem_CheckForTrainersWantingBattle(FieldSystem *fieldSystem, BOOL ha
     if (trainer.isDoubleBattle == TRUE) {
         MapObject *trainerTwoMapObj;
         ApproachingTrainerTemplate trainerTwo;
-
-        if (!hasTwoAliveMons) {
-            return FALSE;
-        }
 
         trainerTwoMapObj = FindTrainerPartner(fieldSystem, mapObjMan, trainer.trainerMapObj, trainer.trainerID);
 

@@ -1,4 +1,5 @@
 #include "macros/scrcmd.inc"
+#include "res/text/bank/common_strings.h"
 #include "res/text/bank/team_galactic_eterna_building_4f.h"
 #include "res/field/events/events_team_galactic_eterna_building_4f.h"
 
@@ -23,6 +24,8 @@ TeamGalacticEternaBuilding4F_Jupiter:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
+    CheckHasTwoAliveMons VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, TeamGalacticEternaBuilding4F_NotEnoughPokemon
     ApplyMovement LOCALID_POKEFAN_M, TeamGalacticEternaBuilding4F_Movement_PokefanMWalkOnSpotNorth
     WaitMovement
     Message TeamGalacticEternaBuilding4F_Text_IWillDealWithYou
@@ -87,6 +90,13 @@ TeamGalacticEternaBuilding4F_HandleTeamGalacticLeftEternaBuilding:
 
 TeamGalacticEternaBuilding4F_BlackOut:
     BlackOutFromBattle
+    ReleaseAll
+    End
+
+TeamGalacticEternaBuilding4F_NotEnoughPokemon:
+    Message CommonStrings_Text_BeaconDexTwoPokemonRequired
+    WaitABPress
+    CloseMessage
     ReleaseAll
     End
 

@@ -17,6 +17,15 @@
             "moves": null,
             "iv_scale": 250,
             "ball_seal": 26
+        },
+        {
+            "species": "SPECIES_PRINPLUP",
+            "form": 0,
+            "level": 35,
+            "item": "ITEM_NONE",
+            "moves": null,
+            "iv_scale": 250,
+            "ball_seal": 0
         }
     ],
     "messages": [
