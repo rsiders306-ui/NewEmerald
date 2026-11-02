@@ -69,8 +69,16 @@ u16 Item_IsTMHM(u16 item)
     return FALSE;
 }
 
-u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity)
+u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity, BOOL completed)
 {
+    if (completed) {
+        if (reachedEternaCity) {
+            return PokedexRatings_Text_RowanCompleteLocalDex;
+        } else {
+            return PokedexRatings_Text_RowanCompleteLocalDex_TooEarly;
+        }
+    }
+
     if (pokemonSeen <= 15) {
         return PokedexRatings_Text_RowanPokemonSeenUpTo15;
     }
@@ -126,8 +134,16 @@ u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity)
     }
 }
 
-u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender)
+u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender, BOOL completed)
 {
+    if (completed) {
+        if (playerGender) {
+            return PokedexRatings_Text_OakCompleteNationalDex_Female;
+        } else {
+            return PokedexRatings_Text_OakCompleteNationalDex_Male;
+        }
+    }
+
     if (pokemonCaught <= 39) {
         return PokedexRatings_Text_OakPokemonCaughtUnder40;
     }
@@ -204,11 +220,9 @@ u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender)
         return PokedexRatings_Text_OakPokemonCaught476;
     }
 
-    if (playerGender) {
-        return PokedexRatings_Text_OakCompleteNationalDex_Female;
-    } else {
-        return PokedexRatings_Text_OakCompleteNationalDex_Male;
-    }
+    // The original rating table ended at 482 required captures. The expanded
+    // Pokédex must not report completion before every required species is caught.
+    return PokedexRatings_Text_OakPokemonCaught476;
 }
 
 u16 SaveData_GetFirstNonEggInParty(SaveData *saveData)

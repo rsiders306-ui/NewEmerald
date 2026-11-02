@@ -8,8 +8,8 @@
 
 u16 GetNumberDigitCount(u32 number);
 u16 Item_IsTMHM(u16 item);
-u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity);
-u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender);
+u16 Pokedex_GetRatingMessageID_Local(u16 pokemonSeen, u16 reachedEternaCity, BOOL completed);
+u16 Pokedex_GetRatingMessageID_National(u16 pokemonCaught, u16 playerGender, BOOL completed);
 u16 SaveData_GetFirstNonEggInParty(SaveData *saveData);
 BOOL HasAllLegendaryTitansInParty(SaveData *saveData);
 void MapObject_Shake(FieldTask *task, MapObject *mapObj, u16 times, u16 speed, u16 xOffset, u16 zOffset);

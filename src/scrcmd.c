@@ -3986,10 +3986,16 @@ static BOOL ScrCmd_LoadPokedexRating(ScriptContext *ctx)
 
     if (nationalDex == FALSE) {
         pokemonCount = Pokedex_NumSeen_Local(pokedex);
-        *destVar = Pokedex_GetRatingMessageID_Local(pokemonCount, SystemFlag_HandleFirstArrivalToZone(SaveData_GetVarsFlags(ctx->fieldSystem->saveData), HANDLE_FLAG_CHECK, FIRST_ARRIVAL_ETERNA_CITY));
+        *destVar = Pokedex_GetRatingMessageID_Local(
+            pokemonCount,
+            SystemFlag_HandleFirstArrivalToZone(SaveData_GetVarsFlags(ctx->fieldSystem->saveData), HANDLE_FLAG_CHECK, FIRST_ARRIVAL_ETERNA_CITY),
+            Pokedex_LocalDexCompleted(pokedex));
     } else {
         pokemonCount = Pokedex_NumCaught_National(pokedex);
-        *destVar = Pokedex_GetRatingMessageID_National(pokemonCount, TrainerInfo_Gender(trainerInfo));
+        *destVar = Pokedex_GetRatingMessageID_National(
+            pokemonCount,
+            TrainerInfo_Gender(trainerInfo),
+            Pokedex_NationalDexCompleted(pokedex));
     }
 
     return FALSE;
