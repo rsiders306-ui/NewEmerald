@@ -1,0 +1,996 @@
+{
+  "schema": "beacondex-trainer-distribution-v1",
+  "policy": "Append exactly one custom species to 63 unique trainers; retain every original party member.",
+  "species_covered": 63,
+  "unique_trainers": 63,
+  "story_boss_assignments": 17,
+  "all_parties_at_least_two": true,
+  "all_parties_at_most_six": true,
+  "assignments": [
+    {
+      "species": "SPECIES_GLIMBARK",
+      "display_name": "Glimbark",
+      "family": 1,
+      "stage": 1,
+      "types": [
+        "TYPE_FIGHTING"
+      ],
+      "trainer": "battle_girl_kelsey",
+      "trainer_name": "Kelsey",
+      "level": 15,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_WARDMANE",
+      "display_name": "Wardmane",
+      "family": 1,
+      "stage": 2,
+      "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "leader_maylene",
+      "trainer_name": "Maylene",
+      "level": 32,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_SIDERION",
+      "display_name": "Siderion",
+      "family": 1,
+      "stage": 3,
+      "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "cameraman_tevin_rematch_3",
+      "trainer_name": "Tevin",
+      "level": 51,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_CALFLANK",
+      "display_name": "Calflank",
+      "family": 2,
+      "stage": 1,
+      "types": [
+        "TYPE_ROCK"
+      ],
+      "trainer": "leader_roark",
+      "trainer_name": "Roark",
+      "level": 14,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_GRIDIRUFF",
+      "display_name": "Gridiruff",
+      "family": 2,
+      "stage": 2,
+      "types": [
+        "TYPE_ROCK"
+      ],
+      "trainer": "ruin_maniac_ronald",
+      "trainer_name": "Ronald",
+      "level": 27,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_OXGUARD",
+      "display_name": "Oxguard",
+      "family": 2,
+      "stage": 3,
+      "types": [
+        "TYPE_ROCK",
+        "TYPE_STEEL"
+      ],
+      "trainer": "leader_byron",
+      "trainer_name": "Byron",
+      "level": 41,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_ZEPHYLET",
+      "display_name": "Zephylet",
+      "family": 3,
+      "stage": 1,
+      "types": [
+        "TYPE_FLYING"
+      ],
+      "trainer": "bird_keeper_alexandra",
+      "trainer_name": "Alexandra",
+      "level": 17,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_GALECREST",
+      "display_name": "Galecrest",
+      "family": 3,
+      "stage": 2,
+      "types": [
+        "TYPE_FLYING"
+      ],
+      "trainer": "bird_keeper_brianna",
+      "trainer_name": "Brianna",
+      "level": 33,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_TERRAPTOR",
+      "display_name": "Terraptor",
+      "family": 3,
+      "stage": 3,
+      "types": [
+        "TYPE_FLYING",
+        "TYPE_GROUND"
+      ],
+      "trainer": "galactic_boss_cyrus_celestic_town_ruins",
+      "trainer_name": "Cyrus",
+      "level": 36,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_TRILLKIT",
+      "display_name": "Trillkit",
+      "family": 4,
+      "stage": 1,
+      "types": [
+        "TYPE_FAIRY"
+      ],
+      "trainer": "aroma_lady_elizabeth",
+      "trainer_name": "Elizabeth",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_CANTACAT",
+      "display_name": "Cantacat",
+      "family": 4,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "lady_melissa",
+      "trainer_name": "Melissa",
+      "level": 27,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_ARIAPURR",
+      "display_name": "Ariapurr",
+      "family": 4,
+      "stage": 3,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "breeder_jennifer_rematch_3",
+      "trainer_name": "Jennifer",
+      "level": 50,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_MEDIJEST",
+      "display_name": "Medijest",
+      "family": 5,
+      "stage": 1,
+      "types": [
+        "TYPE_NORMAL"
+      ],
+      "trainer": "galactic_grunt_floaroma_meadow_1",
+      "trainer_name": "Grunt",
+      "level": 13,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_CHARTICKLE",
+      "display_name": "Chartickle",
+      "family": 5,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_PSYCHIC"
+      ],
+      "trainer": "breeder_jennifer_rematch_1",
+      "trainer_name": "Jennifer",
+      "level": 32,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_SERMEDIC",
+      "display_name": "Sermedic",
+      "family": 5,
+      "stage": 3,
+      "types": [
+        "TYPE_PSYCHIC",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "elite_four_lucian",
+      "trainer_name": "Lucian",
+      "level": 59,
+      "story_boss": true,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_ROOKIT",
+      "display_name": "Rookit",
+      "family": 6,
+      "stage": 1,
+      "types": [
+        "TYPE_DARK",
+        "TYPE_NORMAL"
+      ],
+      "trainer": "galactic_grunt_valley_windworks_1",
+      "trainer_name": "Grunt",
+      "level": 13,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_VROOMBREL",
+      "display_name": "Vroombrel",
+      "family": 6,
+      "stage": 2,
+      "types": [
+        "TYPE_DARK",
+        "TYPE_STEEL"
+      ],
+      "trainer": "commander_jupiter_team_galactic_eterna_building",
+      "trainer_name": "Jupiter",
+      "level": 23,
+      "story_boss": true,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_TALLADEVIL",
+      "display_name": "Talladevil",
+      "family": 6,
+      "stage": 3,
+      "types": [
+        "TYPE_DARK",
+        "TYPE_STEEL"
+      ],
+      "trainer": "leader_volkner",
+      "trainer_name": "Volkner",
+      "level": 50,
+      "story_boss": true,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_GROOVETTE",
+      "display_name": "Groovette",
+      "family": 7,
+      "stage": 1,
+      "types": [
+        "TYPE_FAIRY"
+      ],
+      "trainer": "aroma_lady_taylor",
+      "trainer_name": "Taylor",
+      "level": 11,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_SAUTENE",
+      "display_name": "Saut\u00e8ne",
+      "family": 7,
+      "stage": 2,
+      "types": [
+        "TYPE_FAIRY",
+        "TYPE_FIRE"
+      ],
+      "trainer": "breeder_amber",
+      "trainer_name": "Amber",
+      "level": 23,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_VELOURA",
+      "display_name": "Veloura",
+      "family": 7,
+      "stage": 3,
+      "types": [
+        "TYPE_FAIRY",
+        "TYPE_FIRE"
+      ],
+      "trainer": "idol_grace_rematch_3",
+      "trainer_name": "Grace",
+      "level": 48,
+      "story_boss": false,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_EMBERREST",
+      "display_name": "Emberrest",
+      "family": 8,
+      "stage": 1,
+      "types": [
+        "TYPE_FIGHTING"
+      ],
+      "trainer": "galactic_grunt_team_galactic_eterna_building_3f",
+      "trainer_name": "Grunt",
+      "level": 16,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_FORGUARD",
+      "display_name": "Forguard",
+      "family": 8,
+      "stage": 2,
+      "types": [
+        "TYPE_FIGHTING",
+        "TYPE_GROUND"
+      ],
+      "trainer": "black_belt_adam",
+      "trainer_name": "Adam",
+      "level": 34,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_AEGICARE",
+      "display_name": "Aegicare",
+      "family": 8,
+      "stage": 3,
+      "types": [
+        "TYPE_FIGHTING",
+        "TYPE_GROUND"
+      ],
+      "trainer": "black_belt_kendal",
+      "trainer_name": "Kendal",
+      "level": 38,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_TIMBLET",
+      "display_name": "Timblet",
+      "family": 9,
+      "stage": 1,
+      "types": [
+        "TYPE_GRASS"
+      ],
+      "trainer": "lass_briana",
+      "trainer_name": "Briana",
+      "level": 16,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_NESTELLE",
+      "display_name": "Nestelle",
+      "family": 9,
+      "stage": 2,
+      "types": [
+        "TYPE_GRASS",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "leader_gardenia",
+      "trainer_name": "Gardenia",
+      "level": 22,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_HEARTISTLE",
+      "display_name": "Heartistle",
+      "family": 9,
+      "stage": 3,
+      "types": [
+        "TYPE_GRASS",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "breeder_jennifer_rematch_2",
+      "trainer_name": "Jennifer",
+      "level": 41,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_NILECUB",
+      "display_name": "Nilecub",
+      "family": 10,
+      "stage": 1,
+      "types": [
+        "TYPE_WATER"
+      ],
+      "trainer": "fisherman_zachary",
+      "trainer_name": "Zachary",
+      "level": 16,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_REEDMANE",
+      "display_name": "Reedmane",
+      "family": 10,
+      "stage": 2,
+      "types": [
+        "TYPE_WATER"
+      ],
+      "trainer": "fisherman_kenneth",
+      "trainer_name": "Kenneth",
+      "level": 28,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_TIDELION",
+      "display_name": "Tidelion",
+      "family": 10,
+      "stage": 3,
+      "types": [
+        "TYPE_WATER",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "leader_wake",
+      "trainer_name": "Wake",
+      "level": 37,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_SNUGRIME",
+      "display_name": "Snugrime",
+      "family": 11,
+      "stage": 1,
+      "types": [
+        "TYPE_BUG"
+      ],
+      "trainer": "bug_catcher_donald",
+      "trainer_name": "Donald",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_CRYOCOON",
+      "display_name": "Cryocoon",
+      "family": 11,
+      "stage": 2,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_ICE"
+      ],
+      "trainer": "bug_catcher_brandon_rematch_1",
+      "trainer_name": "Brandon",
+      "level": 23,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_AUROROTH",
+      "display_name": "Auroroth",
+      "family": 11,
+      "stage": 3,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_ICE"
+      ],
+      "trainer": "elite_four_aaron",
+      "trainer_name": "Aaron",
+      "level": 53,
+      "story_boss": true,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_FLEURRIT",
+      "display_name": "Fleurrit",
+      "family": 12,
+      "stage": 1,
+      "types": [
+        "TYPE_BUG"
+      ],
+      "trainer": "bug_catcher_brandon",
+      "trainer_name": "Brandon",
+      "level": 11,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_SHIVERSKEW",
+      "display_name": "Shiverskew",
+      "family": 12,
+      "stage": 2,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_GHOST"
+      ],
+      "trainer": "leader_fantina",
+      "trainer_name": "Fantina",
+      "level": 26,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_NIVISPECT",
+      "display_name": "Nivispect",
+      "family": 12,
+      "stage": 3,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_GHOST"
+      ],
+      "trainer": "ace_trainer_garrett",
+      "trainer_name": "Garrett",
+      "level": 39,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_EMBERIMP",
+      "display_name": "Emberimp",
+      "family": 13,
+      "stage": 1,
+      "types": [
+        "TYPE_FIRE"
+      ],
+      "trainer": "camper_jacob",
+      "trainer_name": "Jacob",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_GLEAMBER",
+      "display_name": "Gleamber",
+      "family": 13,
+      "stage": 2,
+      "types": [
+        "TYPE_FIRE",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "breeder_kaylee",
+      "trainer_name": "Kaylee",
+      "level": 26,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_HEARTHALO",
+      "display_name": "Hearthalo",
+      "family": 13,
+      "stage": 3,
+      "types": [
+        "TYPE_FIRE",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "elite_four_flint",
+      "trainer_name": "Flint",
+      "level": 57,
+      "story_boss": true,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_SLUSHIP",
+      "display_name": "Sluship",
+      "family": 14,
+      "stage": 1,
+      "types": [
+        "TYPE_ICE"
+      ],
+      "trainer": "galactic_grunt_valley_windworks_2",
+      "trainer_name": "Grunt",
+      "level": 13,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_TOXIFLOE",
+      "display_name": "Toxifloe",
+      "family": 14,
+      "stage": 2,
+      "types": [
+        "TYPE_ICE",
+        "TYPE_POISON"
+      ],
+      "trainer": "ninja_boy_joel",
+      "trainer_name": "Joel",
+      "level": 29,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_VENOFROST",
+      "display_name": "Venofrost",
+      "family": 14,
+      "stage": 3,
+      "types": [
+        "TYPE_ICE",
+        "TYPE_POISON"
+      ],
+      "trainer": "leader_candice",
+      "trainer_name": "Candice",
+      "level": 44,
+      "story_boss": true,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_DRIBLIT",
+      "display_name": "Driblit",
+      "family": 15,
+      "stage": 1,
+      "types": [
+        "TYPE_BUG"
+      ],
+      "trainer": "bug_catcher_jack",
+      "trainer_name": "Jack",
+      "level": 15,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_WYRMOLT",
+      "display_name": "Wyrmolt",
+      "family": 15,
+      "stage": 2,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_DRAGON"
+      ],
+      "trainer": "bug_catcher_brandon_rematch_2",
+      "trainer_name": "Brandon",
+      "level": 34,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_DRAKOCOON",
+      "display_name": "Drakocoon",
+      "family": 15,
+      "stage": 3,
+      "types": [
+        "TYPE_BUG",
+        "TYPE_DRAGON"
+      ],
+      "trainer": "galactic_boss_cyrus_distortion_world",
+      "trainer_name": "Cyrus",
+      "level": 48,
+      "story_boss": true,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_SHARDSHADE",
+      "display_name": "Shardshade",
+      "family": 16,
+      "stage": 1,
+      "types": [
+        "TYPE_ROCK"
+      ],
+      "trainer": "hiker_daniel",
+      "trainer_name": "Daniel",
+      "level": 12,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_CAIRNRAITH",
+      "display_name": "Cairnraith",
+      "family": 16,
+      "stage": 2,
+      "types": [
+        "TYPE_ROCK",
+        "TYPE_GHOST"
+      ],
+      "trainer": "lass_molly",
+      "trainer_name": "Molly",
+      "level": 23,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_GRAVEMOURN",
+      "display_name": "Gravemourn",
+      "family": 16,
+      "stage": 3,
+      "types": [
+        "TYPE_ROCK",
+        "TYPE_GHOST"
+      ],
+      "trainer": "commander_saturn_valor_cavern",
+      "trainer_name": "Saturn",
+      "level": 40,
+      "story_boss": true,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_SPRIGLET",
+      "display_name": "Spriglet",
+      "family": 17,
+      "stage": 1,
+      "types": [
+        "TYPE_GROUND"
+      ],
+      "trainer": "hiker_nicholas",
+      "trainer_name": "Nicholas",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_LOAMBELLE",
+      "display_name": "Loambelle",
+      "family": 17,
+      "stage": 2,
+      "types": [
+        "TYPE_GROUND",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "parasol_lady_sabrina",
+      "trainer_name": "Sabrina",
+      "level": 28,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_MEADOWMIRA",
+      "display_name": "Meadowmira",
+      "family": 17,
+      "stage": 3,
+      "types": [
+        "TYPE_GROUND",
+        "TYPE_FAIRY"
+      ],
+      "trainer": "elite_four_bertha",
+      "trainer_name": "Bertha",
+      "level": 55,
+      "story_boss": true,
+      "original_party_size": 5,
+      "new_party_size": 6
+    },
+    {
+      "species": "SPECIES_TINHAM",
+      "display_name": "Tinham",
+      "family": 18,
+      "stage": 1,
+      "types": [
+        "TYPE_NORMAL"
+      ],
+      "trainer": "camper_zackary",
+      "trainer_name": "Zackary",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_COGMUNK",
+      "display_name": "Cogmunk",
+      "family": 18,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_STEEL"
+      ],
+      "trainer": "beauty_cyndy",
+      "trainer_name": "Cyndy",
+      "level": 29,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_FERRALUME",
+      "display_name": "Ferralume",
+      "family": 18,
+      "stage": 3,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_STEEL"
+      ],
+      "trainer": "ace_trainer_mariah",
+      "trainer_name": "Mariah",
+      "level": 48,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_PUFFLURRY",
+      "display_name": "Pufflurry",
+      "family": 19,
+      "stage": 1,
+      "types": [
+        "TYPE_NORMAL"
+      ],
+      "trainer": "commander_mars_valley_windworks",
+      "trainer_name": "Mars",
+      "level": 17,
+      "story_boss": true,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_BURROWMUFF",
+      "display_name": "Burrowmuff",
+      "family": 19,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_ICE"
+      ],
+      "trainer": "youngster_tristan_rematch_1",
+      "trainer_name": "Tristan",
+      "level": 24,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_TUNDRINDLE",
+      "display_name": "Tundrindle",
+      "family": 19,
+      "stage": 3,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_ICE"
+      ],
+      "trainer": "ace_trainer_meagan",
+      "trainer_name": "Meagan",
+      "level": 58,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_NIBLIT",
+      "display_name": "Niblit",
+      "family": 20,
+      "stage": 1,
+      "types": [
+        "TYPE_NORMAL"
+      ],
+      "trainer": "picnicker_karina",
+      "trainer_name": "Karina",
+      "level": 14,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_LOOMBLE",
+      "display_name": "Loomble",
+      "family": 20,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_BUG"
+      ],
+      "trainer": "collector_edwin",
+      "trainer_name": "Edwin",
+      "level": 25,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_SILKRICKET",
+      "display_name": "Silkricket",
+      "family": 20,
+      "stage": 3,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_BUG"
+      ],
+      "trainer": "ranger_ashlee_rematch",
+      "trainer_name": "Ashlee",
+      "level": 60,
+      "story_boss": false,
+      "original_party_size": 3,
+      "new_party_size": 4
+    },
+    {
+      "species": "SPECIES_PEBPUP",
+      "display_name": "Pebpup",
+      "family": 21,
+      "stage": 1,
+      "types": [
+        "TYPE_NORMAL"
+      ],
+      "trainer": "picnicker_siena",
+      "trainer_name": "Siena",
+      "level": 12,
+      "story_boss": false,
+      "original_party_size": 2,
+      "new_party_size": 3
+    },
+    {
+      "species": "SPECIES_CRAGHOUND",
+      "display_name": "Craghound",
+      "family": 21,
+      "stage": 2,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_ROCK"
+      ],
+      "trainer": "breeder_albert_rematch_1",
+      "trainer_name": "Albert",
+      "level": 32,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    },
+    {
+      "species": "SPECIES_CAIRNCROWN",
+      "display_name": "Cairncrown",
+      "family": 21,
+      "stage": 3,
+      "types": [
+        "TYPE_NORMAL",
+        "TYPE_ROCK"
+      ],
+      "trainer": "youngster_dallas_rematch_3",
+      "trainer_name": "Dallas",
+      "level": 50,
+      "story_boss": false,
+      "original_party_size": 4,
+      "new_party_size": 5
+    }
+  ]
+}

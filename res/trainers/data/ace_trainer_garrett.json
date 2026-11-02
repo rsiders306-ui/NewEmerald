@@ -50,6 +50,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NIVISPECT",
+            "form": 0,
+            "level": 39,
+            "item": null,
+            "moves": [
+                "MOVE_U_TURN",
+                "MOVE_PURSUIT",
+                "MOVE_X_SCISSOR",
+                "MOVE_WILL_O_WISP"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

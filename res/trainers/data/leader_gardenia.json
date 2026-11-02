@@ -53,6 +53,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_NESTELLE",
+            "form": 0,
+            "level": 22,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SWEET_SCENT",
+                "MOVE_LEECH_SEED",
+                "MOVE_GUST",
+                "MOVE_MEGA_DRAIN"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

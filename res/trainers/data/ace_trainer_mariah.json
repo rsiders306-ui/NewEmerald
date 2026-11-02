@@ -50,6 +50,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_FERRALUME",
+            "form": 0,
+            "level": 48,
+            "item": null,
+            "moves": [
+                "MOVE_FOLLOW_ME",
+                "MOVE_IRON_HEAD",
+                "MOVE_PROTECT",
+                "MOVE_DOUBLE_EDGE"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

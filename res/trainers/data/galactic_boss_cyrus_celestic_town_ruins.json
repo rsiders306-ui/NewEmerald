@@ -52,6 +52,20 @@
             ],
             "iv_scale": 250,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TERRAPTOR",
+            "form": 0,
+            "level": 36,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_SAND_TOMB",
+                "MOVE_AGILITY",
+                "MOVE_EARTHQUAKE",
+                "MOVE_AERIAL_ACE"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
         }
     ],
     "messages": [

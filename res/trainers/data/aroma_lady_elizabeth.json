@@ -32,6 +32,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TRILLKIT",
+            "form": 0,
+            "level": 14,
+            "item": null,
+            "moves": [
+                "MOVE_POUND",
+                "MOVE_GROWL",
+                "MOVE_SING",
+                "MOVE_BODY_SLAM"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

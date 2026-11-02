@@ -34,6 +34,20 @@
             ],
             "iv_scale": 100,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_PUFFLURRY",
+            "form": 0,
+            "level": 17,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_POWDER_SNOW",
+                "MOVE_QUICK_ATTACK",
+                "MOVE_ENDURE",
+                "MOVE_ICY_WIND"
+            ],
+            "iv_scale": 100,
+            "ball_seal": 0
         }
     ],
     "messages": [

@@ -24,6 +24,15 @@
             "moves": null,
             "iv_scale": 30,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ROOKIT",
+            "form": 0,
+            "level": 13,
+            "item": null,
+            "moves": null,
+            "iv_scale": 30,
+            "ball_seal": 0
         }
     ],
     "messages": [

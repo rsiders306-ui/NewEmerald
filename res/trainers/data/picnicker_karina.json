@@ -22,6 +22,20 @@
             "ball_seal": 0
         },
         {
+            "species": "SPECIES_NIBLIT",
+            "form": 0,
+            "level": 14,
+            "item": null,
+            "moves": [
+                "MOVE_TACKLE",
+                "MOVE_SUPERSONIC",
+                "MOVE_SING",
+                "MOVE_BUG_BITE"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
+        },
+        {
             "species": "SPECIES_BIDOOF",
             "form": 0,
             "level": 14,

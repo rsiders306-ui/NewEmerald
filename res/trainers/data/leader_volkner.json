@@ -67,6 +67,20 @@
             ],
             "iv_scale": 2500,
             "ball_seal": 14
+        },
+        {
+            "species": "SPECIES_TALLADEVIL",
+            "form": 0,
+            "level": 50,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_DOUBLE_EDGE",
+                "MOVE_KNOCK_OFF",
+                "MOVE_CRUNCH",
+                "MOVE_SWORDS_DANCE"
+            ],
+            "iv_scale": 2500,
+            "ball_seal": 0
         }
     ],
     "messages": [

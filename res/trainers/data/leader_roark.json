@@ -49,6 +49,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CALFLANK",
+            "form": 0,
+            "level": 14,
+            "item": null,
+            "moves": [
+                "MOVE_ROCK_THROW",
+                "MOVE_DEFENSE_CURL",
+                "MOVE_ROLLOUT",
+                "MOVE_HEADBUTT"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

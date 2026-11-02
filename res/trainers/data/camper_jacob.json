@@ -32,6 +32,20 @@
             ],
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_EMBERIMP",
+            "form": 0,
+            "level": 14,
+            "item": null,
+            "moves": [
+                "MOVE_GROWL",
+                "MOVE_SWEET_KISS",
+                "MOVE_FIRE_SPIN",
+                "MOVE_CHARM"
+            ],
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

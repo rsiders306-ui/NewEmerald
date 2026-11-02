@@ -42,6 +42,15 @@
             "moves": null,
             "iv_scale": 0,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ARIAPURR",
+            "form": 0,
+            "level": 50,
+            "item": null,
+            "moves": null,
+            "iv_scale": 0,
+            "ball_seal": 0
         }
     ],
     "messages": [

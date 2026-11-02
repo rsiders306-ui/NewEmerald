@@ -24,6 +24,15 @@
             "moves": null,
             "iv_scale": 20,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ZEPHYLET",
+            "form": 0,
+            "level": 17,
+            "item": null,
+            "moves": null,
+            "iv_scale": 20,
+            "ball_seal": 0
         }
     ],
     "messages": [

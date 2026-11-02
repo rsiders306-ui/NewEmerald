@@ -36,6 +36,20 @@
             ],
             "iv_scale": 50,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_TUNDRINDLE",
+            "form": 0,
+            "level": 58,
+            "item": null,
+            "moves": [
+                "MOVE_ICE_BEAM",
+                "MOVE_HYPER_VOICE",
+                "MOVE_BATON_PASS",
+                "MOVE_BLIZZARD"
+            ],
+            "iv_scale": 50,
+            "ball_seal": 0
         }
     ],
     "messages": [

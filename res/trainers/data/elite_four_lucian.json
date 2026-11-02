@@ -82,6 +82,20 @@
             ],
             "iv_scale": 250,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_SERMEDIC",
+            "form": 0,
+            "level": 59,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_CALM_MIND",
+                "MOVE_WISH",
+                "MOVE_PSYCHIC",
+                "MOVE_SKILL_SWAP"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
         }
     ],
     "messages": [

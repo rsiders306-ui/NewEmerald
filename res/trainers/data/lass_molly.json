@@ -31,6 +31,20 @@
             ],
             "iv_scale": 10,
             "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_CAIRNRAITH",
+            "form": 0,
+            "level": 23,
+            "item": null,
+            "moves": [
+                "MOVE_CURSE",
+                "MOVE_ROCK_TOMB",
+                "MOVE_SHADOW_SNEAK",
+                "MOVE_ANCIENT_POWER"
+            ],
+            "iv_scale": 10,
+            "ball_seal": 0
         }
     ],
     "messages": [
