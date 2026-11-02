@@ -38,6 +38,7 @@ BASE_ROM = {
 }
 
 AUDITS = {
+    "boot_integrity": ["tools/beacondex/boot_integrity_audit.py"],
     "trainer_parties": ["tools/beacondex/trainer_party_audit.py"],
     "trainer_battle_flow": ["tools/beacondex/trainer_battle_flow_audit.py", "--json"],
     "wild_distribution": ["tools/beacondex/wild_distribution_audit.py"],
@@ -111,6 +112,62 @@ def file_hashes(path: Path) -> dict[str, Any]:
             "size": path.stat().st_size,
             "sha1": sha1.hexdigest(),
             "sha256": sha256.hexdigest(),
+        }
+    )
+    return result
+
+
+def verify_emulator_evidence(built_rom: dict[str, Any]) -> dict[str, Any]:
+    report_path = DATA_ROOT / "emulator_boot_report.json"
+    result: dict[str, Any] = {
+        "path": report_path.relative_to(REPO_ROOT).as_posix(),
+        "present": report_path.is_file(),
+        "passed": False,
+    }
+    if not report_path.is_file():
+        return result
+
+    report = load_json(report_path)
+    artifacts = []
+    for emulator in report.get("emulators", []):
+        for kind in ("screenshot", "log"):
+            declared = emulator.get(kind)
+            if not declared:
+                continue
+            artifact_path = REPO_ROOT / declared["path"]
+            hashes = file_hashes(artifact_path)
+            content_matches = True
+            if kind == "log" and artifact_path.is_file():
+                log_text = artifact_path.read_text(encoding="utf-8", errors="replace")
+                content_matches = all(
+                    marker in log_text for marker in declared.get("contains", [])
+                )
+                if declared.get("arm9_data_abort") is False:
+                    content_matches = content_matches and "ARM9: data abort" not in log_text
+            artifacts.append(
+                {
+                    "emulator": emulator["name"],
+                    "kind": kind,
+                    "expected_sha256": declared["sha256"],
+                    "actual": hashes,
+                    "content_matches": content_matches,
+                    "matches": hashes.get("sha256") == declared["sha256"]
+                    and content_matches,
+                }
+            )
+
+    rom_matches = (
+        report.get("release_rom", {}).get("sha256") == built_rom.get("sha256")
+    )
+    result.update(
+        {
+            "report": report,
+            "release_rom_matches": rom_matches,
+            "artifacts": artifacts,
+            "passed": bool(report.get("passed"))
+            and rom_matches
+            and bool(artifacts)
+            and all(artifact["matches"] for artifact in artifacts),
         }
     )
     return result
@@ -334,6 +391,7 @@ def build_report(rom_path: Path, patch_path: Path) -> dict[str, Any]:
     fairy = fairy_moves()
     cries = cry_registry(species_rows)
     built_rom = file_hashes(rom_path)
+    emulator_evidence = verify_emulator_evidence(built_rom)
     bps_patch = file_hashes(patch_path)
     bps_round_trip = verify_bps_round_trip(rom_path, patch_path)
 
@@ -388,6 +446,7 @@ def build_report(rom_path: Path, patch_path: Path) -> dict[str, Any]:
         "built_rom_has_ds_capacity": built_rom.get("size") == BASE_ROM["size"],
         "bps_patch_present": bps_patch["present"] and bps_patch.get("size", 0) > 0,
         "bps_round_trip_matches_built_rom": bps_round_trip["passed"],
+        "emulator_boot_verified": emulator_evidence["passed"],
     }
 
     report = {
@@ -479,12 +538,15 @@ def build_report(rom_path: Path, patch_path: Path) -> dict[str, Any]:
             "built_rom": built_rom,
             "bps_patch": bps_patch,
             "bps_round_trip": bps_round_trip,
-            "emulator_playthrough_completed": False,
-            "emulator_evidence": [],
+            "emulator_boot_verified": emulator_evidence["passed"],
+            "emulator_playthrough_completed": emulator_evidence.get("report", {}).get(
+                "full_playthrough_completed", False
+            ),
+            "emulator_evidence": emulator_evidence,
         },
         "design_conflicts": conflicts,
         "known_limitations": [
-            "No Nintendo DS emulator is installed in this cloud environment; runtime screenshots and a complete playthrough remain unverified.",
+            "Boot through the title animation is verified in melonDS and DeSmuME; a complete story playthrough has not been completed.",
             "Fresh saves are required; migration from a vanilla Platinum save has not been implemented or tested.",
             "The 252 battle images are draft art and use duplicated animation frames pending an in-emulator art pass.",
             "Thirty-six party icons and footprints are generated draft placeholders.",

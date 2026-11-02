@@ -15,6 +15,8 @@
 #include "libs/strings.h"
 #include "libs/vector.h"
 
+#define SECURE_AREA_SIZE 0x4000
+
 rompacker *rompacker_new(unsigned int verbose, vector *vardefs)
 {
     rompacker *packer = calloc(1, sizeof(*packer));
@@ -320,6 +322,33 @@ static void sealfntb(rompacker *packer, romfile *sorted, int fileid)
 static int sealheader(rompacker *packer, uint64_t romsize)
 {
     unsigned char *header = packer->header.source.buf;
+
+    if (packer->hasrawsecurecrc) {
+        unsigned char securearea[SECURE_AREA_SIZE];
+        long arm9pos = ftell(packer->arm9.source.hdl);
+        if (packer->arm9.size < SECURE_AREA_SIZE
+            || fseek(packer->arm9.source.hdl, 0, SEEK_SET) != 0
+            || fread(securearea, 1, sizeof(securearea), packer->arm9.source.hdl)
+                != sizeof(securearea)
+            || fseek(packer->arm9.source.hdl, arm9pos, SEEK_SET) != 0) {
+            fprintf(stderr, "rompacker: could not read the ARM9 secure area\n");
+            return 1;
+        }
+
+        uint16_t configured = lehalf(header + OFS_HEADER_SECURECRC);
+        uint16_t rawcrc = crc16(string(securearea, sizeof(securearea)), 0xFFFF);
+        uint16_t corrected = configured ^ packer->rawsecurecrc ^ rawcrc;
+        putlehalf(header + OFS_HEADER_SECURECRC, corrected);
+        if (packer->verbose) {
+            fprintf(
+                stderr,
+                "rompacker: secure CRC: 0x%04X (raw reference 0x%04X, current 0x%04X)\n",
+                corrected,
+                packer->rawsecurecrc,
+                rawcrc
+            );
+        }
+    }
 
     uint32_t trycap   = TRY_CAPSHIFT_BASE;
     int      maxshift = packer->prom ? MAX_CAPSHIFT_PROM : MAX_CAPSHIFT_MROM;

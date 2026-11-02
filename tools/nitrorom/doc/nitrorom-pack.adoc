@@ -177,6 +177,13 @@ specify metadata which is only relevant to the header of the output ROM-file.
     secure area. The secure area consists largely of system-critical code for,
     e.g., reading data from the inserted game card.
 
+`secure-raw-crc` -> `number`, base-16, max value: 0xFFFF::
+    The CRC-16 checksum of the reference ROM's raw 0x4000-byte secure area.
+    When provided with `secure-crc`, `nitrorom` applies the raw CRC delta from
+    the reference secure area to the current ARM9 secure area. This keeps the
+    decrypted secure-area checksum valid when code after the unchanged
+    encrypted prefix is modified.
+
 `rom` Section
 ~~~~~~~~~~~~~
 

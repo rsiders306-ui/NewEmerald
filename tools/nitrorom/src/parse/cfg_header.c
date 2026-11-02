@@ -106,7 +106,13 @@ static cfgresult cfg_header_revision(rompacker *packer, string val, long line)
     return configok;
 }
 
-static cfgresult cfg_header_securecrc(rompacker *packer, string val, long line)
+static cfgresult cfg_header_parsecrc(
+    rompacker  *packer,
+    string      val,
+    long        line,
+    const char *key,
+    uint16_t   *value
+)
 {
     varsub(val, packer);
     string par = val;
@@ -133,12 +139,37 @@ static cfgresult cfg_header_securecrc(rompacker *packer, string val, long line)
         result += digit;
     }
 
-    if (result > 0xFFFF) configerr("secure-crc value 0x%08X exceeds maximum of 0xFFFF", result);
+    if (result > 0xFFFF) configerr("%s value 0x%08X exceeds maximum of 0xFFFF", key, result);
+
+    *value = result;
+    return configok;
+}
+
+static cfgresult cfg_header_securecrc(rompacker *packer, string val, long line)
+{
+    uint16_t result;
+    cfgresult parsed = cfg_header_parsecrc(packer, val, line, "secure-crc", &result);
+    if (parsed.code != E_config_none) return parsed;
 
     unsigned char *header = packer->header.source.buf;
     putlehalf(header + OFS_HEADER_SECURECRC, result);
     if (packer->verbose) {
         fprintf(stderr, "rompacker:configuration:header: set secure CRC to 0x%04X\n", result);
+    }
+
+    return configok;
+}
+
+static cfgresult cfg_header_rawsecurecrc(rompacker *packer, string val, long line)
+{
+    uint16_t result;
+    cfgresult parsed = cfg_header_parsecrc(packer, val, line, "secure-raw-crc", &result);
+    if (parsed.code != E_config_none) return parsed;
+
+    packer->rawsecurecrc = result;
+    packer->hasrawsecurecrc = 1;
+    if (packer->verbose) {
+        fprintf(stderr, "rompacker:configuration:header: set reference raw secure CRC to 0x%04X\n", result);
     }
 
     return configok;
@@ -152,6 +183,7 @@ static const keyvalueparser kvparsers[] = {
     { .key = string("maker"),      .parser = cfg_header_maker     },
     { .key = string("revision"),   .parser = cfg_header_revision  },
     { .key = string("secure-crc"), .parser = cfg_header_securecrc },
+    { .key = string("secure-raw-crc"), .parser = cfg_header_rawsecurecrc },
     { .key = stringZ,              .parser = NULL                 },
 };
 // clang-format on

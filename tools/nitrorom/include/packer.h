@@ -54,8 +54,10 @@ typedef struct rompacker {
     unsigned int filltail : 1;
     unsigned int fillwith : 8;
     unsigned int prom     : 1;
+    unsigned int hasrawsecurecrc : 1;
 
     unsigned int tailsize;
+    uint16_t     rawsecurecrc;
 
     vector *vardefs;
 

@@ -1,0 +1,141 @@
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5205:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5728:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2722:(snd_pcm_open_noupdate) Unknown PCM default
+melonDS 1.1
+https://melonds.kuribo64.net
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.toml" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.toml" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.2.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.3.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.4.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.5.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.6.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.7.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.8.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.9.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.10.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.11.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.12.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.13.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.14.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.15.ini" with FileMode 0x11 (effective mode "r")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.16.ini" with FileMode 0x11 (effective mode "r")
+MP comm init OK
+Audio init failed: ALSA: Couldn't open audio device: No such file or directory
+Opened "/tmp/beacondex-sdatfat-securecrc.nds" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.sav" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.sav" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.sav" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/wfcsettings.bin" with FileMode 0x1 (effective mode "rb")
+Resetting JIT block cache...
+done resetting jit mem
+done resetting jit mem
+MAC: 00:09:BF:11:22:33
+FW: WIFI CRC16 = GOOD
+FW: AP1 CRC16 = GOOD
+FW: AP2 CRC16 = GOOD
+FW: AP3 CRC16 = GOOD
+FW: USER0 CRC16 = GOOD
+FW: USER1 CRC16 = GOOD
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/rtc.bin" with FileMode 0x1 (effective mode "rb")
+Re-encrypting cart secure area
+NDSCart: Initialized Key1_KeyBuf to zero
+NDSCart: Initialized Key1_KeyBuf to zero
+Re-encrypted cart secure area
+Inserted cart with game code: CPUE
+Inserted cart with ID: 00007FC2
+ROM entry: 08000000 00000006
+Ejected GBA cart
+Failed to open "/tmp/beacondex-sdatfat-securecrc.mch" with FileMode 0x11 (effective mode "r")
+Resetting JIT block cache...
+done resetting jit mem
+done resetting jit mem
+MAC: 00:09:BF:11:22:33
+FW: WIFI CRC16 = GOOD
+FW: AP1 CRC16 = GOOD
+FW: AP2 CRC16 = GOOD
+FW: AP3 CRC16 = GOOD
+FW: USER0 CRC16 = GOOD
+FW: USER1 CRC16 = GOOD
+remapping SWRAM
+NDSCart: Initialized Key1_KeyBuf to zero
+NDSCart: Initialized Key1_KeyBuf to zero
+Secure area decryption OK
+remapping DTCM 0 1000 ffffffff ffffffff
+PU: region 0 = 04000033 : enabled, start: 04000000 size: 19
+PU: region 0 = 04000033 : enabled, start: 04000000 size: 19
+PU: region 1 = 0200002B : enabled, start: 02000000 size: 15
+PU: region 1 = 0200002B : enabled, start: 02000000 size: 15
+PU: region 2 = 00000000 : disabled, start: 00000000 size: 00
+PU: region 2 = 00000000 : disabled, start: 00000000 size: 00
+PU: region 3 = 08000035 : enabled, start: 08000000 size: 1A
+PU: region 3 = 08000035 : enabled, start: 08000000 size: 1A
+PU: region 4 = 0300001B : enabled, start: 03000000 size: 0D
+PU: region 4 = 0300001B : enabled, start: 03000000 size: 0D
+PU: region 5 = 00000000 : disabled, start: 00000000 size: 00
+PU: region 5 = 00000000 : disabled, start: 00000000 size: 00
+PU: region 6 = FFFF001D : enabled, start: FFFF0000 size: 0E
+PU: region 6 = FFFF001D : enabled, start: FFFF0000 size: 0E
+PU: region 7 = 027FF017 : enabled, start: 027FF000 size: 0B
+PU: region 7 = 027FF017 : enabled, start: 027FF000 size: 0B
+remapping DTCM 3000000 3004000 0 fffff000
+Game is now booting
+remapping DTCM ffffffff ffffffff 3000000 2ffc000
+PU: region 0 = 04000033 : enabled, start: 04000000 size: 19
+Failed to open "/tmp/melonds-config-sdatfat/melonDS/melonDS.toml" with FileMode 0x1 (effective mode "rb")
+PU: region 1 = 0200002D : enabled, start: 02000000 size: 16
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml1" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml2" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml3" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml4" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml5" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml6" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml7" with FileMode 0x1 (effective mode "rb")
+Failed to open "/tmp/beacondex-sdatfat-securecrc.ml8" with FileMode 0x1 (effective mode "rb")
+PU: region 2 = 027E0021 : enabled, start: 027E0000 size: 10
+PU: region 3 = 08000035 : enabled, start: 08000000 size: 1A
+PU: region 4 = 027E001B : enabled, start: 027E0000 size: 0D
+PU: region 5 = 0100002F : enabled, start: 01000000 size: 17
+PU: region 6 = FFFF001D : enabled, start: FFFF0000 size: 0E
+PU: region 7 = 027FF017 : enabled, start: 027FF000 size: 0B
+remapping DTCM 27e0000 27e4000 ffffffff ffffffff
+PU region 0: 04000000-07FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 1: 02000000-027FFFFF, user=70 priv=77, 15111011/05100011
+PU region 2: 027E0000-027FFFFF, user=00 priv=00, 15111011/05100011
+PU region 3: 08000000-0FFFFFFF, user=00 priv=03, 15111011/05100011
+PU region 4: 027E0000-027E3FFF, user=00 priv=03, 15111011/05100011
+PU region 5: 01000000-01FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 6: FFFF0000-FFFF7FFF, user=50 priv=55, 15111011/05100011
+PU region 7: 027FF000-027FFFFF, user=00 priv=03, 15111011/05100011
+PU: region 1 = 0200002B : enabled, start: 02000000 size: 15
+PU region 0: 04000000-07FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 1: 02000000-023FFFFF, user=70 priv=77, 15111011/05100011
+PU region 2: 027E0000-027FFFFF, user=00 priv=00, 15111011/05100011
+PU region 3: 08000000-0FFFFFFF, user=00 priv=03, 15111011/05100011
+PU region 4: 027E0000-027E3FFF, user=00 priv=03, 15111011/05100011
+PU region 5: 01000000-01FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 6: FFFF0000-FFFF7FFF, user=50 priv=55, 15111011/05100011
+PU region 7: 027FF000-027FFFFF, user=00 priv=03, 15111011/05100011
+PU: region 2 = 023E0021 : enabled, start: 023E0000 size: 10
+PU region 0: 04000000-07FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 1: 02000000-023FFFFF, user=70 priv=77, 15111011/05100011
+PU region 2: 023E0000-023FFFFF, user=00 priv=00, 15111011/05100011
+PU region 3: 08000000-0FFFFFFF, user=00 priv=03, 15111011/05100011
+PU region 4: 027E0000-027E3FFF, user=00 priv=03, 15111011/05100011
+PU region 5: 01000000-01FFFFFF, user=00 priv=07, 15111011/05100011
+PU region 6: FFFF0000-FFFF7FFF, user=50 priv=55, 15111011/05100011
+PU region 7: 027FF000-027FFFFF, user=00 priv=03, 15111011/05100011
+PU region 3: 08000000-0FFFFFFF, user=00 priv=01, 15115011/05100011
+unknown ARM9 IO write32 04001060 00000000 01FF8580
+unknown ARM9 IO write32 04001064 00000000 01FF8580
+unknown ARM9 IO write32 04001068 00000000 01FF8580
+saving firmware for instance 0
+SaveManager: Flush requested
+sa

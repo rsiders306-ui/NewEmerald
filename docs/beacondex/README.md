@@ -36,7 +36,8 @@ python3 tools/beacondex/integration_report.py
 `data/beacondex/integration_report.json` inventories the 63 species, 252
 logical battle-sprite slots, starter combinations, encounter locations,
 Trainer assignments, doubles coverage, custom cries, Fairy moves, build hashes,
-release-patch round trip, design conflicts, and known validation limits.
+release-patch round trip, boot-integrity checks, emulator evidence, design
+conflicts, and known validation limits.
 
 ## Release patch
 
@@ -74,8 +75,9 @@ The supported base identity and current artifact hashes are recorded in
 - `INTEGRATION_PACK_AUDIT.md` records source precedence and unresolved design
   conflicts from the supplied pack.
 
-The ROM, sprites, icons, footprints, and audio compile from source. Runtime
-playthrough evidence still requires a Nintendo DS emulator; the cloud image
-used for this build does not include one. Fresh saves are required until a
-vanilla-save migration is implemented and tested. Cry audio uses documented
-templates, and the new species' egg-move and tutor lists remain empty.
+The ROM, sprites, icons, footprints, and audio compile from source. The release
+ROM reaches the title animation in melonDS 1.1 and DeSmuME 0.9.13; see
+`BOOT_FAILURE_ANALYSIS.md` and `evidence/`. A complete story playthrough has not
+been performed. Fresh saves are required until a vanilla-save migration is
+implemented and tested. Cry audio uses documented templates, and the new
+species' egg-move and tutor lists remain empty.

@@ -1,0 +1,70 @@
+{
+  "schema": "beacondex-emulator-boot-report-v1",
+  "tested_at": "2026-11-02T10:48:52Z",
+  "passed": true,
+  "release_rom": {
+    "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234",
+    "checkpoint": "Pokemon Platinum title animation"
+  },
+  "failed_rom": {
+    "sha256": "9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96",
+    "result": "white screen",
+    "melonDS_error": "ARM9: data abort (020C64CC)"
+  },
+  "emulators": [
+    {
+      "name": "melonDS",
+      "version": "1.1",
+      "configuration": "fresh configuration, --boot auto",
+      "result": "passed",
+      "checkpoint": "Pokemon Platinum title animation",
+      "screenshot": {
+        "path": "docs/beacondex/evidence/melonds-1.1-title.png",
+        "sha256": "11c4aa3e136a66293ca2d3ac87df791b8ed91dc18d9c7687035655cb5146b837"
+      },
+      "log": {
+        "path": "docs/beacondex/evidence/melonds-1.1-boot.log",
+        "sha256": "15f1f3f02bcd31a51917e0f5d6aca0b505f6e721c8351f5d5592fbd34c519666",
+        "contains": [
+          "Secure area decryption OK",
+          "Game is now booting"
+        ],
+        "arm9_data_abort": false
+      }
+    },
+    {
+      "name": "DeSmuME",
+      "version": "0.9.13",
+      "configuration": "ARM interpreter, fresh save",
+      "result": "passed",
+      "checkpoint": "Pokemon Platinum title animation",
+      "screenshot": {
+        "path": "docs/beacondex/evidence/desmume-0.9.13-title.png",
+        "sha256": "634f54c3a299fd0a5e4d153a05bbbe9c0f535136e44083a98483c474b9a13d1f"
+      }
+    }
+  ],
+  "isolation_tests": [
+    {
+      "case": "clean US Rev 1 ROM",
+      "result": "boots"
+    },
+    {
+      "case": "failed release target",
+      "result": "white screen and ARM9 data abort"
+    },
+    {
+      "case": "failed target with secure/header CRC only corrected",
+      "result": "same ARM9 data abort"
+    },
+    {
+      "case": "failed target with retail SDAT substituted",
+      "result": "boots"
+    },
+    {
+      "case": "custom SDAT with all FAT payload offsets corrected",
+      "result": "boots with custom audio preserved"
+    }
+  ],
+  "full_playthrough_completed": false
+}
