@@ -1,9 +1,10 @@
 # BeaconDex wild distribution
 
 Every BeaconDex species has one permanent encounter slot. The placement pass uses
-50 maps across the main story and postgame, keeps all original Pokémon available
-somewhere in Sinnoh, and leaves encounter levels unchanged so the regional level
-curve remains intact. Turtwig, Chimchar, and Piplup also have rare recovery
+50 maps across the main story and postgame, preserves all 147 species present in
+the pre-BeaconDex wild baseline, and leaves encounter levels unchanged so the
+regional level curve remains intact. The protected inventory is recorded in
+`data/beacondex/original_wild_species.json`. Turtwig, Chimchar, and Piplup have rare recovery
 encounters so every species omitted from the player's initial pair remains
 obtainable in the same save.
 

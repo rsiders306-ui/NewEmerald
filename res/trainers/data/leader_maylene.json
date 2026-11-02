@@ -32,7 +32,7 @@
                 "MOVE_KARATE_CHOP",
                 "MOVE_ROCK_TOMB",
                 "MOVE_STRENGTH",
-                "MOVE_FOCUS_ENERGY"
+                "MOVE_ROCK_SLIDE"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -55,12 +55,12 @@
             "species": "SPECIES_WARDMANE",
             "form": 0,
             "level": 32,
-            "item": "ITEM_NONE",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_BITE",
                 "MOVE_BRICK_BREAK",
                 "MOVE_HELPING_HAND",
-                "MOVE_BODY_SLAM"
+                "MOVE_PLAY_ROUGH"
             ],
             "iv_scale": 200,
             "ball_seal": 0

@@ -20,7 +20,7 @@
             "moves": [
                 "MOVE_SLASH",
                 "MOVE_AERIAL_ACE",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_PROTECT",
                 "MOVE_ICE_SHARD"
             ],
             "iv_scale": 250,
@@ -34,7 +34,7 @@
             "moves": [
                 "MOVE_AVALANCHE",
                 "MOVE_STONE_EDGE",
-                "MOVE_EARTHQUAKE",
+                "MOVE_ICY_WIND",
                 "MOVE_HAIL"
             ],
             "iv_scale": 250,
@@ -72,7 +72,7 @@
             "species": "SPECIES_VENOFROST",
             "form": 0,
             "level": 44,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_ICE_BEAM",
                 "MOVE_RECOVER",

@@ -7,6 +7,10 @@ Turtwig, Chimchar, and Piplup. The player selects two entries in sequence,
 cannot select the same species twice, sees both names in a confirmation prompt,
 and can restart the selection before confirming.
 
+The exact labels are `GLIMBARK  Fighting`, `CALFLANK  Rock`,
+`ZEPHYLET  Flying`, `TURTWIG  Grass`, `CHIMCHAR  Fire`, and `PIPLUP  Water`;
+the starter audit checks all six mechanically.
+
 Both choices are granted at level 5 while the field event remains locked. The
 two grants happen before the first Barry battle, so its forced Double Battle
 always starts with two player battlers. The chosen pair is stored in the
@@ -21,8 +25,11 @@ matchup where both of Barry's starters can be assigned a super-effective target
 in the player's pair. The pair is stored in two formerly unused variables and
 is applied to party slots zero and one for all 33 Barry trainer records.
 
-Each dynamic line evolves at its own level thresholds. Dynamic party members
-use their species' level-up moves. A later fixed Sinnoh starter in the original
+Each dynamic line evolves at its own level thresholds. Route 201 keeps natural
+level-up moves. Later battles add one non-duplicate support/control move to both
+dynamic slots when needed: Helping Hand, Rock Tomb from level 18, Sand Attack,
+Razor Leaf from level 13, Leer, or Growl. Their natural Earthquake remains an
+intentional high-risk option for some late pairs. A later fixed Sinnoh starter in the original
 Barry parties is changed to Staravia or Staraptor, preserving his bird line and
 preventing him from carrying a third starter family.
 

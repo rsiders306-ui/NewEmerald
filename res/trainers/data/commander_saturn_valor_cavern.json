@@ -55,7 +55,7 @@
             "species": "SPECIES_GRAVEMOURN",
             "form": 0,
             "level": 40,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_ROCK_SLIDE",
                 "MOVE_PROTECT",

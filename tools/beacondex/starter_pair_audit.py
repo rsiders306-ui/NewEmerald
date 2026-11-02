@@ -76,6 +76,17 @@ LEGACY_RIVAL_STARTERS = {
     "SPECIES_EMPOLEON",
 }
 BIRD_LINE = {"SPECIES_STARLY", "SPECIES_STARAVIA", "SPECIES_STARAPTOR"}
+RIVAL_SUPPORT = {
+    "SPECIES_GLIMBARK": (6, "MOVE_HELPING_HAND"), "SPECIES_WARDMANE": (6, "MOVE_HELPING_HAND"),
+    "SPECIES_SIDERION": (6, "MOVE_HELPING_HAND"), "SPECIES_CALFLANK": (18, "MOVE_ROCK_TOMB"),
+    "SPECIES_GRIDIRUFF": (18, "MOVE_ROCK_TOMB"), "SPECIES_OXGUARD": (18, "MOVE_ROCK_TOMB"),
+    "SPECIES_ZEPHYLET": (6, "MOVE_SAND_ATTACK"), "SPECIES_GALECREST": (6, "MOVE_SAND_ATTACK"),
+    "SPECIES_TERRAPTOR": (6, "MOVE_SAND_ATTACK"), "SPECIES_TURTWIG": (13, "MOVE_RAZOR_LEAF"),
+    "SPECIES_GROTLE": (13, "MOVE_RAZOR_LEAF"), "SPECIES_TORTERRA": (13, "MOVE_RAZOR_LEAF"),
+    "SPECIES_CHIMCHAR": (6, "MOVE_LEER"), "SPECIES_MONFERNO": (6, "MOVE_LEER"),
+    "SPECIES_INFERNAPE": (6, "MOVE_LEER"), "SPECIES_PIPLUP": (6, "MOVE_GROWL"),
+    "SPECIES_PRINPLUP": (6, "MOVE_GROWL"), "SPECIES_EMPOLEON": (6, "MOVE_GROWL"),
+}
 
 LABEL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):$")
 FIRST_DISPATCH_RE = re.compile(
@@ -272,6 +283,25 @@ def has_damaging_move(moves: tuple[str, ...]) -> bool:
     )
 
 
+def apply_rival_support(moves: tuple[str, ...], species: str, level: int) -> tuple[str, ...]:
+    result = list(moves)
+    minimum, support = RIVAL_SUPPORT[species]
+    if level < minimum or support in result:
+        return tuple(result)
+    if len(result) < 4:
+        result.append(support)
+    else:
+        result[3] = support
+    return tuple(result)
+
+
+def ground_immune(species: str) -> bool:
+    data = json.loads(
+        (REPO_ROOT / f"res/pokemon/{SPECIES_DIRECTORIES[species]}/data.json").read_text()
+    )
+    return "TYPE_FLYING" in data["types"] or "ABILITY_LEVITATE" in data["abilities"]
+
+
 def transformed_rival_roster(
     party: list[dict[str, object]], rival_pair: tuple[str, str]
 ) -> tuple[list[str], list[int]]:
@@ -292,7 +322,7 @@ def transformed_rival_roster(
 
 def audit_rival_rosters(
     pair_results: list[dict[str, object]], violations: list[str]
-) -> tuple[int, int]:
+) -> tuple[int, int, int, int]:
     records = []
     for path in sorted(TRAINER_ROOT.glob("*.json")):
         data = json.loads(path.read_text())
@@ -303,6 +333,8 @@ def audit_rival_rosters(
         violations.append(f"expected 33 Barry records, found {len(records)}")
 
     runtime_rosters = 0
+    runtime_move_sets = 0
+    intentional_ally_risk_states = 0
     for filename, party in records:
         if len(party) < 2:
             violations.append(f"{filename} has fewer than two party members")
@@ -332,6 +364,7 @@ def audit_rival_rosters(
 
             transformed, replaced_slots = transformed_rival_roster(party, rival_pair)
             runtime_rosters += 1
+            dynamic_moves: dict[int, tuple[str, ...]] = {}
             if len(set(transformed)) != len(transformed):
                 violations.append(
                     f"{filename} produces a duplicate species for {' + '.join(rival_pair)}"
@@ -353,6 +386,14 @@ def audit_rival_rosters(
                 moves = default_level_moves(
                     transformed[slot], party[slot]["level"], violations
                 )
+                if slot < 2:
+                    moves = apply_rival_support(moves, transformed[slot], party[slot]["level"])
+                    dynamic_moves[slot] = moves
+                    runtime_move_sets += 1
+                    if len(moves) != len(set(moves)):
+                        violations.append(
+                            f"{filename} runtime slot {slot} has duplicate moves for {' + '.join(rival_pair)}"
+                        )
                 if not moves:
                     violations.append(
                         f"{filename} replacement slot {slot} has an empty "
@@ -365,6 +406,12 @@ def audit_rival_rosters(
                         f"{party[slot]['level']}: {', '.join(moves)}"
                     )
 
+            if (
+                ("MOVE_EARTHQUAKE" in dynamic_moves.get(0, ()) and not ground_immune(transformed[1]))
+                or ("MOVE_EARTHQUAKE" in dynamic_moves.get(1, ()) and not ground_immune(transformed[0]))
+            ):
+                intentional_ally_risk_states += 1
+
             if filename.startswith("rival_spear_pillar_"):
                 if "SPECIES_MUNCHLAX" not in transformed:
                     violations.append(f"{filename} loses Barry's Munchlax identity")
@@ -373,7 +420,7 @@ def audit_rival_rosters(
             if len(party) >= 5 and "SPECIES_HERACROSS" not in transformed:
                 violations.append(f"{filename} loses Barry's Heracross identity")
 
-    return len(records), runtime_rosters
+    return len(records), runtime_rosters, runtime_move_sets, intentional_ally_risk_states
 
 
 def audit_custom_starter_fallbacks(violations: list[str]) -> int:
@@ -558,7 +605,7 @@ def main() -> int:
             }
         )
 
-    rival_records, runtime_rosters = audit_rival_rosters(results, violations)
+    rival_records, runtime_rosters, runtime_move_sets, ally_risk_states = audit_rival_rosters(results, violations)
     custom_fallback_checks = audit_custom_starter_fallbacks(violations)
     typed_menu_labels = audit_typed_menu_labels(violations)
 
@@ -574,6 +621,8 @@ def main() -> int:
         ),
         "rival_records": rival_records,
         "runtime_rosters": runtime_rosters,
+        "runtime_dynamic_move_sets": runtime_move_sets,
+        "intentional_earthquake_ally_risk_states": ally_risk_states,
         "custom_fallback_checks": custom_fallback_checks,
         "typed_menu_labels": typed_menu_labels,
         "violations": violations,

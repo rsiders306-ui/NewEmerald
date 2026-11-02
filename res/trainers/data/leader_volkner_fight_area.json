@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,12 +17,12 @@
             "species": "SPECIES_LUXRAY",
             "form": 0,
             "level": 56,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_ICE_FANG",
                 "MOVE_THUNDER_FANG",
                 "MOVE_CRUNCH",
-                "MOVE_FIRE_FANG"
+                "MOVE_LIGHT_SCREEN"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -49,7 +50,7 @@
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_FIRE_PUNCH",
                 "MOVE_BRICK_BREAK",
-                "MOVE_GIGA_IMPACT"
+                "MOVE_SHOCK_WAVE"
             ],
             "iv_scale": 200,
             "ball_seal": 14

@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,7 +17,7 @@
             "species": "SPECIES_HOUNDOOM",
             "form": 0,
             "level": 52,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_FLAMETHROWER",
                 "MOVE_SLUDGE_BOMB",
@@ -32,9 +33,9 @@
             "level": 55,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_OVERHEAT",
-                "MOVE_GIGA_IMPACT",
-                "MOVE_QUICK_ATTACK",
+                "MOVE_FIRE_FANG",
+                "MOVE_SUPERPOWER",
+                "MOVE_HELPING_HAND",
                 "MOVE_WILL_O_WISP"
             ],
             "iv_scale": 250,
@@ -47,8 +48,8 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_FLARE_BLITZ",
-                "MOVE_SOLAR_BEAM",
-                "MOVE_BOUNCE",
+                "MOVE_MEGAHORN",
+                "MOVE_POISON_JAB",
                 "MOVE_SUNNY_DAY"
             ],
             "iv_scale": 250,
@@ -63,7 +64,7 @@
                 "MOVE_FLARE_BLITZ",
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_MACH_PUNCH",
-                "MOVE_EARTHQUAKE"
+                "MOVE_CLOSE_COMBAT"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -76,8 +77,8 @@
             "moves": [
                 "MOVE_FLAMETHROWER",
                 "MOVE_THUNDERBOLT",
-                "MOVE_SOLAR_BEAM",
-                "MOVE_HYPER_BEAM"
+                "MOVE_FOCUS_BLAST",
+                "MOVE_HEAT_WAVE"
             ],
             "iv_scale": 250,
             "ball_seal": 13
@@ -86,12 +87,12 @@
             "species": "SPECIES_HEARTHALO",
             "form": 0,
             "level": 57,
-            "item": "ITEM_NONE",
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
                 "MOVE_HEAT_WAVE",
-                "MOVE_SWIFT",
                 "MOVE_SAFEGUARD",
-                "MOVE_FIRE_BLAST"
+                "MOVE_FIRE_BLAST",
+                "MOVE_FLAMETHROWER"
             ],
             "iv_scale": 250,
             "ball_seal": 0

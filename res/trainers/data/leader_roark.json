@@ -16,10 +16,11 @@
             "species": "SPECIES_GEODUDE",
             "form": 0,
             "level": 12,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_STEALTH_ROCK",
-                "MOVE_ROCK_THROW"
+                "MOVE_ROCK_THROW",
+                "MOVE_SANDSTORM"
             ],
             "iv_scale": 50,
             "ball_seal": 0
@@ -28,11 +29,12 @@
             "species": "SPECIES_ONIX",
             "form": 0,
             "level": 12,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_STEALTH_ROCK",
                 "MOVE_ROCK_THROW",
-                "MOVE_SCREECH"
+                "MOVE_SCREECH",
+                "MOVE_ROCK_TOMB"
             ],
             "iv_scale": 50,
             "ball_seal": 0
@@ -41,7 +43,7 @@
             "species": "SPECIES_CRANIDOS",
             "form": 0,
             "level": 14,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_HEADBUTT",
                 "MOVE_PURSUIT",
@@ -54,7 +56,7 @@
             "species": "SPECIES_CALFLANK",
             "form": 0,
             "level": 14,
-            "item": null,
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_ROCK_THROW",
                 "MOVE_DEFENSE_CURL",

@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,12 +17,12 @@
             "species": "SPECIES_SKARMORY",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_NIGHT_SLASH",
                 "MOVE_DRILL_PECK",
                 "MOVE_ROCK_TOMB",
-                "MOVE_STEALTH_ROCK"
+                "MOVE_SANDSTORM"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -34,7 +35,7 @@
             "moves": [
                 "MOVE_GYRO_BALL",
                 "MOVE_ICE_FANG",
-                "MOVE_DRAGON_BREATH",
+                "MOVE_ROCK_SLIDE",
                 "MOVE_SANDSTORM"
             ],
             "iv_scale": 200,
@@ -76,8 +77,8 @@
             "moves": [
                 "MOVE_METAL_BURST",
                 "MOVE_STONE_EDGE",
-                "MOVE_EARTHQUAKE",
-                "MOVE_AVALANCHE"
+                "MOVE_AVALANCHE",
+                "MOVE_IRON_TAIL"
             ],
             "iv_scale": 200,
             "ball_seal": 0

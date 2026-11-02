@@ -5,7 +5,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -13,7 +14,7 @@
             "species": "SPECIES_CLAYDOL",
             "form": 0,
             "level": 63,
-            "item": null,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_ANCIENT_POWER",
@@ -27,7 +28,7 @@
             "species": "SPECIES_DUSKNOIR",
             "form": 0,
             "level": 63,
-            "item": null,
+            "item": "ITEM_LUM_BERRY",
             "moves": [
                 "MOVE_FIRE_PUNCH",
                 "MOVE_ICE_PUNCH",

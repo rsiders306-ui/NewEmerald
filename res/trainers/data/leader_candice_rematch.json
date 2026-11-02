@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,11 +17,11 @@
             "species": "SPECIES_WEAVILE",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_AVALANCHE",
                 "MOVE_SLASH",
-                "MOVE_FAINT_ATTACK",
+                "MOVE_PROTECT",
                 "MOVE_TAUNT"
             ],
             "iv_scale": 200,
@@ -33,8 +34,8 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_AVALANCHE",
-                "MOVE_ANCIENT_POWER",
-                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_ICY_WIND",
                 "MOVE_HAIL"
             ],
             "iv_scale": 200,

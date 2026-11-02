@@ -13,12 +13,12 @@
             "species": "SPECIES_LUCARIO",
             "form": 0,
             "level": 41,
-            "item": null,
+            "item": "ITEM_NONE",
             "moves": [
                 "MOVE_METAL_CLAW",
                 "MOVE_FORCE_PALM",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_BONE_RUSH"
+                "MOVE_ROCK_SLIDE"
             ],
             "iv_scale": 30,
             "ball_seal": 0
@@ -27,12 +27,12 @@
             "species": "SPECIES_ABSOL",
             "form": 0,
             "level": 41,
-            "item": null,
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_PSYCHO_CUT",
-                "MOVE_NIGHT_SLASH",
                 "MOVE_SWORDS_DANCE",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_QUICK_ATTACK",
+                "MOVE_SUCKER_PUNCH",
+                "MOVE_PUNISHMENT"
             ],
             "iv_scale": 30,
             "ball_seal": 0

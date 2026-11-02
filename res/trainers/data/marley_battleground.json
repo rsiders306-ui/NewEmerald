@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,7 +17,7 @@
             "species": "SPECIES_NINJASK",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_X_SCISSOR",
                 "MOVE_AERIAL_ACE",
@@ -32,10 +33,10 @@
             "level": 61,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_HYPER_BEAM",
                 "MOVE_THUNDER",
                 "MOVE_THUNDER_WAVE",
-                "MOVE_DOUBLE_TEAM"
+                "MOVE_DOUBLE_TEAM",
+                "MOVE_THUNDERBOLT"
             ],
             "iv_scale": 200,
             "ball_seal": 0

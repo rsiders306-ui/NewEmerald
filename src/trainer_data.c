@@ -2,6 +2,7 @@
 
 #include "constants/battle.h"
 #include "constants/pokemon.h"
+#include "generated/moves.h"
 #include "generated/trainer_message_types.h"
 
 #include "struct_defs/trainer.h"
@@ -32,6 +33,8 @@ static u16 TrainerData_GetPartySpecies(
     BOOL *useLevelUpMoves);
 static u16 TrainerData_EvolveRivalStarter(u16 species, u8 level);
 static BOOL TrainerData_IsLegacyRivalStarter(u16 species);
+static u16 TrainerData_RivalDoublesMove(u16 species, u8 level);
+static void TrainerData_ApplyRivalDoublesSupport(Pokemon *mon, u16 species, u8 level);
 
 void Trainer_Encounter(FieldBattleDTO *dto, SaveData *saveData, enum HeapID heapID)
 {
@@ -227,6 +230,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *s
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
+            if (dto->trainer[battler].header.trainerType == TRAINER_CLASS_RIVAL && i < 2 && useLevelUpMoves == TRUE) {
+                TrainerData_ApplyRivalDoublesSupport(mon, species, trmon[i].level);
+            }
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Party_AddPokemon(dto->parties[battler], mon);
@@ -259,6 +265,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *s
                     Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
                 }
             }
+            if (dto->trainer[battler].header.trainerType == TRAINER_CLASS_RIVAL && i < 2 && useLevelUpMoves == TRUE) {
+                TrainerData_ApplyRivalDoublesSupport(mon, species, trmon[i].level);
+            }
 
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
@@ -287,6 +296,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *s
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
             Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
+            if (dto->trainer[battler].header.trainerType == TRAINER_CLASS_RIVAL && i < 2 && useLevelUpMoves == TRUE) {
+                TrainerData_ApplyRivalDoublesSupport(mon, species, trmon[i].level);
+            }
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Party_AddPokemon(dto->parties[battler], mon);
@@ -319,6 +331,9 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, SaveData *s
                 for (j = 0; j < 4; j++) {
                     Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
                 }
+            }
+            if (dto->trainer[battler].header.trainerType == TRAINER_CLASS_RIVAL && i < 2 && useLevelUpMoves == TRUE) {
+                TrainerData_ApplyRivalDoublesSupport(mon, species, trmon[i].level);
             }
 
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
@@ -411,4 +426,69 @@ static BOOL TrainerData_IsLegacyRivalStarter(u16 species)
     default:
         return FALSE;
     }
+}
+
+static u16 TrainerData_RivalDoublesMove(u16 species, u8 level)
+{
+    /* Route 201 keeps its natural level-up sets. Later encounters restore one
+     * level-appropriate support or speed-control move as old moves roll off. */
+    if (level <= 5) {
+        return MOVE_NONE;
+    }
+
+    switch (species) {
+    case SPECIES_GLIMBARK:
+    case SPECIES_WARDMANE:
+    case SPECIES_SIDERION:
+        return MOVE_HELPING_HAND;
+    case SPECIES_CALFLANK:
+    case SPECIES_GRIDIRUFF:
+    case SPECIES_OXGUARD:
+        return level >= 18 ? MOVE_ROCK_TOMB : MOVE_NONE;
+    case SPECIES_ZEPHYLET:
+    case SPECIES_GALECREST:
+    case SPECIES_TERRAPTOR:
+        return MOVE_SAND_ATTACK;
+    case SPECIES_TURTWIG:
+    case SPECIES_GROTLE:
+    case SPECIES_TORTERRA:
+        return level >= 13 ? MOVE_RAZOR_LEAF : MOVE_NONE;
+    case SPECIES_CHIMCHAR:
+    case SPECIES_MONFERNO:
+    case SPECIES_INFERNAPE:
+        return MOVE_LEER;
+    case SPECIES_PIPLUP:
+    case SPECIES_PRINPLUP:
+    case SPECIES_EMPOLEON:
+        return MOVE_GROWL;
+    default:
+        return MOVE_NONE;
+    }
+}
+
+static void TrainerData_ApplyRivalDoublesSupport(Pokemon *mon, u16 species, u8 level)
+{
+    u16 supportMove;
+    u16 move;
+    int moveSlot;
+    int emptySlot = -1;
+
+    supportMove = TrainerData_RivalDoublesMove(species, level);
+    if (supportMove == MOVE_NONE) {
+        return;
+    }
+
+    for (moveSlot = 0; moveSlot < 4; moveSlot++) {
+        move = Pokemon_GetValue(mon, MON_DATA_MOVE1 + moveSlot, NULL);
+        if (move == supportMove) {
+            return;
+        }
+        if (move == MOVE_NONE && emptySlot < 0) {
+            emptySlot = moveSlot;
+        }
+    }
+
+    /* Fill a natural empty slot before replacing the last move. This keeps the
+     * early Barry sets compact and avoids duplicate support moves. */
+    Pokemon_SetMoveSlot(mon, supportMove, emptySlot >= 0 ? emptySlot : 3);
 }

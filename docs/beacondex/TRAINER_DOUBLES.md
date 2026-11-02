@@ -20,16 +20,24 @@ distributed as follows:
 | Party size | Records |
 | --- | ---: |
 | 0 (`TRAINER_NONE`) | 1 |
-| 2 | 657 |
-| 3 | 189 |
-| 4 | 31 |
-| 5 | 27 |
-| 6 | 23 |
+| 2 | 627 |
+| 3 | 201 |
+| 4 | 40 |
+| 5 | 30 |
+| 6 | 29 |
 
-The first Barry teams use deliberate two-starter pairs. The remaining 397
-one-member records received deterministic same-class, same-level partners as a
-safe structural pass. Their moves, items, and species remain balance candidates
-for the later regional-distribution milestone.
+The first Barry teams use deliberate two-starter pairs. A reviewed balance pass
+covers 80 major records; 59 changed, including 50 move/item/ordering changes and
+9 AI-only changes. Every reviewed major has an ordered lead role. Barry's 990
+dynamic starter move sets are also checked for duplicates; 99 reachable states
+retain Earthquake as an intentional high-risk option, with Tag Strategy AI
+evaluating ally damage before choosing it.
+
+Whole-game AI progression adds 648 flags across 431 active records: 431 gain
+`AI_FLAG_EVAL_ATTACK` and 217 also gain `AI_FLAG_EXPERT`. Physical Double
+Battles add `AI_FLAG_TAG_STRATEGY` at runtime. The audit also reports 114
+inherited ordinary-team ally-hit cases and 112 inherited learnability warnings;
+these remain emulator balance work rather than compile or progression failures.
 
 ## Battle-flow coverage
 
@@ -73,7 +81,4 @@ The following checks passed on 2026-11-02:
   compiled
 - the complete modified US Rev 1 ROM linked successfully
 
-The original doubles-only checkpoint ROM was 134,217,728 bytes with SHA-1
-`0e725d96dd0fd56ebd43042b79bcae99a20267f7`. The later integrated starter,
-Fairy, and 63-species checkpoint also links successfully; Route 201 is no longer
-deferred.
+Final artifact hashes and patch instructions are recorded in `RELEASE.md`.

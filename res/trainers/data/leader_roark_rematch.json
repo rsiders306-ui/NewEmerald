@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,12 +17,12 @@
             "species": "SPECIES_AERODACTYL",
             "form": 0,
             "level": 62,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_STONE_EDGE",
                 "MOVE_AERIAL_ACE",
-                "MOVE_EARTHQUAKE",
-                "MOVE_DRAGON_CLAW"
+                "MOVE_SANDSTORM",
+                "MOVE_ROCK_SLIDE"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -33,9 +34,9 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_EARTH_POWER",
-                "MOVE_STEALTH_ROCK",
-                "MOVE_DISCHARGE",
-                "MOVE_STONE_EDGE"
+                "MOVE_ROCK_TOMB",
+                "MOVE_STONE_EDGE",
+                "MOVE_IRON_HEAD"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -47,9 +48,9 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_STONE_EDGE",
-                "MOVE_EARTHQUAKE",
                 "MOVE_BRICK_BREAK",
-                "MOVE_FLAMETHROWER"
+                "MOVE_FIRE_PUNCH",
+                "MOVE_ROCK_SLIDE"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -63,7 +64,7 @@
                 "MOVE_HEAD_SMASH",
                 "MOVE_ZEN_HEADBUTT",
                 "MOVE_AVALANCHE",
-                "MOVE_EARTHQUAKE"
+                "MOVE_STONE_EDGE"
             ],
             "iv_scale": 200,
             "ball_seal": 0

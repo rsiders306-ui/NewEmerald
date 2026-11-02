@@ -15,7 +15,9 @@ footprints, and required asset inventory.
 
 The Regional Pokédex appends the families as entries 211 through 273. The
 original 210-entry seen requirement still unlocks the National Pokédex so the
-new postgame entries do not block the vanilla story transition.
+new postgame entries do not block the vanilla story transition. National-Dex
+ratings remain at the highest progress message for 482 through 544 required
+captures and report completion only when all 545 required species are caught.
 
 ## Runtime data
 
@@ -54,7 +56,11 @@ The supplied shiny drafts for some of the original 27 species do not share the
 normal sprite's silhouette. Conversion preserves the normal outline and maps
 the shiny colors onto it, which avoids transparent-pixel corruption but needs
 an art review. Every species currently reuses a documented vanilla cry template
-until authored cries are available.
+until authored cries are available. All 63 independent cry banks are registered
+and compiled at species IDs 494 through 556.
+
+The compiled species-runtime audit passes all 10 archive checks. Egg-move and
+tutor lists remain empty for the new species and are a current content limit.
 
 ## Text and open design decisions
 

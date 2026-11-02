@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,7 +17,7 @@
             "species": "SPECIES_SHUCKLE",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_REST",
                 "MOVE_TOXIC",
@@ -46,10 +47,10 @@
             "level": 61,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EARTHQUAKE",
                 "MOVE_WILL_O_WISP",
                 "MOVE_ERUPTION",
-                "MOVE_PROTECT"
+                "MOVE_PROTECT",
+                "MOVE_FIRE_BLAST"
             ],
             "iv_scale": 200,
             "ball_seal": 0

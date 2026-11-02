@@ -33,9 +33,9 @@
             "item": "ITEM_NONE",
             "moves": [
                 "MOVE_FLASH_CANNON",
-                "MOVE_ICE_FANG",
-                "MOVE_EARTHQUAKE",
-                "MOVE_SANDSTORM"
+                "MOVE_ROCK_SLIDE",
+                "MOVE_SANDSTORM",
+                "MOVE_IRON_TAIL"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -58,7 +58,7 @@
             "species": "SPECIES_OXGUARD",
             "form": 0,
             "level": 41,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_DOUBLE_KICK",
                 "MOVE_STOMP",

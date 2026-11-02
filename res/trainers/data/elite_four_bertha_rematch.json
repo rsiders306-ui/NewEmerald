@@ -8,10 +8,39 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
+        {
+            "species": "SPECIES_HIPPOWDON",
+            "form": 0,
+            "level": 68,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_STONE_EDGE",
+                "MOVE_CRUNCH",
+                "MOVE_YAWN"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLISCOR",
+            "form": 0,
+            "level": 69,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ICE_FANG",
+                "MOVE_FIRE_FANG",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_WING_ATTACK"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
+        },
         {
             "species": "SPECIES_WHISCASH",
             "form": 0,
@@ -27,43 +56,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLISCOR",
-            "form": 0,
-            "level": 69,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_ICE_FANG",
-                "MOVE_FIRE_FANG",
-                "MOVE_THUNDER_FANG"
-            ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_HIPPOWDON",
-            "form": 0,
-            "level": 68,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_STONE_EDGE",
-                "MOVE_CRUNCH",
-                "MOVE_YAWN"
-            ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
             "species": "SPECIES_GOLEM",
             "form": 0,
             "level": 68,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EARTHQUAKE",
                 "MOVE_FIRE_PUNCH",
                 "MOVE_THUNDER_PUNCH",
-                "MOVE_SANDSTORM"
+                "MOVE_SANDSTORM",
+                "MOVE_STONE_EDGE"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -74,10 +75,10 @@
             "level": 71,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_EARTHQUAKE",
                 "MOVE_ROCK_WRECKER",
                 "MOVE_MEGAHORN",
-                "MOVE_AVALANCHE"
+                "MOVE_AVALANCHE",
+                "MOVE_STONE_EDGE"
             ],
             "iv_scale": 250,
             "ball_seal": 0

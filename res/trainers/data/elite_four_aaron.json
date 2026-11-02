@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,7 +17,7 @@
             "species": "SPECIES_YANMEGA",
             "form": 0,
             "level": 49,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_AIR_SLASH",
                 "MOVE_BUG_BUZZ",
@@ -35,7 +36,7 @@
                 "MOVE_IRON_HEAD",
                 "MOVE_X_SCISSOR",
                 "MOVE_NIGHT_SLASH",
-                "MOVE_QUICK_ATTACK"
+                "MOVE_LIGHT_SCREEN"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -86,7 +87,7 @@
             "species": "SPECIES_AUROROTH",
             "form": 0,
             "level": 53,
-            "item": "ITEM_NONE",
+            "item": "ITEM_FOCUS_SASH",
             "moves": [
                 "MOVE_LIGHT_SCREEN",
                 "MOVE_TAILWIND",

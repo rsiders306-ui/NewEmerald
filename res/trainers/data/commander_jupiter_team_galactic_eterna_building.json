@@ -17,7 +17,8 @@
             "moves": [
                 "MOVE_GIGA_DRAIN",
                 "MOVE_WING_ATTACK",
-                "MOVE_BITE"
+                "MOVE_BITE",
+                "MOVE_AIR_CUTTER"
             ],
             "iv_scale": 100,
             "ball_seal": 0
@@ -28,10 +29,10 @@
             "level": 23,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_NIGHT_SLASH",
                 "MOVE_POISON_GAS",
                 "MOVE_SCREECH",
-                "MOVE_SMOKE_SCREEN"
+                "MOVE_SMOKE_SCREEN",
+                "MOVE_SUCKER_PUNCH"
             ],
             "iv_scale": 100,
             "ball_seal": 0

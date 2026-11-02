@@ -39,7 +39,7 @@
             "species": "SPECIES_PUFFLURRY",
             "form": 0,
             "level": 17,
-            "item": "ITEM_NONE",
+            "item": "ITEM_ORAN_BERRY",
             "moves": [
                 "MOVE_POWDER_SNOW",
                 "MOVE_QUICK_ATTACK",

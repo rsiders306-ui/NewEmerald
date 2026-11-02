@@ -6,7 +6,8 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT",
-        "AI_FLAG_SETUP_FIRST_TURN"
+        "AI_FLAG_SETUP_FIRST_TURN",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -14,7 +15,7 @@
             "species": "SPECIES_BRONZOR",
             "form": 0,
             "level": 44,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_GYRO_BALL",
                 "MOVE_EXTRASENSORY",

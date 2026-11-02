@@ -17,10 +17,10 @@
             "level": 34,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_SLASH",
                 "MOVE_ICE_PUNCH",
                 "MOVE_QUICK_ATTACK",
-                "MOVE_SCREECH"
+                "MOVE_SCREECH",
+                "MOVE_PUNISHMENT"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -57,7 +57,7 @@
             "species": "SPECIES_TERRAPTOR",
             "form": 0,
             "level": 36,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_SAND_TOMB",
                 "MOVE_AGILITY",

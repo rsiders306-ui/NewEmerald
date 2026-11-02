@@ -17,6 +17,6 @@ original and resulting party sizes, level, family, stage, and story-boss flag.
 63 trainers still match this manifest. The broader party audit continues to
 enforce the two-Pokémon minimum required by global Double Battles.
 
-The structural pass compiles and is fully covered by automated checks. Runtime
-difficulty, moveset synergy, held items, and pacing still need emulator
-playtesting and a full-game balance pass.
+The structural pass, reviewed major-team balance, and whole-game AI progression
+compile and pass automated checks. Runtime difficulty, EXP pacing, held-item
+tuning, and inherited ordinary-team warnings still need emulator playtesting.

@@ -27,12 +27,9 @@ Platinum US Rev 1 before it is used as a patch base.
 
 ## Validation
 
-Run every project audit and generate the consolidated report with:
+After building the ROM and release patch, run the consolidated report with:
 
 ```sh
-for audit in tools/beacondex/*_audit.py; do
-    python3 "$audit"
-done
 python3 tools/beacondex/integration_report.py
 ```
 
@@ -80,4 +77,5 @@ The supported base identity and current artifact hashes are recorded in
 The ROM, sprites, icons, footprints, and audio compile from source. Runtime
 playthrough evidence still requires a Nintendo DS emulator; the cloud image
 used for this build does not include one. Fresh saves are required until a
-vanilla-save migration is implemented and tested.
+vanilla-save migration is implemented and tested. Cry audio uses documented
+templates, and the new species' egg-move and tutor lists remain empty.

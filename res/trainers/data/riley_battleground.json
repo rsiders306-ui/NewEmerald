@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,11 +17,11 @@
             "species": "SPECIES_ABSOL",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_PSYCHO_CUT",
                 "MOVE_NIGHT_SLASH",
-                "MOVE_SWORDS_DANCE",
+                "MOVE_ROCK_SLIDE",
                 "MOVE_QUICK_ATTACK"
             ],
             "iv_scale": 200,

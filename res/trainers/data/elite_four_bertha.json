@@ -8,10 +8,39 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
+        {
+            "species": "SPECIES_HIPPOWDON",
+            "form": 0,
+            "level": 52,
+            "item": "ITEM_SITRUS_BERRY",
+            "moves": [
+                "MOVE_EARTHQUAKE",
+                "MOVE_STONE_EDGE",
+                "MOVE_CRUNCH",
+                "MOVE_YAWN"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_GLISCOR",
+            "form": 0,
+            "level": 53,
+            "item": "ITEM_NONE",
+            "moves": [
+                "MOVE_ICE_FANG",
+                "MOVE_FIRE_FANG",
+                "MOVE_THUNDER_FANG",
+                "MOVE_ROCK_SLIDE"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
+        },
         {
             "species": "SPECIES_WHISCASH",
             "form": 0,
@@ -27,29 +56,15 @@
             "ball_seal": 0
         },
         {
-            "species": "SPECIES_GLISCOR",
+            "species": "SPECIES_MEADOWMIRA",
             "form": 0,
-            "level": 53,
+            "level": 55,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_ICE_FANG",
-                "MOVE_FIRE_FANG",
-                "MOVE_THUNDER_FANG"
-            ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_HIPPOWDON",
-            "form": 0,
-            "level": 52,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_STONE_EDGE",
-                "MOVE_CRUNCH",
-                "MOVE_YAWN"
+                "MOVE_EARTH_POWER",
+                "MOVE_DAZZLING_GLEAM",
+                "MOVE_HELPING_HAND",
+                "MOVE_HEALING_WISH"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -60,7 +75,7 @@
             "level": 52,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EARTHQUAKE",
+                "MOVE_ROCK_SLIDE",
                 "MOVE_FIRE_PUNCH",
                 "MOVE_THUNDER_PUNCH",
                 "MOVE_SANDSTORM"
@@ -74,24 +89,10 @@
             "level": 55,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_EARTHQUAKE",
-                "MOVE_ROCK_WRECKER",
-                "MOVE_MEGAHORN",
-                "MOVE_AVALANCHE"
-            ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_MEADOWMIRA",
-            "form": 0,
-            "level": 55,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_SWIFT",
-                "MOVE_EARTHQUAKE",
-                "MOVE_CALM_MIND",
-                "MOVE_HEALING_WISH"
+                "MOVE_STONE_EDGE",
+                "MOVE_ROCK_SLIDE",
+                "MOVE_AVALANCHE",
+                "MOVE_HAMMER_ARM"
             ],
             "iv_scale": 250,
             "ball_seal": 0

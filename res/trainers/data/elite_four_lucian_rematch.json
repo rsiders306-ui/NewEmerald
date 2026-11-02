@@ -9,7 +9,8 @@
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
         "AI_FLAG_EXPERT",
-        "AI_FLAG_SETUP_FIRST_TURN"
+        "AI_FLAG_SETUP_FIRST_TURN",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -17,7 +18,7 @@
             "species": "SPECIES_MR_MIME",
             "form": 0,
             "level": 69,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_THUNDERBOLT",
@@ -35,7 +36,7 @@
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_SHADOW_BALL",
-                "MOVE_QUICK_ATTACK",
+                "MOVE_HELPING_HAND",
                 "MOVE_SIGNAL_BEAM"
             ],
             "iv_scale": 250,
@@ -49,22 +50,8 @@
             "moves": [
                 "MOVE_PSYCHIC",
                 "MOVE_GYRO_BALL",
-                "MOVE_EARTHQUAKE",
-                "MOVE_CALM_MIND"
-            ],
-            "iv_scale": 250,
-            "ball_seal": 0
-        },
-        {
-            "species": "SPECIES_ALAKAZAM",
-            "form": 0,
-            "level": 72,
-            "item": "ITEM_NONE",
-            "moves": [
-                "MOVE_PSYCHIC",
-                "MOVE_ENERGY_BALL",
-                "MOVE_FOCUS_BLAST",
-                "MOVE_RECOVER"
+                "MOVE_TRICK_ROOM",
+                "MOVE_DREAM_EATER"
             ],
             "iv_scale": 250,
             "ball_seal": 0
@@ -79,6 +66,20 @@
                 "MOVE_PSYCHO_CUT",
                 "MOVE_LEAF_BLADE",
                 "MOVE_STONE_EDGE"
+            ],
+            "iv_scale": 250,
+            "ball_seal": 0
+        },
+        {
+            "species": "SPECIES_ALAKAZAM",
+            "form": 0,
+            "level": 72,
+            "item": "ITEM_LEFTOVERS",
+            "moves": [
+                "MOVE_PSYCHIC",
+                "MOVE_ENERGY_BALL",
+                "MOVE_FOCUS_BLAST",
+                "MOVE_RECOVER"
             ],
             "iv_scale": 250,
             "ball_seal": 0

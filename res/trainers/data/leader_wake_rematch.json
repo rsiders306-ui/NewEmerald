@@ -8,7 +8,8 @@
     "ai_flags": [
         "AI_FLAG_BASIC",
         "AI_FLAG_EVAL_ATTACK",
-        "AI_FLAG_EXPERT"
+        "AI_FLAG_EXPERT",
+        "AI_FLAG_CHECK_HP"
     ],
     "double_battle": false,
     "party": [
@@ -16,12 +17,12 @@
             "species": "SPECIES_SHARPEDO",
             "form": 0,
             "level": 61,
-            "item": "ITEM_NONE",
+            "item": "ITEM_SITRUS_BERRY",
             "moves": [
                 "MOVE_AQUA_JET",
                 "MOVE_NIGHT_SLASH",
                 "MOVE_SLASH",
-                "MOVE_ENDURE"
+                "MOVE_RAIN_DANCE"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -32,10 +33,10 @@
             "level": 61,
             "item": "ITEM_NONE",
             "moves": [
-                "MOVE_EARTHQUAKE",
                 "MOVE_STONE_EDGE",
-                "MOVE_YAWN",
-                "MOVE_SURF"
+                "MOVE_ICY_WIND",
+                "MOVE_MUDDY_WATER",
+                "MOVE_EARTH_POWER"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -49,7 +50,7 @@
                 "MOVE_AQUA_TAIL",
                 "MOVE_AVALANCHE",
                 "MOVE_BITE",
-                "MOVE_GIGA_IMPACT"
+                "MOVE_WATERFALL"
             ],
             "iv_scale": 200,
             "ball_seal": 0
@@ -74,10 +75,10 @@
             "level": 65,
             "item": "ITEM_SITRUS_BERRY",
             "moves": [
-                "MOVE_SURF",
                 "MOVE_ICE_BEAM",
                 "MOVE_ENERGY_BALL",
-                "MOVE_FOCUS_BLAST"
+                "MOVE_FOCUS_BLAST",
+                "MOVE_HYDRO_PUMP"
             ],
             "iv_scale": 200,
             "ball_seal": 0
