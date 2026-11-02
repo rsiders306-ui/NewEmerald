@@ -23,4 +23,8 @@ python3 bps_patch.py apply CLEAN_PLATINUM.nds \
 
 Expected patched ROM SHA-256
 ---------------------------
-9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96
+e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234
+
+This corrected build reaches the Pokemon Platinum title animation in melonDS
+1.1 and DeSmuME 0.9.13. The previous 9c54fe... target is revoked because its
+expanded sound archive was malformed.
