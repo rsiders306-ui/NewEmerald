@@ -12320,135 +12320,261 @@
 			"fileName":	"arceus/cry.sbnk",
 			"waves":	["WAVE_ARC_PV518", "", "", ""]
 		}, {
+			"name":	"BANK_BDX_494",
+			"fileName":	"glimbark/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_494", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_495",
+			"fileName":	"wardmane/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_495", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_496",
+			"fileName":	"siderion/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_496", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_497",
+			"fileName":	"calflank/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_497", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_498",
+			"fileName":	"gridiruff/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_498", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_499",
+			"fileName":	"oxguard/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_499", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_500",
+			"fileName":	"zephylet/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_500", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_501",
+			"fileName":	"galecrest/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_501", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_502",
+			"fileName":	"terraptor/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_502", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_503",
+			"fileName":	"trillkit/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_503", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_504",
+			"fileName":	"cantacat/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_504", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_505",
+			"fileName":	"ariapurr/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_505", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_506",
+			"fileName":	"medijest/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_506", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_507",
+			"fileName":	"chartickle/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_507", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_508",
+			"fileName":	"sermedic/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_508", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_509",
+			"fileName":	"rookit/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_509", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_510",
+			"fileName":	"vroombrel/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_510", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_511",
+			"fileName":	"talladevil/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_511", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_512",
+			"fileName":	"groovette/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_512", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_513",
+			"fileName":	"sautene/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_513", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_514",
+			"fileName":	"veloura/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_514", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_515",
+			"fileName":	"emberrest/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_515", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_516",
+			"fileName":	"forguard/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_516", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_517",
+			"fileName":	"aegicare/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_517", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_518",
+			"fileName":	"timblet/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_518", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_519",
+			"fileName":	"nestelle/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_519", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_520",
+			"fileName":	"heartistle/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_520", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_521",
+			"fileName":	"nilecub/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_521", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_522",
+			"fileName":	"reedmane/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_522", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_523",
+			"fileName":	"tidelion/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_523", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_524",
+			"fileName":	"snugrime/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_524", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_525",
+			"fileName":	"cryocoon/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_525", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_526",
+			"fileName":	"auroroth/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_526", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_527",
+			"fileName":	"fleurrit/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_527", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_528",
+			"fileName":	"shiverskew/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_528", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_529",
+			"fileName":	"nivispect/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_529", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_530",
+			"fileName":	"emberimp/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_530", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_531",
+			"fileName":	"gleamber/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_531", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_532",
+			"fileName":	"hearthalo/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_532", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_533",
+			"fileName":	"sluship/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_533", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_534",
+			"fileName":	"toxifloe/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_534", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_535",
+			"fileName":	"venofrost/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_535", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_536",
+			"fileName":	"driblit/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_536", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_537",
+			"fileName":	"wyrmolt/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_537", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_538",
+			"fileName":	"drakocoon/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_538", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_539",
+			"fileName":	"shardshade/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_539", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_540",
+			"fileName":	"cairnraith/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_540", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_541",
+			"fileName":	"gravemourn/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_541", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_542",
+			"fileName":	"spriglet/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_542", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_543",
+			"fileName":	"loambelle/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_543", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_544",
+			"fileName":	"meadowmira/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_544", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_545",
+			"fileName":	"tinham/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_545", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_546",
+			"fileName":	"cogmunk/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_546", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_547",
+			"fileName":	"ferralume/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_547", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_548",
+			"fileName":	"pufflurry/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_548", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_549",
+			"fileName":	"burrowmuff/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_549", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_550",
+			"fileName":	"tundrindle/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_550", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_551",
+			"fileName":	"niblit/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_551", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_552",
+			"fileName":	"loomble/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_552", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_553",
+			"fileName":	"silkricket/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_553", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_554",
+			"fileName":	"pebpup/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_554", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_555",
+			"fileName":	"craghound/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_555", "", "", ""]
+		}, {
+			"name":	"BANK_BDX_556",
+			"fileName":	"cairncrown/cry.sbnk",
+			"waves":	["WAVE_ARC_BDX_556", "", "", ""]
+		}, {
 			"name":	"BANK_PV516_SKY",
 			"fileName":	"shaymin/forms/sky/cry.sbnk",
 			"waves":	["WAVE_ARC_PV516_SKY", "", "", ""]
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
 		}, {
 			"name":	""
 		}, {
@@ -14412,134 +14538,197 @@
 			"name":	"WAVE_ARC_PV518",
 			"fileName":	"arceus/cry.swar"
 		}, {
+			"name":	"WAVE_ARC_BDX_494",
+			"fileName":	"glimbark/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_495",
+			"fileName":	"wardmane/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_496",
+			"fileName":	"siderion/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_497",
+			"fileName":	"calflank/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_498",
+			"fileName":	"gridiruff/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_499",
+			"fileName":	"oxguard/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_500",
+			"fileName":	"zephylet/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_501",
+			"fileName":	"galecrest/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_502",
+			"fileName":	"terraptor/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_503",
+			"fileName":	"trillkit/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_504",
+			"fileName":	"cantacat/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_505",
+			"fileName":	"ariapurr/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_506",
+			"fileName":	"medijest/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_507",
+			"fileName":	"chartickle/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_508",
+			"fileName":	"sermedic/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_509",
+			"fileName":	"rookit/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_510",
+			"fileName":	"vroombrel/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_511",
+			"fileName":	"talladevil/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_512",
+			"fileName":	"groovette/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_513",
+			"fileName":	"sautene/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_514",
+			"fileName":	"veloura/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_515",
+			"fileName":	"emberrest/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_516",
+			"fileName":	"forguard/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_517",
+			"fileName":	"aegicare/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_518",
+			"fileName":	"timblet/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_519",
+			"fileName":	"nestelle/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_520",
+			"fileName":	"heartistle/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_521",
+			"fileName":	"nilecub/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_522",
+			"fileName":	"reedmane/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_523",
+			"fileName":	"tidelion/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_524",
+			"fileName":	"snugrime/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_525",
+			"fileName":	"cryocoon/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_526",
+			"fileName":	"auroroth/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_527",
+			"fileName":	"fleurrit/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_528",
+			"fileName":	"shiverskew/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_529",
+			"fileName":	"nivispect/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_530",
+			"fileName":	"emberimp/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_531",
+			"fileName":	"gleamber/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_532",
+			"fileName":	"hearthalo/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_533",
+			"fileName":	"sluship/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_534",
+			"fileName":	"toxifloe/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_535",
+			"fileName":	"venofrost/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_536",
+			"fileName":	"driblit/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_537",
+			"fileName":	"wyrmolt/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_538",
+			"fileName":	"drakocoon/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_539",
+			"fileName":	"shardshade/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_540",
+			"fileName":	"cairnraith/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_541",
+			"fileName":	"gravemourn/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_542",
+			"fileName":	"spriglet/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_543",
+			"fileName":	"loambelle/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_544",
+			"fileName":	"meadowmira/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_545",
+			"fileName":	"tinham/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_546",
+			"fileName":	"cogmunk/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_547",
+			"fileName":	"ferralume/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_548",
+			"fileName":	"pufflurry/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_549",
+			"fileName":	"burrowmuff/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_550",
+			"fileName":	"tundrindle/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_551",
+			"fileName":	"niblit/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_552",
+			"fileName":	"loomble/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_553",
+			"fileName":	"silkricket/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_554",
+			"fileName":	"pebpup/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_555",
+			"fileName":	"craghound/cry.swar"
+		}, {
+			"name":	"WAVE_ARC_BDX_556",
+			"fileName":	"cairncrown/cry.swar"
+		}, {
 			"name":	"WAVE_ARC_PV516_SKY",
 			"fileName":	"shaymin/forms/sky/cry.swar"
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
-		}, {
-			"name":	""
 		}, {
 			"name":	""
 		}, {
