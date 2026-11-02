@@ -1,9 +1,11 @@
 # BeaconDex wild distribution
 
 Every BeaconDex species has one permanent encounter slot. The placement pass uses
-48 maps across the main story and postgame, keeps all original Pokémon available
+50 maps across the main story and postgame, keeps all original Pokémon available
 somewhere in Sinnoh, and leaves encounter levels unchanged so the regional level
-curve remains intact.
+curve remains intact. Turtwig, Chimchar, and Piplup also have rare recovery
+encounters so every species omitted from the player's initial pair remains
+obtainable in the same save.
 
 The first forms appear on early or biome-appropriate routes. Middle forms appear
 in midgame habitats, and most final forms are rare encounters in late-game or
@@ -34,6 +36,19 @@ weights. Almost all additions occupy the 5%, 4%, or 1% slots. Tidelion uses the
 | Pufflurry | Route 205 North | Route 216 | Snowpoint Temple |
 | Niblit | Route 202 | Route 214 | Route 229 |
 | Pebpup | Route 207 | Mt. Coronet 3F | Stark Mountain |
+
+## Unchosen Sinnoh starters
+
+| Species | Location | Encounter |
+| --- | --- | --- |
+| Turtwig | Great Marsh Area 2 | 1% land slot, level 31 |
+| Chimchar | Fuego Ironworks exterior | 1% land slot, level 31 |
+| Piplup | Lake Acuity | 1% Surf slot, levels 20–40 |
+
+Driblit uses Great Marsh Area 1 land slot 10. Great Marsh Safari encounters
+always replace land slots 6 and 7 with the daily species, so those slots cannot
+host a permanent placement. The audit models that runtime replacement and checks
+all 15 possible initial starter pairs.
 
 The exact map, table, slot, level, replaced original species, and habitat note are
 recorded in `data/beacondex/wild_distribution.json`. Run

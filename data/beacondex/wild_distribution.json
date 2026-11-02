@@ -1,5 +1,5 @@
 {
-    "schema": "beacondex-wild-distribution-v1",
+    "schema": "beacondex-wild-distribution-v2",
     "policy": {
         "all_custom_species_have_one_permanent_wild_slot": true,
         "vanilla_species_removed_globally": false,
@@ -24,7 +24,9 @@
             4,
             1
         ],
-        "levels_are_inherited_from_replaced_slots": true
+        "levels_are_inherited_from_replaced_slots": true,
+        "all_six_starter_choices_obtainable_after_selection": true,
+        "runtime_dynamic_slots_audited": true
     },
     "placements": [
         {
@@ -538,11 +540,11 @@
             "stage": 1,
             "map": "great_marsh_1",
             "table": "land_encounters",
-            "slot": 6,
-            "encounter_weight_percent": 5,
-            "level": 28,
-            "replaced_species": "SPECIES_WOOPER",
-            "habitat_note": "humid marsh"
+            "slot": 10,
+            "encounter_weight_percent": 1,
+            "level": 31,
+            "replaced_species": "SPECIES_YANMA",
+            "habitat_note": "Great Marsh reeds; stable slot outside daily replacement"
         },
         {
             "species": "SPECIES_WYRMOLT",
@@ -783,6 +785,39 @@
             "level": 51,
             "replaced_species": "SPECIES_NUMEL",
             "habitat_note": "postgame summit approach"
+        }
+    ],
+    "starter_recovery_placements": [
+        {
+            "species": "SPECIES_TURTWIG",
+            "map": "great_marsh_2",
+            "table": "land_encounters",
+            "slot": 11,
+            "encounter_weight_percent": 1,
+            "level": 31,
+            "replaced_species": "SPECIES_TANGELA",
+            "habitat_note": "rare Great Marsh grove"
+        },
+        {
+            "species": "SPECIES_CHIMCHAR",
+            "map": "fuego_ironworks_outside",
+            "table": "land_encounters",
+            "slot": 10,
+            "encounter_weight_percent": 1,
+            "level": 31,
+            "replaced_species": "SPECIES_FLOATZEL",
+            "habitat_note": "rare fire starter near the ironworks"
+        },
+        {
+            "species": "SPECIES_PIPLUP",
+            "map": "lake_acuity",
+            "table": "surf_encounters",
+            "slot": 4,
+            "encounter_weight_percent": 1,
+            "level_min": 20,
+            "level_max": 40,
+            "replaced_species": "SPECIES_GOLDUCK",
+            "habitat_note": "rare cold-lake surf encounter"
         }
     ]
 }

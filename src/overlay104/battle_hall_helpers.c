@@ -1384,7 +1384,7 @@ FieldBattleDTO *BattleHall_SetupBattle(BattleHall *battleHall, FieldFrontierDTO 
         rank = HALL_MAX_TYPE_RANK - 1;
     }
 
-    u16 aiMask = BattleHall_GetAIMask(battleHall, offset, rank);
+    u16 aiMask = BattleHall_GetAIMask(battleHall, battleHall->currentBattle, rank);
 
     for (i = 0; i < MAX_BATTLERS; i++) {
         battleDTO->trainer[i].header.aiMask = aiMask;

@@ -41,6 +41,7 @@ REQUIRED_SNIPPETS = {
     "src/overlay104/battle_hall_helpers.c": (
         "BattleHall_SetMonsPersonality(battleHall, offset + i)",
         "&battleHall->opponentMons[offset + i]",
+        "BattleHall_GetAIMask(battleHall, battleHall->currentBattle, rank)",
         "return BattleHall_GetHighestLevelInParty(battleHall) / 10;",
     ),
     "res/text/battle_hall.json": (
