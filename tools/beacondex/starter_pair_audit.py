@@ -12,6 +12,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ROUTE_201 = REPO_ROOT / "res/field/scripts/scripts_route_201.s"
+ROUTE_201_TEXT = REPO_ROOT / "res/text/route_201.json"
 TYPE_CHART = REPO_ROOT / "src/battle/battle_lib.c"
 TRAINER_ROOT = REPO_ROOT / "res/trainers/data"
 
@@ -22,6 +23,15 @@ STARTERS = {
     "SPECIES_TURTWIG": "turtwig",
     "SPECIES_CHIMCHAR": "chimchar",
     "SPECIES_PIPLUP": "piplup",
+}
+
+TYPED_MENU_LABELS = {
+    "Route201_Text_StarterGlimbark": "GLIMBARK  Fighting",
+    "Route201_Text_StarterCalflank": "CALFLANK  Rock",
+    "Route201_Text_StarterZephylet": "ZEPHYLET  Flying",
+    "Route201_Text_StarterTurtwig": "TURTWIG  Grass",
+    "Route201_Text_StarterChimchar": "CHIMCHAR  Fire",
+    "Route201_Text_StarterPiplup": "PIPLUP  Water",
 }
 
 EVOLUTIONS = {
@@ -471,6 +481,19 @@ def audit_custom_starter_fallbacks(violations: list[str]) -> int:
     return checks
 
 
+def audit_typed_menu_labels(violations: list[str]) -> int:
+    messages = {
+        entry["id"]: entry.get("en_US")
+        for entry in json.loads(ROUTE_201_TEXT.read_text(encoding="utf-8"))["messages"]
+    }
+    for message_id, expected in TYPED_MENU_LABELS.items():
+        if messages.get(message_id) != expected:
+            violations.append(
+                f"{message_id} must identify the starter and base type as {expected!r}"
+            )
+    return len(TYPED_MENU_LABELS)
+
+
 def main() -> int:
     args = parse_args()
     violations: list[str] = []
@@ -537,6 +560,7 @@ def main() -> int:
 
     rival_records, runtime_rosters = audit_rival_rosters(results, violations)
     custom_fallback_checks = audit_custom_starter_fallbacks(violations)
+    typed_menu_labels = audit_typed_menu_labels(violations)
 
     report = {
         "schema": "beacondex-starter-pair-v1",
@@ -551,6 +575,7 @@ def main() -> int:
         "rival_records": rival_records,
         "runtime_rosters": runtime_rosters,
         "custom_fallback_checks": custom_fallback_checks,
+        "typed_menu_labels": typed_menu_labels,
         "violations": violations,
         "pairs": results,
     }
@@ -567,7 +592,8 @@ def main() -> int:
             f"valid: {report['valid_combinations']}; "
             f"Barry records: {report['rival_records']}; "
             f"runtime rosters: {report['runtime_rosters']}; "
-            f"custom fallbacks: {report['custom_fallback_checks']}"
+            f"custom fallbacks: {report['custom_fallback_checks']}; "
+            f"typed menu labels: {report['typed_menu_labels']}"
         )
         print(f"violations: {len(violations)}")
         for violation in violations:

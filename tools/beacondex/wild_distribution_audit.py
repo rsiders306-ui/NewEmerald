@@ -75,6 +75,9 @@ def main() -> int:
     species_manifest = json.loads(
         (repo / "data/beacondex/species_normalized.json").read_text(encoding="utf-8")
     )["species"]
+    original_wild_manifest = json.loads(
+        (repo / "data/beacondex/original_wild_species.json").read_text(encoding="utf-8")
+    )
     species_by_family_stage = {
         (row["family_index"], row["stage"]): row for row in species_manifest
     }
@@ -98,6 +101,20 @@ def main() -> int:
                 status = dynamic_slot_status(map_name, table, slot_index)
                 if status is None or status[0] != "always":
                     reachable_encounter_counts[species_name] += 1
+
+    original_wild_species = set(original_wild_manifest["species"])
+    missing_original_species = sorted(
+        species_name
+        for species_name in original_wild_species
+        if reachable_encounter_counts[species_name] < 1
+    )
+    if original_wild_manifest["species_count"] != len(original_wild_species):
+        failures.append("original wild-species manifest count is inconsistent")
+    if missing_original_species:
+        failures.append(
+            "original wild species lost from all reachable encounter tables: "
+            f"{missing_original_species}"
+        )
 
     conditional_dynamic_slots = []
     for row in placements + starter_recovery:
@@ -187,6 +204,10 @@ def main() -> int:
         "water_placements": sum(row["table"] != "land_encounters" for row in placements),
         "starter_recovery_placements": len(starter_recovery),
         "starter_pair_combinations_checked": len(list(combinations(STARTER_CHOICES, 2))),
+        "original_wild_species_preserved": len(original_wild_species)
+        - len(missing_original_species),
+        "original_wild_species_expected": len(original_wild_species),
+        "missing_original_wild_species": missing_original_species,
         "conditional_dynamic_slots": conditional_dynamic_slots,
         "failures": failures,
     }
