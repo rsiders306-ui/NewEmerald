@@ -106,7 +106,8 @@ BOOL FrontierScrCmd_OpenBattleHallApp(FrontierScriptContext *ctx)
 
     Party_AddPokemon(args->party, mon);
 
-    if (args->challengeType == FRONTIER_CHALLENGE_DOUBLE) {
+    if (args->challengeType == FRONTIER_CHALLENGE_SINGLE
+        || args->challengeType == FRONTIER_CHALLENGE_DOUBLE) {
         mon = Party_GetPokemonBySlotIndex(party, battleHall->partySlots[1]);
         Party_AddPokemon(args->party, mon);
     } else if (args->challengeType == FRONTIER_CHALLENGE_MULTI || args->challengeType == FRONTIER_CHALLENGE_MULTI_WFC) {

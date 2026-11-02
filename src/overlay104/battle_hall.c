@@ -156,7 +156,7 @@ static void SetupNextOpponent(BattleHall *battleHall)
     }
 
     Pokemon *playersMon = Party_GetPokemonBySlotIndex(battleHall->party, 0);
-    BattleHall_PickNextOpponentPokemon(1, battleHall->selectedType, typeRank, battleHall->currentBattle, Pokemon_GetValue(playersMon, MON_DATA_SPECIES, NULL), battleHall->monIndices, battleType);
+    BattleHall_PickNextOpponentPokemon(BattleHall_GetOpponentPartySize(battleHall->challengeType), battleHall->selectedType, typeRank, battleHall->currentBattle, Pokemon_GetValue(playersMon, MON_DATA_SPECIES, NULL), battleHall->monIndices, battleType);
 }
 
 void BattleHall_Free(BattleHall *battleHall)

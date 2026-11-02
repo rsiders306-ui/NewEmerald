@@ -1395,9 +1395,9 @@ FieldBattleDTO *BattleHall_SetupBattle(BattleHall *battleHall, FieldFrontierDTO 
     mon = Pokemon_New(HEAP_ID_FIELD2);
 
     for (i = 0; i < opponentPartySize; i++) {
-        while (BattleHall_SetMonsPersonality(battleHall, offset) != 0) {}
+        while (BattleHall_SetMonsPersonality(battleHall, offset + i) != 0) {}
 
-        FrontierPokemon_InitPokemon(&battleHall->opponentMons[offset], mon, BattleHall_GetOpponentLevel(battleHall, rank));
+        FrontierPokemon_InitPokemon(&battleHall->opponentMons[offset + i], mon, BattleHall_GetOpponentLevel(battleHall, rank));
 
         Pokemon_CalcAbility(mon);
         FieldBattleDTO_AddPokemonToBattler(battleDTO, mon, BATTLER_ENEMY_1);
@@ -1447,7 +1447,6 @@ static u32 BattleHall_GetBattleType(u8 challengeType)
 {
     switch (challengeType) {
     case FRONTIER_CHALLENGE_SINGLE:
-        return BATTLE_TYPE_FRONTIER_SINGLES;
     case FRONTIER_CHALLENGE_DOUBLE:
         return BATTLE_TYPE_FRONTIER_DOUBLES;
     case FRONTIER_CHALLENGE_MULTI:
@@ -1461,7 +1460,8 @@ static u32 BattleHall_GetBattleType(u8 challengeType)
 
 u8 BattleHall_GetPlayerPartySize(u8 challengeType)
 {
-    if (challengeType == FRONTIER_CHALLENGE_DOUBLE) {
+    if (challengeType == FRONTIER_CHALLENGE_SINGLE
+        || challengeType == FRONTIER_CHALLENGE_DOUBLE) {
         return 2;
     }
     return 1;
@@ -1469,7 +1469,8 @@ u8 BattleHall_GetPlayerPartySize(u8 challengeType)
 
 u8 BattleHall_GetOpponentPartySize(u8 challengeType)
 {
-    if (challengeType == FRONTIER_CHALLENGE_DOUBLE) {
+    if (challengeType == FRONTIER_CHALLENGE_SINGLE
+        || challengeType == FRONTIER_CHALLENGE_DOUBLE) {
         return 2;
     }
     return 1;
@@ -1542,11 +1543,7 @@ BOOL BattleHall_IsMultiPlayerChallenge(u8 challengeType)
 
 u8 BattleHall_GetHallMatronTypeRank(BattleHall *battleHall)
 {
-    Party *party = SaveData_GetParty(battleHall->saveData);
-    Pokemon *mon = Party_GetPokemonBySlotIndex(party, battleHall->partySlots[0]);
-    int level = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
-
-    return level / 10;
+    return BattleHall_GetHighestLevelInParty(battleHall) / 10;
 }
 
 static u8 BattleHall_GetIVsOfOpponentAtRank(u8 typeRank)

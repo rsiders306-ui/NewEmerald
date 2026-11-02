@@ -16,9 +16,11 @@ Fairy is appended after Dark so all vanilla type IDs remain stable. Battles use
 the standard Fairy offense and defense relationships. Steel retains its Gen IV
 Ghost and Dark resistances so unrelated vanilla matchups stay unchanged.
 
-Battle Hall initially retains its original selectable type categories. Its UI
-and packed rank data have a fixed 17-type design; Fairy Pokémon can battle there,
-but a Fairy rank category needs a separate save/UI expansion.
+Battle Hall retains its original selectable type categories. Its UI and packed
+rank data have a fixed 17-type design; Fairy Pokémon can battle there, but a
+Fairy rank category needs a separate save/UI expansion. The main Hall ladder
+now selects two same-species Pokémon and runs physical Double Battles while
+retaining its logical Single record bucket and Matron progression.
 
 ## Trainer doubles
 

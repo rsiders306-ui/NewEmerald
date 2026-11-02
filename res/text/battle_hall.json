@@ -5,7 +5,7 @@
       "id": "BattleHall_Text_WelcomeToSingleDoubleChallenge",
       "en_US": [
         "Welcome to the Battle Hall!\r",
-        "I am your guide to the Single and\n",
+        "I am your guide to our solo\n",
         "Double Battle challenges.\r",
         "Please be aware that these challenges\n",
         "are designed for a single Trainer.\r"
@@ -18,13 +18,14 @@
     {
       "id": "BattleHall_Text_ExplainSingleDoubleChallenge",
       "en_US": [
-        "At the Battle Hall, you may take Single\n",
-        "or Double Battle challenges alone.\r",
-        "For the Single Battle challenge, you\n",
-        "enter one Pokémon of at least Lv. 30.\r",
-        "The Double Battle Challenge requires\n",
-        "you to enter two of the same kind of\f",
-        "Pokémon that are at least Lv. 30 each.\r",
+        "All solo matches at the Battle Hall use\n",
+        "Double Battle rules.\r",
+        "Both challenges require you to enter\n",
+        "two of the same kind of Pokémon\f",
+        "that are at least Lv. 30 each.\r",
+        "STANDARD DOUBLE follows the main Hall\n",
+        "record ladder and includes the Matron.\r",
+        "DOUBLE BATTLE keeps a separate streak.\r",
         "Winning-streak records are kept for\n",
         "individual kinds of Pokémon.\r",
         "That makes it possible for any kind of\n",
@@ -136,7 +137,7 @@
     },
     {
       "id": "BattleHall_Text_SingleBattle",
-      "en_US": "SINGLE BATTLE"
+      "en_US": "STANDARD DOUBLE"
     },
     {
       "id": "BattleHall_Text_DoubleBattle",

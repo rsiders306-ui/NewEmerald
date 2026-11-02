@@ -3,9 +3,9 @@
 ## Engine policy
 
 `FieldBattleDTO_New` adds `BATTLE_TYPE_DOUBLES` to offline trainer battles.
-Wild battles and link battles retain their original formats. Battle Frontier
-battles remain temporarily excluded until the Battle Hall's one-Pokémon party
-selection and record flow can be expanded safely.
+Wild battles and link battles retain their original formats. The five offline
+Battle Frontier facilities construct their native Double Battle formats in
+their own challenge code; the regular field hook continues to exclude them.
 
 The original trainer JSON `double_battle` field still identifies paired
 overworld NPCs. It was not set globally because the field also controls partner

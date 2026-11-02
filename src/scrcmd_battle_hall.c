@@ -311,7 +311,8 @@ static int SubTask_SetupPartyMenu(BattleHallTaskEnv *taskEnv, FieldSystem *field
     partyMenu->minSelectionSlots = 1;
     partyMenu->maxSelectionSlots = 1;
 
-    if (taskEnv->challengeType == FRONTIER_CHALLENGE_DOUBLE) {
+    if (taskEnv->challengeType == FRONTIER_CHALLENGE_SINGLE
+        || taskEnv->challengeType == FRONTIER_CHALLENGE_DOUBLE) {
         partyMenu->minSelectionSlots = 2;
         partyMenu->maxSelectionSlots = 2;
     }

@@ -219,7 +219,6 @@ static u32 BattleCastle_GetBattleType(u8 challengeType)
 {
     switch (challengeType) {
     case FRONTIER_CHALLENGE_SINGLE:
-        return BATTLE_TYPE_FRONTIER_SINGLES;
     case FRONTIER_CHALLENGE_DOUBLE:
         return BATTLE_TYPE_FRONTIER_DOUBLES;
     case FRONTIER_CHALLENGE_MULTI:

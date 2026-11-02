@@ -960,7 +960,7 @@ static u32 BattleTower_GetBattleTypeFromChallengeMode(u8 challengeMode)
     switch (challengeMode) {
     case BATTLE_TOWER_MODE_SINGLE:
     case BATTLE_TOWER_MODE_WIFI:
-        return BATTLE_TYPE_FRONTIER_SINGLES;
+    case BATTLE_TOWER_MODE_5:
     case BATTLE_TOWER_MODE_DOUBLE:
         return BATTLE_TYPE_FRONTIER_DOUBLES;
     case BATTLE_TOWER_MODE_MULTI:

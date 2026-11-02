@@ -222,8 +222,8 @@ BattleHall_HopeToSeeYouAgain:
 
 BattleHall_TryTakeSingleChallenge:
     SetVar VAR_BATTLE_HALL_CHALLENGE_TYPE, FRONTIER_CHALLENGE_SINGLE
-    CallBattleHallLobbyFunction BH_LOBBY_FUNC_CHECK_PARTY_ELIGIBLE, 1, VAR_RESULT
-    GoToIfEq VAR_RESULT, 0, BattleHall_PrintEligbilityRuleOnePokemon
+    CallBattleHallLobbyFunction BH_LOBBY_FUNC_CHECK_PARTY_ELIGIBLE, 2, VAR_RESULT
+    GoToIfEq VAR_RESULT, 0, BattleHall_PrintEligbilityRulesForTwoPokemon
     GoTo BattleHall_SelectPokemon
     End
 
