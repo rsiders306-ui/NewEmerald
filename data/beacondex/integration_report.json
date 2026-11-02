@@ -1,6 +1,6 @@
 {
   "schema": "beacondex-platinum-integration-report-v1",
-  "source_commit": "09242765fff38f4938b817ffd538edef1af38db5",
+  "source_commit": "9e5c0f9af48fe5db4b717f8b0af5fee209d88b9e",
   "exact_patch_base": {
     "title": "POKEMON PL",
     "game_code": "CPUE",
@@ -8597,9 +8597,52 @@
       "built_rom_present": true,
       "built_rom_has_ds_capacity": true,
       "bps_patch_present": true,
-      "bps_round_trip_matches_built_rom": true
+      "bps_round_trip_matches_built_rom": true,
+      "emulator_boot_verified": true
     },
     "audits": {
+      "boot_integrity": {
+        "command": "tools/beacondex/boot_integrity_audit.py",
+        "exit_code": 0,
+        "passed": true,
+        "report": {
+          "schema": "beacondex-boot-integrity-audit-v1",
+          "passed": true,
+          "rom": {
+            "path": "/workspace/NewEmerald/build-cloud-r1/pokeplatinum.us.nds",
+            "size": 134217728,
+            "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234"
+          },
+          "header": {
+            "title": "POKEMON PL",
+            "game_code": "CPUE",
+            "revision": 1,
+            "arm9_offset": 16384,
+            "raw_secure_crc": "0xEA5C",
+            "secure_crc": "0xE8CE",
+            "expected_secure_crc": "0xE8CE",
+            "header_crc": "0x65AD",
+            "expected_header_crc": "0x65AD"
+          },
+          "sound_archive_file_id": 309,
+          "standalone_sdat_matches": true,
+          "sdat": {
+            "size": 8606272,
+            "sha256": "8ed955769d1f517b0bec8906b74d398f894d4e9b950d9d85127797022afbe618",
+            "block_count": 4,
+            "file_count": 2135,
+            "fat_offset": 84940,
+            "file_offset": 119112,
+            "magic_counts": {
+              "SSEQ": 967,
+              "SBNK": 584,
+              "SWAR": 584
+            }
+          },
+          "failures": []
+        },
+        "stderr": ""
+      },
       "trainer_parties": {
         "command": "tools/beacondex/trainer_party_audit.py",
         "exit_code": 0,
@@ -10103,7 +10146,7 @@
         "passed": true,
         "report": {
           "schema": "beacondex-species-runtime-audit-v1",
-          "source_head": "09242765fff38f4938b817ffd538edef1af38db5",
+          "source_head": "9e5c0f9af48fe5db4b717f8b0af5fee209d88b9e",
           "scope": "63 custom species runtime integration; cry SDAT registration and official Fairy move authoring are audited separately",
           "result": "pass",
           "checks_passed": 10,
@@ -25827,14 +25870,14 @@
               "slot": 4,
               "species": "SPECIES_TOGEKISS",
               "level": 60,
-              "move": "MOVE_FOLLOW_ME"
+              "move": "MOVE_THUNDER_WAVE"
             },
             {
               "trainer": "champion_cynthia",
               "slot": 4,
               "species": "SPECIES_TOGEKISS",
               "level": 60,
-              "move": "MOVE_THUNDER_WAVE"
+              "move": "MOVE_FOLLOW_ME"
             },
             {
               "trainer": "champion_cynthia",
@@ -25883,14 +25926,14 @@
               "slot": 4,
               "species": "SPECIES_TOGEKISS",
               "level": 76,
-              "move": "MOVE_FOLLOW_ME"
+              "move": "MOVE_THUNDER_WAVE"
             },
             {
               "trainer": "champion_cynthia_rematch",
               "slot": 4,
               "species": "SPECIES_TOGEKISS",
               "level": 76,
-              "move": "MOVE_THUNDER_WAVE"
+              "move": "MOVE_FOLLOW_ME"
             },
             {
               "trainer": "champion_cynthia_rematch",
@@ -25988,7 +26031,7 @@
               "slot": 3,
               "species": "SPECIES_MEADOWMIRA",
               "level": 55,
-              "move": "MOVE_EARTH_POWER"
+              "move": "MOVE_HELPING_HAND"
             },
             {
               "trainer": "elite_four_bertha",
@@ -26002,7 +26045,7 @@
               "slot": 3,
               "species": "SPECIES_MEADOWMIRA",
               "level": 55,
-              "move": "MOVE_HELPING_HAND"
+              "move": "MOVE_EARTH_POWER"
             },
             {
               "trainer": "elite_four_bertha",
@@ -26016,14 +26059,14 @@
               "slot": 5,
               "species": "SPECIES_RHYPERIOR",
               "level": 55,
-              "move": "MOVE_STONE_EDGE"
+              "move": "MOVE_HAMMER_ARM"
             },
             {
               "trainer": "elite_four_bertha",
               "slot": 5,
               "species": "SPECIES_RHYPERIOR",
               "level": 55,
-              "move": "MOVE_HAMMER_ARM"
+              "move": "MOVE_STONE_EDGE"
             },
             {
               "trainer": "elite_four_bertha",
@@ -26065,6 +26108,13 @@
               "slot": 1,
               "species": "SPECIES_FLAREON",
               "level": 55,
+              "move": "MOVE_HELPING_HAND"
+            },
+            {
+              "trainer": "elite_four_flint",
+              "slot": 1,
+              "species": "SPECIES_FLAREON",
+              "level": 55,
               "move": "MOVE_FIRE_FANG"
             },
             {
@@ -26076,10 +26126,10 @@
             },
             {
               "trainer": "elite_four_flint",
-              "slot": 1,
-              "species": "SPECIES_FLAREON",
-              "level": 55,
-              "move": "MOVE_HELPING_HAND"
+              "slot": 2,
+              "species": "SPECIES_RAPIDASH",
+              "level": 53,
+              "move": "MOVE_MEGAHORN"
             },
             {
               "trainer": "elite_four_flint",
@@ -26087,13 +26137,6 @@
               "species": "SPECIES_RAPIDASH",
               "level": 53,
               "move": "MOVE_POISON_JAB"
-            },
-            {
-              "trainer": "elite_four_flint",
-              "slot": 2,
-              "species": "SPECIES_RAPIDASH",
-              "level": 53,
-              "move": "MOVE_MEGAHORN"
             },
             {
               "trainer": "elite_four_flint",
@@ -26142,14 +26185,14 @@
               "slot": 2,
               "species": "SPECIES_MAGMORTAR",
               "level": 58,
-              "move": "MOVE_FIRE_BLAST"
+              "move": "MOVE_HEAT_WAVE"
             },
             {
               "trainer": "elite_four_flint_fight_area",
               "slot": 2,
               "species": "SPECIES_MAGMORTAR",
               "level": 58,
-              "move": "MOVE_HEAT_WAVE"
+              "move": "MOVE_FIRE_BLAST"
             },
             {
               "trainer": "elite_four_flint_rematch",
@@ -26170,14 +26213,14 @@
               "slot": 2,
               "species": "SPECIES_RAPIDASH",
               "level": 69,
-              "move": "MOVE_FIRE_BLAST"
+              "move": "MOVE_HEAT_WAVE"
             },
             {
               "trainer": "elite_four_flint_rematch",
               "slot": 2,
               "species": "SPECIES_RAPIDASH",
               "level": 69,
-              "move": "MOVE_HEAT_WAVE"
+              "move": "MOVE_FIRE_BLAST"
             },
             {
               "trainer": "elite_four_flint_rematch",
@@ -26191,14 +26234,14 @@
               "slot": 4,
               "species": "SPECIES_MAGMORTAR",
               "level": 73,
-              "move": "MOVE_FIRE_BLAST"
+              "move": "MOVE_HEAT_WAVE"
             },
             {
               "trainer": "elite_four_flint_rematch",
               "slot": 4,
               "species": "SPECIES_MAGMORTAR",
               "level": 73,
-              "move": "MOVE_HEAT_WAVE"
+              "move": "MOVE_FIRE_BLAST"
             },
             {
               "trainer": "elite_four_lucian",
@@ -26226,14 +26269,14 @@
               "slot": 2,
               "species": "SPECIES_BRONZONG",
               "level": 70,
-              "move": "MOVE_TRICK_ROOM"
+              "move": "MOVE_DREAM_EATER"
             },
             {
               "trainer": "elite_four_lucian_rematch",
               "slot": 2,
               "species": "SPECIES_BRONZONG",
               "level": 70,
-              "move": "MOVE_DREAM_EATER"
+              "move": "MOVE_TRICK_ROOM"
             },
             {
               "trainer": "galactic_boss_cyrus_celestic_town_ruins",
@@ -26254,14 +26297,14 @@
               "slot": 1,
               "species": "SPECIES_STEELIX",
               "level": 38,
-              "move": "MOVE_IRON_TAIL"
+              "move": "MOVE_ROCK_SLIDE"
             },
             {
               "trainer": "leader_byron",
               "slot": 1,
               "species": "SPECIES_STEELIX",
               "level": 38,
-              "move": "MOVE_ROCK_SLIDE"
+              "move": "MOVE_IRON_TAIL"
             },
             {
               "trainer": "leader_byron_rematch",
@@ -26324,14 +26367,14 @@
               "slot": 0,
               "species": "SPECIES_DUSKULL",
               "level": 24,
-              "move": "MOVE_NIGHT_SHADE"
+              "move": "MOVE_SHADOW_BALL"
             },
             {
               "trainer": "leader_fantina",
               "slot": 0,
               "species": "SPECIES_DUSKULL",
               "level": 24,
-              "move": "MOVE_SHADOW_BALL"
+              "move": "MOVE_NIGHT_SHADE"
             },
             {
               "trainer": "leader_fantina",
@@ -26443,14 +26486,14 @@
               "slot": 1,
               "species": "SPECIES_PROBOPASS",
               "level": 61,
-              "move": "MOVE_IRON_HEAD"
+              "move": "MOVE_ROCK_TOMB"
             },
             {
               "trainer": "leader_roark_rematch",
               "slot": 1,
               "species": "SPECIES_PROBOPASS",
               "level": 61,
-              "move": "MOVE_ROCK_TOMB"
+              "move": "MOVE_IRON_HEAD"
             },
             {
               "trainer": "leader_roark_rematch",
@@ -26569,14 +26612,14 @@
               "slot": 3,
               "species": "SPECIES_TIDELION",
               "level": 37,
-              "move": "MOVE_PLAY_ROUGH"
+              "move": "MOVE_WATERFALL"
             },
             {
               "trainer": "leader_wake",
               "slot": 3,
               "species": "SPECIES_TIDELION",
               "level": 37,
-              "move": "MOVE_WATERFALL"
+              "move": "MOVE_PLAY_ROUGH"
             },
             {
               "trainer": "leader_wake_rematch",
@@ -26584,13 +26627,6 @@
               "species": "SPECIES_SHARPEDO",
               "level": 61,
               "move": "MOVE_RAIN_DANCE"
-            },
-            {
-              "trainer": "leader_wake_rematch",
-              "slot": 1,
-              "species": "SPECIES_QUAGSIRE",
-              "level": 61,
-              "move": "MOVE_EARTH_POWER"
             },
             {
               "trainer": "leader_wake_rematch",
@@ -26605,6 +26641,13 @@
               "species": "SPECIES_QUAGSIRE",
               "level": 61,
               "move": "MOVE_MUDDY_WATER"
+            },
+            {
+              "trainer": "leader_wake_rematch",
+              "slot": 1,
+              "species": "SPECIES_QUAGSIRE",
+              "level": 61,
+              "move": "MOVE_EARTH_POWER"
             },
             {
               "trainer": "leader_wake_rematch",
@@ -86778,15 +86821,15 @@
       "path": "build-cloud-r1/pokeplatinum.us.nds",
       "present": true,
       "size": 134217728,
-      "sha1": "97799e74e448431f3359cf7be879882826a26dec",
-      "sha256": "9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96"
+      "sha1": "cf5cf6a2e6fee980659cf41ad38a020e6c37670b",
+      "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234"
     },
     "bps_patch": {
       "path": "dist/BeaconDex-Platinum-v0.1.0-US-Rev1.bps",
       "present": true,
       "size": 28090228,
-      "sha1": "57cf2ad156b089417daebabf717ec9f4d55468cb",
-      "sha256": "9d6ce0c99ad5b59989c4d0349b848174869ba7f2eba538ce860286e65665724f"
+      "sha1": "a18f392e472708ab1b55d630905271a7faf8f60a",
+      "sha256": "299eb1d3f9e3351d7612e7c87c720235bbf242c775f03aec53165cc54cb1b15b"
     },
     "bps_round_trip": {
       "base": {
@@ -86800,23 +86843,143 @@
       "passed": true,
       "exit_code": 0,
       "reconstructed": {
-        "path": "/tmp/beacondex-bps-b2gy4fni.nds",
+        "path": "/tmp/beacondex-bps-imsgnmrm.nds",
         "present": true,
         "size": 134217728,
-        "sha1": "97799e74e448431f3359cf7be879882826a26dec",
-        "sha256": "9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96"
+        "sha1": "cf5cf6a2e6fee980659cf41ad38a020e6c37670b",
+        "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234"
       },
       "target": {
         "path": "build-cloud-r1/pokeplatinum.us.nds",
         "present": true,
         "size": 134217728,
-        "sha1": "97799e74e448431f3359cf7be879882826a26dec",
-        "sha256": "9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96"
+        "sha1": "cf5cf6a2e6fee980659cf41ad38a020e6c37670b",
+        "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234"
       },
       "stderr": ""
     },
+    "emulator_boot_verified": true,
     "emulator_playthrough_completed": false,
-    "emulator_evidence": []
+    "emulator_evidence": {
+      "path": "data/beacondex/emulator_boot_report.json",
+      "present": true,
+      "passed": true,
+      "report": {
+        "schema": "beacondex-emulator-boot-report-v1",
+        "tested_at": "2026-11-02T10:48:52Z",
+        "passed": true,
+        "release_rom": {
+          "sha256": "e589b251e95b7558ab1b8c27e3ae1ccacfbf98d26518ed06a528936b77369234",
+          "checkpoint": "Pokemon Platinum title animation"
+        },
+        "failed_rom": {
+          "sha256": "9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96",
+          "result": "white screen",
+          "melonDS_error": "ARM9: data abort (020C64CC)"
+        },
+        "emulators": [
+          {
+            "name": "melonDS",
+            "version": "1.1",
+            "configuration": "fresh configuration, --boot auto",
+            "result": "passed",
+            "checkpoint": "Pokemon Platinum title animation",
+            "screenshot": {
+              "path": "docs/beacondex/evidence/melonds-1.1-title.png",
+              "sha256": "11c4aa3e136a66293ca2d3ac87df791b8ed91dc18d9c7687035655cb5146b837"
+            },
+            "log": {
+              "path": "docs/beacondex/evidence/melonds-1.1-boot.log",
+              "sha256": "15f1f3f02bcd31a51917e0f5d6aca0b505f6e721c8351f5d5592fbd34c519666",
+              "contains": [
+                "Secure area decryption OK",
+                "Game is now booting"
+              ],
+              "arm9_data_abort": false
+            }
+          },
+          {
+            "name": "DeSmuME",
+            "version": "0.9.13",
+            "configuration": "ARM interpreter, fresh save",
+            "result": "passed",
+            "checkpoint": "Pokemon Platinum title animation",
+            "screenshot": {
+              "path": "docs/beacondex/evidence/desmume-0.9.13-title.png",
+              "sha256": "634f54c3a299fd0a5e4d153a05bbbe9c0f535136e44083a98483c474b9a13d1f"
+            }
+          }
+        ],
+        "isolation_tests": [
+          {
+            "case": "clean US Rev 1 ROM",
+            "result": "boots"
+          },
+          {
+            "case": "failed release target",
+            "result": "white screen and ARM9 data abort"
+          },
+          {
+            "case": "failed target with secure/header CRC only corrected",
+            "result": "same ARM9 data abort"
+          },
+          {
+            "case": "failed target with retail SDAT substituted",
+            "result": "boots"
+          },
+          {
+            "case": "custom SDAT with all FAT payload offsets corrected",
+            "result": "boots with custom audio preserved"
+          }
+        ],
+        "full_playthrough_completed": false
+      },
+      "release_rom_matches": true,
+      "artifacts": [
+        {
+          "emulator": "melonDS",
+          "kind": "screenshot",
+          "expected_sha256": "11c4aa3e136a66293ca2d3ac87df791b8ed91dc18d9c7687035655cb5146b837",
+          "actual": {
+            "path": "docs/beacondex/evidence/melonds-1.1-title.png",
+            "present": true,
+            "size": 49634,
+            "sha1": "f2c8cfc2396c2ae2efeb1f7031b3e70bac920173",
+            "sha256": "11c4aa3e136a66293ca2d3ac87df791b8ed91dc18d9c7687035655cb5146b837"
+          },
+          "content_matches": true,
+          "matches": true
+        },
+        {
+          "emulator": "melonDS",
+          "kind": "log",
+          "expected_sha256": "15f1f3f02bcd31a51917e0f5d6aca0b505f6e721c8351f5d5592fbd34c519666",
+          "actual": {
+            "path": "docs/beacondex/evidence/melonds-1.1-boot.log",
+            "present": true,
+            "size": 8863,
+            "sha1": "5e844bdc5c13b8c48fcc7af22a5cf4aff8bad179",
+            "sha256": "15f1f3f02bcd31a51917e0f5d6aca0b505f6e721c8351f5d5592fbd34c519666"
+          },
+          "content_matches": true,
+          "matches": true
+        },
+        {
+          "emulator": "DeSmuME",
+          "kind": "screenshot",
+          "expected_sha256": "634f54c3a299fd0a5e4d153a05bbbe9c0f535136e44083a98483c474b9a13d1f",
+          "actual": {
+            "path": "docs/beacondex/evidence/desmume-0.9.13-title.png",
+            "present": true,
+            "size": 33991,
+            "sha1": "ed381146bb16f3703615576da83faead64ba0329",
+            "sha256": "634f54c3a299fd0a5e4d153a05bbbe9c0f535136e44083a98483c474b9a13d1f"
+          },
+          "content_matches": true,
+          "matches": true
+        }
+      ]
+    }
   },
   "design_conflicts": [
     {
@@ -87061,7 +87224,7 @@
     }
   ],
   "known_limitations": [
-    "No Nintendo DS emulator is installed in this cloud environment; runtime screenshots and a complete playthrough remain unverified.",
+    "Boot through the title animation is verified in melonDS and DeSmuME; a complete story playthrough has not been completed.",
     "Fresh saves are required; migration from a vanilla Platinum save has not been implemented or tested.",
     "The 252 battle images are draft art and use duplicated animation frames pending an in-emulator art pass.",
     "Thirty-six party icons and footprints are generated draft placeholders.",
