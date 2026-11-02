@@ -1,0 +1,14 @@
+# sha256	filename	url
+c9c4944e54de852536b4f6a238a682c38a6243cdc2843dd1c4f587e046c0615b	binutils-arm-none-eabi_2.44-3+23+b1_amd64.deb	https://deb.debian.org/debian/pool/main/b/binutils-arm-none-eabi/binutils-arm-none-eabi_2.44-3%2b23%2bb1_amd64.deb
+ce6eb1f7aad18850e32d223a68f54bcbe756d74f138c8ec5460ad9d220f4d335	bison_2%3a3.8.2+dfsg-1+b2_amd64.deb	https://deb.debian.org/debian/pool/main/b/bison/bison_3.8.2%2bdfsg-1%2bb2_amd64.deb
+75f963765232c356d0a2fb70e780dfa9de2425aca036ec60eefb7fc98a2c905b	flex_2.6.4-8.2+b4_amd64.deb	https://deb.debian.org/debian/pool/main/f/flex/flex_2.6.4-8.2%2bb4_amd64.deb
+99252fdda02ad134e8c3c344d3c843f7aa5c0d006e92a5b3d53daf4bd935b5d3	gcc-arm-none-eabi_15%3a14.2.rel1-1_amd64.deb	https://deb.debian.org/debian/pool/main/g/gcc-arm-none-eabi/gcc-arm-none-eabi_14.2.rel1-1_amd64.deb
+67bb4b54cf4bb6a380449dfa1852cd9135659f85360caa0e41d312f4b30e573a	libc6_2.41-12+deb13u4_i386.deb	https://deb.debian.org/debian/pool/main/g/glibc/libc6_2.41-12%2bdeb13u4_i386.deb
+c340b3a68d3e494290db3952293cbb64f01a8ea1ac75ae0ac6980a3418782415	libpng-dev_1.6.48-1+deb13u6_amd64.deb	https://security.debian.org/debian-security/pool/updates/main/libp/libpng1.6/libpng-dev_1.6.48-1%2bdeb13u6_amd64.deb
+0f8034d1c2547760430c81e8d87e5d6acd533a3493c80cf76dbecd0343b6773c	libpng16-16t64_1.6.48-1+deb13u6_amd64.deb	https://security.debian.org/debian-security/pool/updates/main/libp/libpng1.6/libpng16-16t64_1.6.48-1%2bdeb13u6_amd64.deb
+221b3e224708c1da2a1a88b6824380593579b2254ae7d914afa14cbd5d343334	m4_1.4.19-8_amd64.deb	https://deb.debian.org/debian/pool/main/m/m4/m4_1.4.19-8_amd64.deb
+e5096e91356d643f54d46f3ede1d8d44e45c81a3995fb057c28ec51e3791818f	nasm_2.16.03-1_amd64.deb	https://deb.debian.org/debian/pool/main/n/nasm/nasm_2.16.03-1_amd64.deb
+bc172ce9270bd6fcd6d5335a83ff9d3c7ba0d13ec624cfdfa1b5aa06901dc453	ninja-build_1.12.1-1_amd64.deb	https://deb.debian.org/debian/pool/main/n/ninja-build/ninja-build_1.12.1-1_amd64.deb
+ca6ede739327a20ae5a3498230c8a3a9a072c586e131bc6bcc1201eb1725e336	qemu-user_1%3a10.0.13+ds-0+deb13u1_amd64.deb	https://deb.debian.org/debian/pool/main/q/qemu/qemu-user_10.0.13%2bds-0%2bdeb13u1_amd64.deb
+76ed5c858e1aef38b7be93acce5910e457e77bd6271471b9d05fb42e78826224	zlib1g-dev_1%3a1.3.dfsg+really1.3.1-1+b1_amd64.deb	https://deb.debian.org/debian/pool/main/z/zlib/zlib1g-dev_1.3.dfsg%2breally1.3.1-1%2bb1_amd64.deb
+015be740d6236ad114582dea500c1d907f29e16d6db00566ca32fb68d71ac90d	zlib1g_1%3a1.3.dfsg+really1.3.1-1+b1_amd64.deb	https://deb.debian.org/debian/pool/main/z/zlib/zlib1g_1.3.dfsg%2breally1.3.1-1%2bb1_amd64.deb

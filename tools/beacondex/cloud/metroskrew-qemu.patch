@@ -1,0 +1,51 @@
+diff --git a/wrap/wrap.c b/wrap/wrap.c
+index e28975e..64ca925 100644
+--- a/wrap/wrap.c
++++ b/wrap/wrap.c
+@@ -213,9 +213,12 @@ _TCHAR *utftotc(const char *str)
+ _TCHAR *strmake(const _TCHAR *format, ...)
+ {
+     va_list ap;
++    va_list ap_size;
+ 
+     va_start(ap, format);
+-    int size = _vsntprintf(NULL, 0, format, ap) + 1;
++    va_copy(ap_size, ap);
++    int size = _vsntprintf(NULL, 0, format, ap_size) + 1;
++    va_end(ap_size);
+     _TCHAR *dest = malloc(sizeof(_TCHAR) * size);
+     _vsntprintf(dest, size, format, ap);
+     va_end(ap);
+@@ -690,13 +693,31 @@ int _tmain(int argc, _TCHAR *argv[])
+         }
+         printf("\n");
+     }
++    const char *spawn_tool = tool;
++    char **spawn_argv = new_argv;
++    const char *qemu = getenv("SKREW_QEMU");
++    const char *qemu_ld_prefix = getenv("SKREW_QEMU_LD_PREFIX");
++    if (qemu && *qemu) {
++        int prefix_argc = (qemu_ld_prefix && *qemu_ld_prefix) ? 4 : 2;
++        spawn_argv = malloc(sizeof(char *) * (new_argc + prefix_argc));
++        int i = 0;
++        spawn_argv[i++] = (char *)qemu;
++        if (qemu_ld_prefix && *qemu_ld_prefix) {
++            spawn_argv[i++] = "-L";
++            spawn_argv[i++] = (char *)qemu_ld_prefix;
++        }
++        for (int j = 0; j < new_argc; j++) spawn_argv[i++] = new_argv[j];
++        spawn_argv[i] = NULL;
++        spawn_tool = qemu;
++    }
+     pid_t pid;
+-    if (posix_spawn(&pid, tool, NULL, NULL, new_argv, environ) != 0) {
++    if (posix_spawn(&pid, spawn_tool, NULL, NULL, spawn_argv, environ) != 0) {
+         perror(PROGRAM_NAME ": posix_spawn");
+         exit(EXIT_FAILURE);
+     }
+     int exitcode;
+     waitpid(pid, &exitcode, 0);
++    if (spawn_argv != new_argv) free(spawn_argv);
+     if (WIFSIGNALED(exitcode)) return 128 + WTERMSIG(exitcode);
+     if (WIFEXITED(exitcode)) return WEXITSTATUS(exitcode);
+ #else

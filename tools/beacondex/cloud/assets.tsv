@@ -1,0 +1,6 @@
+# sha256	filename	url
+2fec5ba308690a25157afc532ed87411a413501d43d85892ae4bfb9eb3975790	metroskrew-linux.tar.xz	https://github.com/mid-kid/metroskrew/releases/download/0.1.3/metroskrew-linux.tar.xz
+bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e	rapidjson-1.1.0.tar.gz	https://github.com/Tencent/rapidjson/archive/v1.1.0.tar.gz
+c1480d0ecef09dbaa4b4d85d86090205386fb2c7e87f4f158b20dbbda14c9afc	rapidjson_1.1.0-2_patch.zip	https://github.com/mesonbuild/wrapdb/releases/download/rapidjson_1.1.0-2/rapidjson_1.1.0-2_patch.zip
+b16246f617b2a136c78d73e5e2647c6f1de1313e46678062985bdcf1f40bb75d	yyjson-0.12.0.tar.gz	https://github.com/ibireme/yyjson/archive/refs/tags/0.12.0.tar.gz
+014582b328e13671dea64fcb49a795e70142360216a505212b8045134781b3b5	yyjson_0.12.0-1_patch.zip	https://github.com/mesonbuild/wrapdb/releases/download/yyjson_0.12.0-1/yyjson_0.12.0-1_patch.zip
