@@ -1,0 +1,229 @@
+{
+    "base_stats": {
+        "hp": 75,
+        "attack": 85,
+        "defense": 72,
+        "speed": 93,
+        "special_attack": 55,
+        "special_defense": 75
+    },
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FAIRY"
+    ],
+    "catch_rate": 45,
+    "base_exp_reward": 142,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_NONE"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_BLUE",
+    "flip_sprite": false,
+    "icon_palette": 0,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                11,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                14,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                16,
+                "MOVE_GUST"
+            ],
+            [
+                20,
+                "MOVE_BITE"
+            ],
+            [
+                24,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                28,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                32,
+                "MOVE_BODY_SLAM"
+            ],
+            [
+                36,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                42,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                48,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                54,
+                "MOVE_MOONLIGHT"
+            ],
+            [
+                60,
+                "MOVE_BRICK_BREAK"
+            ]
+        ],
+        "by_tm": [
+            "HM01",
+            "HM04",
+            "HM05",
+            "HM06",
+            "TM01",
+            "TM05",
+            "TM08",
+            "TM10",
+            "TM12",
+            "TM16",
+            "TM17",
+            "TM20",
+            "TM21",
+            "TM23",
+            "TM27",
+            "TM28",
+            "TM31",
+            "TM32",
+            "TM33",
+            "TM39",
+            "TM40",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM46"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            36,
+            "SPECIES_SIDERION"
+        ]
+    ],
+    "offspring": "SPECIES_GLIMBARK",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 35,
+        "weight_pounds": 67.2,
+        "body_shape": "SHAPE_QUADRUPED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 288,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 288,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 17,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 17,
+        "en": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "WARDMANE",
+            "category": "Mane Guard Pokémon",
+            "entry_text": [
+                "Wardmane watches over its companions\n",
+                "as its mane begins to glow.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 70,
+        "rarity": 20,
+        "unused": 1799
+    }
+}

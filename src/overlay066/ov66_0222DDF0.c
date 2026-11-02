@@ -909,19 +909,20 @@ void ov66_0222E528(WiFiPlazaSystem *param0, u32 param1)
 
 void ov66_0222E56C(WiFiPlazaSystem *param0, int type1, int type2)
 {
-    GF_ASSERT(type1 < NUM_POKEMON_TYPES);
-    GF_ASSERT(type2 < NUM_POKEMON_TYPES);
+    // Wi-Fi Plaza stores compact indices for its original 18-entry picker.
+    GF_ASSERT(type1 < TYPE_FAIRY);
+    GF_ASSERT(type2 < TYPE_FAIRY);
 
     if (ov66_0222FA04(&param0->unk_108, param0->saveData) == 0) {
         param0->unk_52C = 1;
         return;
     }
 
-    if (type1 >= NUM_POKEMON_TYPES) {
+    if (type1 >= TYPE_FAIRY) {
         return;
     }
 
-    if (type2 >= NUM_POKEMON_TYPES) {
+    if (type2 >= TYPE_FAIRY) {
         return;
     }
 
@@ -1206,7 +1207,7 @@ int ov66_0222E8E8(const WiFiPlazaProfile *profile, u32 index)
 {
     GF_ASSERT(index < 2);
 
-    if (profile->unk_88[index] >= NUM_POKEMON_TYPES) {
+    if (profile->unk_88[index] >= TYPE_FAIRY) {
         return TYPE_NORMAL;
     }
 

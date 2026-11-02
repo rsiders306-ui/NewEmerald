@@ -1285,7 +1285,7 @@ static void GrayOutUnselectableCells(BattleHallApp *app, BgConfig *bgConfig)
             ChangeCellBackground(bgConfig, i, CELL_BACKGROUND_UNSELECTABLE);
         }
     } else {
-        for (int i = 0; i < (NUM_POKEMON_TYPES - 1); i++) {
+        for (int i = 0; i < HALL_NUM_SELECTABLE_TYPES; i++) {
             if (BattleHall_GetRankOfType(i, app->typeRanks) >= 10) {
                 ChangeCellBackground(bgConfig, i, CELL_BACKGROUND_UNSELECTABLE);
             }
@@ -1368,8 +1368,8 @@ static void ChangeCellBackground(BgConfig *bgConfig, u8 boxIdx, u8 background)
 
 static u8 GetCursorPos(u8 cursorPos)
 {
-    if (cursorPos >= 17) {
-        return 17;
+    if (cursorPos >= HALL_NUM_SELECTABLE_TYPES) {
+        return HALL_NUM_SELECTABLE_TYPES;
     }
 
     return cursorPos;

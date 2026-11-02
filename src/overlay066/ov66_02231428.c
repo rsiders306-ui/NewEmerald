@@ -4,6 +4,8 @@
 #include <nitro.h>
 #include <string.h>
 
+#include "generated/pokemon_types.h"
+
 #include "nintendo_wfc/main.h"
 #include "overlay066/struct_ov66_02231428.h"
 #include "overlay066/struct_ov66_02231560.h"
@@ -209,6 +211,13 @@ u32 ov66_022316E8(int param0)
         16,
         17,
     };
+
+    // The Wi-Fi Plaza profile format and picker only support the original
+    // 18 type slots. Treat unknown values as Normal instead of indexing past
+    // the legacy lookup table.
+    if (param0 < 0 || param0 >= NELEMS(v0)) {
+        return TYPE_NORMAL;
+    }
 
     return v0[param0];
 }

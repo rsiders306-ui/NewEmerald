@@ -1,0 +1,198 @@
+{
+    "base_stats": {
+        "hp": 45,
+        "attack": 35,
+        "defense": 50,
+        "speed": 70,
+        "special_attack": 55,
+        "special_defense": 55
+    },
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
+    "catch_rate": 190,
+    "base_exp_reward": 64,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_BUG"
+    ],
+    "abilities": [
+        "ABILITY_SOUNDPROOF",
+        "ABILITY_SWARM"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_RED",
+    "flip_sprite": false,
+    "icon_palette": 0,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_STRING_SHOT"
+            ],
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                5,
+                "MOVE_SUPERSONIC"
+            ],
+            [
+                9,
+                "MOVE_SING"
+            ],
+            [
+                13,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                17,
+                "MOVE_FURY_CUTTER"
+            ],
+            [
+                22,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                26,
+                "MOVE_SILVER_WIND"
+            ],
+            [
+                30,
+                "MOVE_SAFEGUARD"
+            ],
+            [
+                34,
+                "MOVE_BUG_BUZZ"
+            ]
+        ],
+        "by_tm": [
+            "TM05",
+            "TM06",
+            "TM10",
+            "TM17",
+            "TM21",
+            "TM27",
+            "TM32",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM54",
+            "TM58",
+            "TM67",
+            "TM78",
+            "TM82",
+            "TM83",
+            "TM87",
+            "TM90"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            18,
+            "SPECIES_LOOMBLE"
+        ]
+    ],
+    "offspring": "SPECIES_NIBLIT",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 12,
+        "weight_pounds": 4.9,
+        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 713,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 713,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 28,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 28,
+        "en": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "NIBLIT",
+            "category": "Threadling Pokémon",
+            "entry_text": [
+                "Niblit communicates by tapping its\n",
+                "feet on the ground.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 50,
+        "rarity": 30,
+        "unused": 1028
+    }
+}

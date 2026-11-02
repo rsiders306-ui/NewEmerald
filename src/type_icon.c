@@ -30,6 +30,7 @@ ALIGN_4 static const u32 sMoveTypeIconIndex[] = {
     [TYPE_ICE]      = type_icons_ice_NCGR_lz,
     [TYPE_DRAGON]   = type_icons_dragon_NCGR_lz,
     [TYPE_DARK]     = type_icons_dark_NCGR_lz,
+    [TYPE_FAIRY]    = type_icons_fairy_NCGR_lz,
 
     [NUM_POKEMON_TYPES + CONTEST_TYPE_COOL]   = type_icons_cool_NCGR_lz,
     [NUM_POKEMON_TYPES + CONTEST_TYPE_BEAUTY] = type_icons_beauty_NCGR_lz,
@@ -57,6 +58,7 @@ ALIGN_4 static const u8 sMoveTypeIconPaletteIndex[] = {
     [TYPE_ICE]      = 1,
     [TYPE_DRAGON]   = 2,
     [TYPE_DARK]     = 0,
+    [TYPE_FAIRY]    = 1,
 
     [NUM_POKEMON_TYPES + CONTEST_TYPE_COOL]   = 0,
     [NUM_POKEMON_TYPES + CONTEST_TYPE_BEAUTY] = 1,

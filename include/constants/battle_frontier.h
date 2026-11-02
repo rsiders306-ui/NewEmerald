@@ -57,6 +57,11 @@ enum BattleFacility {
 
 #define HALL_MAX_TYPE_RANK 10
 
+// Battle Hall save data has nine bytes of packed ranks for the original 18
+// type slots. Its selection grid exposes the 17 non-Mystery legacy types.
+#define HALL_NUM_TYPE_RANKS       18
+#define HALL_NUM_SELECTABLE_TYPES 17
+
 #define CASTLE_BATTLES_PER_ROUND    7
 #define CASTLE_STREAK_SILVER_BATTLE 21
 #define CASTLE_STREAK_GOLD_BATTLE   49

@@ -523,7 +523,7 @@ static void ov21_021E9504(UnkStruct_ov21_021E95B0 *param0, SpriteList *param1, S
     param0->unk_00 = SpriteList_Add(&v0);
 
     GF_ASSERT(param0->unk_00);
-    Sprite_SetAnim(param0->unk_00, 0x11);
+    Sprite_SetAnim(param0->unk_00, 0x12);
 }
 
 static void ov21_021E9554(UnkStruct_ov21_021E95B0 *param0)

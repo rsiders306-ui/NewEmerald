@@ -1,0 +1,236 @@
+{
+    "base_stats": {
+        "hp": 85,
+        "attack": 125,
+        "defense": 88,
+        "speed": 125,
+        "special_attack": 50,
+        "special_defense": 82
+    },
+    "types": [
+        "TYPE_DARK",
+        "TYPE_STEEL"
+    ],
+    "catch_rate": 45,
+    "base_exp_reward": 220,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "speed": 0,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_INTIMIDATE",
+        "ABILITY_MOTOR_DRIVE"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_BLACK",
+    "flip_sprite": false,
+    "icon_palette": 0,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                1,
+                "MOVE_TAUNT"
+            ],
+            [
+                1,
+                "MOVE_METAL_CLAW"
+            ],
+            [
+                17,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                18,
+                "MOVE_CRUNCH"
+            ],
+            [
+                22,
+                "MOVE_CRUNCH"
+            ],
+            [
+                26,
+                "MOVE_METAL_SOUND"
+            ],
+            [
+                30,
+                "MOVE_CRUNCH"
+            ],
+            [
+                34,
+                "MOVE_CRUNCH"
+            ],
+            [
+                36,
+                "MOVE_DOUBLE_EDGE"
+            ],
+            [
+                40,
+                "MOVE_KNOCK_OFF"
+            ],
+            [
+                44,
+                "MOVE_CRUNCH"
+            ],
+            [
+                48,
+                "MOVE_SWORDS_DANCE"
+            ],
+            [
+                52,
+                "MOVE_IRON_TAIL"
+            ],
+            [
+                56,
+                "MOVE_MEMENTO"
+            ],
+            [
+                60,
+                "MOVE_EARTHQUAKE"
+            ],
+            [
+                64,
+                "MOVE_CRUNCH"
+            ],
+            [
+                68,
+                "MOVE_CRUNCH"
+            ]
+        ],
+        "by_tm": [
+            "HM01",
+            "HM04",
+            "HM06",
+            "TM01",
+            "TM05",
+            "TM06",
+            "TM10",
+            "TM12",
+            "TM15",
+            "TM17",
+            "TM21",
+            "TM23",
+            "TM26",
+            "TM27",
+            "TM28",
+            "TM30",
+            "TM31",
+            "TM32",
+            "TM37",
+            "TM39",
+            "TM41",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM46",
+            "TM49"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [],
+    "offspring": "SPECIES_ROOKIT",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_SCARY"
+    },
+    "pokedex_data": {
+        "height_inches": 55,
+        "weight_pounds": 77.2,
+        "body_shape": "SHAPE_QUADRUPED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 256,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 256,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 9,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 9,
+        "en": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "TALLADEVIL",
+            "category": "Dark Racer Pokémon",
+            "entry_text": [
+                "Talladevil races across rough terrain\n",
+                "without slowing.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 70,
+        "rarity": 20,
+        "unused": 528
+    }
+}

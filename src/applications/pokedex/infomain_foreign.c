@@ -35,7 +35,7 @@
 #include "res/graphics/pokedex/zukan.naix"
 #include "res/text/bank/pokedex.h"
 
-#define POKEDEX_TYPE_ICON_BACKGROUND_BOX_CELL 0x11
+#define POKEDEX_TYPE_ICON_BACKGROUND_BOX_CELL 0x12
 #define POKEDEX_TYPE_ICON_RESOURCE_OFFSET     4000
 
 typedef struct PokedexEntryDisplayState {

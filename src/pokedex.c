@@ -800,13 +800,18 @@ BOOL Pokedex_NationalDexCompleted(const Pokedex *pokedexData)
 
 BOOL Pokedex_LocalDexCompleted(const Pokedex *pokedexData)
 {
-    u16 numSeen = Pokedex_NumSeen_Local(pokedexData);
-
-    if (numSeen >= LOCAL_DEX_GOAL) {
-        return TRUE;
+    // Preserve Platinum's story progression requirement after appending the
+    // BeaconDex species to the visible regional Pokédex. Postgame-only custom
+    // encounters must not prevent Rowan from granting the National Pokédex.
+    for (u16 species = 1; species <= SPECIES_ARCEUS; species++) {
+        if (Pokemon_SinnohDexNumber(species) != 0
+            && CountsForDexCompletion_Local(species) == TRUE
+            && Pokedex_HasSeenSpecies(pokedexData, species) == FALSE) {
+            return FALSE;
+        }
     }
 
-    return FALSE;
+    return TRUE;
 }
 
 u16 Pokedex_NumCaught_National(const Pokedex *pokedexData)

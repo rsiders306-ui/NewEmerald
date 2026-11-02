@@ -642,7 +642,7 @@ static void InitCellActors(PokedexSearchDisplay *searchDisplay, PokedexGraphicDa
 
     searchDisplay->pokeball = SpriteList_Add(&v1);
 
-    Sprite_SetAnim(searchDisplay->pokeball, 17);
+    Sprite_SetAnim(searchDisplay->pokeball, 18);
     Sprite_SetDrawFlag(searchDisplay->pokeball, FALSE);
     Sprite_SetAffineOverwriteMode(searchDisplay->pokeball, AFFINE_OVERWRITE_MODE_NORMAL);
     Sprite_SetExplicitPriority(searchDisplay->pokeball, 0);
@@ -920,6 +920,9 @@ static void FilterTypeMessage(PokedexGraphicData **param0, int typeFilter, enum 
         break;
     case FT_DARK:
         entryID = pl_msg_pokedex_dark;
+        break;
+    case FT_FAIRY:
+        entryID = pl_msg_pokedex_fairy;
         break;
     }
 

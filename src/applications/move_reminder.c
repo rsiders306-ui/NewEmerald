@@ -1531,7 +1531,7 @@ static void MoveReminder_DrawTypeIcon(MoveReminderController *controller, u16 mo
 {
     u32 type = (controller->data->showingContest == 0)
         ? MoveTable_LoadParam(move, MOVEATTRIBUTE_TYPE)
-        : MoveTable_LoadParam(move, MOVEATTRIBUTE_CONTEST_TYPE) + 18;
+        : MoveTable_LoadParam(move, MOVEATTRIBUTE_CONTEST_TYPE) + NUM_POKEMON_TYPES;
 
     SpriteSystem_ReplaceCharResObj(controller->spriteSystem, controller->spriteManager, TypeIcon_GetNARC(), TypeIcon_GetChar(type), 1, 47276 + index);
     ManagedSprite_SetExplicitPalette(controller->managedSprites[MOVE_REMINDER_SPRITE_TYPE_MOVE_0 + index], TypeIcon_GetPltt(type) + 2);

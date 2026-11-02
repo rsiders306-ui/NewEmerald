@@ -38,7 +38,7 @@
 #include "res/graphics/pokedex/zukan.naix"
 #include "res/text/bank/pokedex.h"
 
-#define POKEDEX_TYPE_ICON_BACKGROUND_BOX_CELL 0x11
+#define POKEDEX_TYPE_ICON_BACKGROUND_BOX_CELL 0x12
 #define POKEDEX_TYPE_ICON_RESOURCE_OFFSET     4000
 #define STRING_BUFFER_SIZE                    64
 
@@ -707,6 +707,9 @@ int PokedexGraphics_GetAnimIDfromType(int monType)
         break;
     case TYPE_DARK:
         animID = 12;
+        break;
+    case TYPE_FAIRY:
+        animID = 17;
         break;
     }
 

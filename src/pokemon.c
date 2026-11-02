@@ -3034,6 +3034,11 @@ static void BuildPokemonSpriteTemplateDP(PokemonSpriteTemplate *spriteTemplate, 
     spriteTemplate->dummy = 0;
     spriteTemplate->personality = 0;
 
+    if (species > SPECIES_ARCEUS && species <= NATIONAL_DEX_COUNT) {
+        BuildPokemonSpriteTemplate(spriteTemplate, species, gender, face, shiny, form, personality);
+        return;
+    }
+
     form = Pokemon_SanitizeFormId(species, form);
 
     switch (species) {
@@ -3279,6 +3284,10 @@ u8 LoadPokemonSpriteYOffset(u16 species, u8 gender, u8 face, u8 form, u32 person
 static u8 LoadPokemonDPSpriteHeight(u16 species, u8 gender, u8 face, u8 form, u32 personality)
 {
     // TODO enum values?
+    if (species > SPECIES_ARCEUS && species <= NATIONAL_DEX_COUNT) {
+        return LoadPokemonSpriteYOffset(species, gender, face, form, personality);
+    }
+
     form = Pokemon_SanitizeFormId(species, form);
 
     enum NarcID narcID;
@@ -4932,27 +4941,27 @@ static int Pokemon_GetFormNarcIndex(int monSpecies, int monForm)
     switch (monSpecies) {
     case SPECIES_DEOXYS:
         if (monForm && monForm <= DEOXYS_FORM_COUNT - 1) {
-            monSpecies = (496 - 1) + monForm;
+            monSpecies = SPECIES_BAD_EGG + monForm;
         }
         break;
     case SPECIES_WORMADAM:
         if (monForm && monForm <= WORMADAM_FORM_COUNT - 1) {
-            monSpecies = (499 - 1) + monForm;
+            monSpecies = SPECIES_BAD_EGG + 3 + monForm;
         }
         break;
     case SPECIES_GIRATINA:
         if (monForm && monForm <= GIRATINA_FORM_COUNT - 1) {
-            monSpecies = (501 - 1) + monForm;
+            monSpecies = SPECIES_BAD_EGG + 5 + monForm;
         }
         break;
     case SPECIES_SHAYMIN:
         if (monForm && monForm <= SHAYMIN_FORM_COUNT - 1) {
-            monSpecies = (502 - 1) + monForm;
+            monSpecies = SPECIES_BAD_EGG + 6 + monForm;
         }
         break;
     case SPECIES_ROTOM:
         if (monForm && monForm <= ROTOM_FORM_COUNT - 1) {
-            monSpecies = (503 - 1) + monForm;
+            monSpecies = SPECIES_BAD_EGG + 7 + monForm;
         }
         break;
     default:

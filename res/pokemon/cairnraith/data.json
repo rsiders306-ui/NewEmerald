@@ -1,0 +1,217 @@
+{
+    "base_stats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 115,
+        "speed": 20,
+        "special_attack": 30,
+        "special_defense": 100
+    },
+    "types": [
+        "TYPE_ROCK",
+        "TYPE_GHOST"
+    ],
+    "catch_rate": 90,
+    "base_exp_reward": 142,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "speed": 0,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_MINERAL",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_STURDY",
+        "ABILITY_SOLID_ROCK"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_BROWN",
+    "flip_sprite": false,
+    "icon_palette": 1,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_HARDEN"
+            ],
+            [
+                5,
+                "MOVE_ASTONISH"
+            ],
+            [
+                9,
+                "MOVE_ROCK_THROW"
+            ],
+            [
+                13,
+                "MOVE_CURSE"
+            ],
+            [
+                17,
+                "MOVE_ROCK_TOMB"
+            ],
+            [
+                18,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                22,
+                "MOVE_ANCIENT_POWER"
+            ],
+            [
+                26,
+                "MOVE_WILL_O_WISP"
+            ],
+            [
+                30,
+                "MOVE_ROCK_SLIDE"
+            ],
+            [
+                34,
+                "MOVE_PROTECT"
+            ]
+        ],
+        "by_tm": [
+            "HM04",
+            "HM06",
+            "TM06",
+            "TM10",
+            "TM12",
+            "TM17",
+            "TM21",
+            "TM26",
+            "TM27",
+            "TM28",
+            "TM29",
+            "TM30",
+            "TM32",
+            "TM37",
+            "TM39",
+            "TM41",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM46",
+            "TM58",
+            "TM61",
+            "TM65",
+            "TM69",
+            "TM71",
+            "TM76",
+            "TM78",
+            "TM79",
+            "TM80",
+            "TM82",
+            "TM83",
+            "TM87",
+            "TM90"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            36,
+            "SPECIES_GRAVEMOURN"
+        ]
+    ],
+    "offspring": "SPECIES_SHARDSHADE",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_TOUGH"
+    },
+    "pokedex_data": {
+        "height_inches": 39,
+        "weight_pounds": 231.5,
+        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 256,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 256,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 10,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 10,
+        "en": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "CAIRNRAITH",
+            "category": "Cairn Wraith Pokémon",
+            "entry_text": [
+                "Cairnraith guards ancient places\n",
+                "forgotten by humans.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 50,
+        "rarity": 30,
+        "unused": 2059
+    }
+}

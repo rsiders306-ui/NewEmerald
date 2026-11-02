@@ -1,0 +1,216 @@
+{
+    "base_stats": {
+        "hp": 55,
+        "attack": 90,
+        "defense": 65,
+        "speed": 120,
+        "special_attack": 45,
+        "special_defense": 60
+    },
+    "types": [
+        "TYPE_BUG",
+        "TYPE_GHOST"
+    ],
+    "catch_rate": 90,
+    "base_exp_reward": 142,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 2,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_BUG",
+        "EGG_GROUP_AMORPHOUS"
+    ],
+    "abilities": [
+        "ABILITY_SWARM",
+        "ABILITY_TECHNICIAN"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_YELLOW",
+    "flip_sprite": false,
+    "icon_palette": 1,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                9,
+                "MOVE_BUG_BITE"
+            ],
+            [
+                13,
+                "MOVE_ASTONISH"
+            ],
+            [
+                17,
+                "MOVE_PROTECT"
+            ],
+            [
+                18,
+                "MOVE_SHADOW_CLAW"
+            ],
+            [
+                22,
+                "MOVE_SHADOW_SNEAK"
+            ],
+            [
+                26,
+                "MOVE_TAUNT"
+            ],
+            [
+                30,
+                "MOVE_U_TURN"
+            ],
+            [
+                30,
+                "MOVE_PURSUIT"
+            ],
+            [
+                34,
+                "MOVE_X_SCISSOR"
+            ]
+        ],
+        "by_tm": [
+            "HM01",
+            "TM06",
+            "TM10",
+            "TM12",
+            "TM17",
+            "TM19",
+            "TM21",
+            "TM27",
+            "TM29",
+            "TM30",
+            "TM32",
+            "TM41",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM46",
+            "TM58",
+            "TM61",
+            "TM62",
+            "TM65",
+            "TM78",
+            "TM79",
+            "TM81",
+            "TM82",
+            "TM83",
+            "TM87",
+            "TM89",
+            "TM90"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            36,
+            "SPECIES_NIVISPECT"
+        ]
+    ],
+    "offspring": "SPECIES_FLEURRIT",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_TOUGH"
+    },
+    "pokedex_data": {
+        "height_inches": 31,
+        "weight_pounds": 26.5,
+        "body_shape": "SHAPE_MULTI_WINGED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 276,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 276,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 65534,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 65534,
+        "en": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "SHIVERSKEW",
+            "category": "Frost Wraith Pokémon",
+            "entry_text": [
+                "Shiverskew leaves false tracks in\n",
+                "drifting snow to confuse pursuers.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 70,
+        "rarity": 20,
+        "unused": 4356
+    }
+}

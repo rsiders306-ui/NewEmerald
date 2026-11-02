@@ -2,7 +2,7 @@
 
 #include <nitro.h>
 
-#include "generated/pokemon_types.h"
+#include "constants/battle_frontier.h"
 
 #include "struct_defs/battle_frontier.h"
 
@@ -100,7 +100,7 @@ void BattleHall_SetRankOfType(u8 pokemonType, u8 *typeRanks, u8 value)
 
 void BattleHall_ResetRankOfAllTypes(u8 *typeRanks)
 {
-    for (int i = 0; i < NUM_POKEMON_TYPES; i++) {
+    for (int i = 0; i < HALL_NUM_TYPE_RANKS; i++) {
         BattleHall_SetRankOfType(i, typeRanks, 0);
     }
 }

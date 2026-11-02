@@ -13,6 +13,7 @@ battle_sprites += [
       'electric.png',
       'psychic.png',
       'dark.png',
+      'fairy.png',
       'fighting.png',
       'fire.png',
       'flying.png',

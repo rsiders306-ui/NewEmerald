@@ -215,15 +215,15 @@ static void ov62_022469A0(UnkStruct_ov62_02241204 *param0, UnkStruct_0208C06C *p
 
 static u16 Unk_ov62_02249944[] = {
     0x0,
-    0x57,
-    0x88,
-    0xBF,
-    0xEB,
-    0x12F,
-    0x168,
-    0x1C9,
-    0x1E7,
-    0x1ED
+    0x63,
+    0x9B,
+    0xDA,
+    0x108,
+    0x153,
+    0x190,
+    0x202,
+    0x225,
+    0x22C
 };
 
 static const TouchScreenRect Unk_ov62_0224919C[] = {

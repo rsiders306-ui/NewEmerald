@@ -1,0 +1,198 @@
+{
+    "base_stats": {
+        "hp": 55,
+        "attack": 40,
+        "defense": 40,
+        "speed": 80,
+        "special_attack": 40,
+        "special_defense": 55
+    },
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_NORMAL"
+    ],
+    "catch_rate": 190,
+    "base_exp_reward": 64,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 1,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_RUN_AWAY",
+        "ABILITY_INNER_FOCUS"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_BROWN",
+    "flip_sprite": false,
+    "icon_palette": 2,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                5,
+                "MOVE_POWDER_SNOW"
+            ],
+            [
+                9,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                13,
+                "MOVE_ENDURE"
+            ],
+            [
+                17,
+                "MOVE_ICY_WIND"
+            ],
+            [
+                22,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                26,
+                "MOVE_ICE_SHARD"
+            ],
+            [
+                30,
+                "MOVE_ENCORE"
+            ],
+            [
+                34,
+                "MOVE_TAUNT"
+            ]
+        ],
+        "by_tm": [
+            "TM05",
+            "TM06",
+            "TM10",
+            "TM17",
+            "TM21",
+            "TM27",
+            "TM32",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM54",
+            "TM58",
+            "TM67",
+            "TM78",
+            "TM82",
+            "TM83",
+            "TM87",
+            "TM90"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            18,
+            "SPECIES_BURROWMUFF"
+        ]
+    ],
+    "offspring": "SPECIES_PUFFLURRY",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_SMALL",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 16,
+        "weight_pounds": 14.3,
+        "body_shape": "SHAPE_QUADRUPED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 274,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 274,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 26,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 26,
+        "en": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "PUFFLURRY",
+            "category": "Snow Pellet Pokémon",
+            "entry_text": [
+                "Pufflurry burrows beneath deep snow,\n",
+                "leaving only its ears exposed.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 50,
+        "rarity": 30,
+        "unused": 2061
+    }
+}

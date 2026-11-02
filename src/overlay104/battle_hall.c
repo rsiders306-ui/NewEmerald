@@ -67,7 +67,7 @@ BattleHall *BattleHall_Init(SaveData *saveData, u16 resumingFromSave, u8 challen
         } else {
             battleHall->currentStreak = 0;
 
-            for (i = 0; i < NUM_POKEMON_TYPES; i++) {
+            for (i = 0; i < HALL_NUM_TYPE_RANKS; i++) {
                 BattleHall_SaveTypeRank(battleHall->saveData, battleHall->challengeType, i, 0);
             }
         }
@@ -102,11 +102,11 @@ BattleHall *BattleHall_Init(SaveData *saveData, u16 resumingFromSave, u8 challen
     battleHall->currentRound = battleHall->currentStreak / HALL_BATTLES_PER_ROUND;
 
     if (battleHall->challengeType == FRONTIER_CHALLENGE_MULTI) {
-        for (i = 0; i < NUM_POKEMON_TYPES; i++) {
+        for (i = 0; i < HALL_NUM_TYPE_RANKS; i++) {
             BattleHall_SetRankOfType(i, &battleHall->typeRanks[2][0], HALL_MAX_TYPE_RANK - 1);
         }
     } else {
-        for (i = 0; i < NUM_POKEMON_TYPES; i++) {
+        for (i = 0; i < HALL_NUM_TYPE_RANKS; i++) {
             u16 ptr1, ptr2;
             u16 rank = BattleHall_LoadTypeRanks(saveData, battleHall->challengeType, i, &ptr1, &ptr2);
 
@@ -185,8 +185,8 @@ void BattleHall_GetTypeSelectionAppResult(BattleHall *battleHall, void *args)
     battleHall->selectedTypeIdx = battleHall->selectedTypeIdx2;
     battleHall->selectedType = BattleHall_CursorPosToType(battleHall->selectedTypeIdx2);
 
-    if (battleHall->selectedTypeIdx >= 17) {
-        battleHall->selectedTypeIdx = 17;
+    if (battleHall->selectedTypeIdx >= HALL_NUM_SELECTABLE_TYPES) {
+        battleHall->selectedTypeIdx = HALL_NUM_SELECTABLE_TYPES;
     }
 }
 
@@ -259,7 +259,7 @@ void BattleHall_Save(BattleHall *battleHall, u8 saveType)
         BattleHallSave_SetMember(battleHall->hallSave, HALL_SAVE_PARTY_SLOTS, i, 0, u8Ptr);
     }
 
-    for (i = 0; i < NUM_POKEMON_TYPES; i++) {
+    for (i = 0; i < HALL_NUM_TYPE_RANKS; i++) {
         *u8Ptr = BattleHall_GetRankOfType(i, &battleHall->typeRanks[battleHall->challengeType][0]);
         BattleHall_SaveTypeRank(battleHall->saveData, battleHall->challengeType, i, *u8Ptr);
     }
@@ -407,7 +407,7 @@ void BattleHall_CapTypeRanks(BattleHall *battleHall)
     int type;
 
     if (battleHall->challengeType != FRONTIER_CHALLENGE_MULTI) {
-        for (type = 0; type < NUM_POKEMON_TYPES - 1; type++) {
+        for (type = 0; type < HALL_NUM_SELECTABLE_TYPES; type++) {
             u8 rank = BattleHall_GetRankOfType(type, &battleHall->typeRanks[battleHall->challengeType][0]);
 
             if (rank < HALL_MAX_TYPE_RANK) {
@@ -415,8 +415,8 @@ void BattleHall_CapTypeRanks(BattleHall *battleHall)
             }
         }
 
-        if (type == NUM_POKEMON_TYPES - 1) {
-            for (type = 0; type < NUM_POKEMON_TYPES - 1; type++) {
+        if (type == HALL_NUM_SELECTABLE_TYPES) {
+            for (type = 0; type < HALL_NUM_SELECTABLE_TYPES; type++) {
                 BattleHall_SetRankOfType(type, &battleHall->typeRanks[battleHall->challengeType][0], HALL_MAX_TYPE_RANK - 1);
             }
         }
@@ -453,7 +453,7 @@ static u16 BattleHall_CalcOpponentsLevel(BattleHall *battleHall)
 
     float numBattledTypesFactor = 0.0;
 
-    for (type = 0; type < NUM_POKEMON_TYPES; type++) {
+    for (type = 0; type < HALL_NUM_TYPE_RANKS; type++) {
         if (type == battleHall->selectedTypeIdx) {
             numBattledTypesFactor += 1.0;
         } else {

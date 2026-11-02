@@ -1,7 +1,7 @@
 {
 	"labelEnabled":	true,
-	"sequenceCount":	18,
-	"frameCount":	18,
+	"sequenceCount":	19,
+	"frameCount":	19,
 	"sequences":	[{
 			"frameCount":	1,
 			"loopStartFrame":	0,
@@ -182,6 +182,16 @@
 					"frameDelay":	4,
 					"resultId":	17
 				}]
+		}, {
+			"frameCount":	1,
+			"loopStartFrame":	0,
+			"animationElement":	0,
+			"animationType":	1,
+			"playbackMode":	2,
+			"frameData":	[{
+					"frameDelay":	4,
+					"resultId":	18
+				}]
 		}],
 	"animationResults":	[{
 			"resultType":	0,
@@ -237,8 +247,11 @@
 		}, {
 			"resultType":	0,
 			"index":	17
+		}, {
+			"resultType":	0,
+			"index":	18
 		}],
-	"resultCount":	18,
-	"labels":	["CellAnime0", "CellAnime1", "CellAnime2", "CellAnime3", "CellAnime4", "CellAnime5", "CellAnime6", "CellAnime7", "CellAnime8", "CellAnime9", "CellAnime10", "CellAnime11", "CellAnime12", "CellAnime13", "CellAnime14", "CellAnime15", "CellAnime16", "CellAnime21"],
-	"labelCount":	18
+	"resultCount":	19,
+	"labels":	["CellAnime0", "CellAnime1", "CellAnime2", "CellAnime3", "CellAnime4", "CellAnime5", "CellAnime6", "CellAnime7", "CellAnime8", "CellAnime9", "CellAnime10", "CellAnime11", "CellAnime12", "CellAnime13", "CellAnime14", "CellAnime15", "CellAnime16", "CellAnime17", "CellAnime21"],
+	"labelCount":	19
 }

@@ -1,0 +1,217 @@
+{
+    "base_stats": {
+        "hp": 58,
+        "attack": 52,
+        "defense": 50,
+        "speed": 52,
+        "special_attack": 62,
+        "special_defense": 56
+    },
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
+    "catch_rate": 45,
+    "base_exp_reward": 64,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "special_attack": 1,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+    "egg_groups": [
+        "EGG_GROUP_FIELD",
+        "EGG_GROUP_HUMAN_LIKE"
+    ],
+    "abilities": [
+        "ABILITY_INNER_FOCUS",
+        "ABILITY_NONE"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_BLUE",
+    "flip_sprite": false,
+    "icon_palette": 2,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                5,
+                "MOVE_GROWL"
+            ],
+            [
+                8,
+                "MOVE_QUICK_ATTACK"
+            ],
+            [
+                11,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                14,
+                "MOVE_DOUBLE_KICK"
+            ],
+            [
+                17,
+                "MOVE_DETECT"
+            ],
+            [
+                21,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                25,
+                "MOVE_BULK_UP"
+            ],
+            [
+                29,
+                "MOVE_ENDURE"
+            ],
+            [
+                33,
+                "MOVE_REVERSAL"
+            ],
+            [
+                38,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                44,
+                "MOVE_BULK_UP"
+            ],
+            [
+                50,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                56,
+                "MOVE_BRICK_BREAK"
+            ]
+        ],
+        "by_tm": [
+            "HM05",
+            "HM06",
+            "TM01",
+            "TM08",
+            "TM10",
+            "TM16",
+            "TM17",
+            "TM20",
+            "TM21",
+            "TM27",
+            "TM31",
+            "TM32",
+            "TM33",
+            "TM40",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            16,
+            "SPECIES_WARDMANE"
+        ]
+    ],
+    "offspring": "SPECIES_GLIMBARK",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 28,
+        "weight_pounds": 44.5,
+        "body_shape": "SHAPE_BIPEDAL_TAILED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 342,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 342,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 21,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 21,
+        "en": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "GLIMBARK",
+            "category": "Dawn Cub Pokémon",
+            "entry_text": [
+                "Glimbark trains tirelessly to defend\n",
+                "the vulnerable.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 70,
+        "rarity": 20,
+        "unused": 257
+    }
+}

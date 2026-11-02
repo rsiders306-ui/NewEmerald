@@ -1,0 +1,213 @@
+{
+    "base_stats": {
+        "hp": 62,
+        "attack": 66,
+        "defense": 55,
+        "speed": 60,
+        "special_attack": 30,
+        "special_defense": 47
+    },
+    "types": [
+        "TYPE_FIGHTING",
+        "TYPE_FIGHTING"
+    ],
+    "catch_rate": 190,
+    "base_exp_reward": 64,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "speed": 0,
+        "special_attack": 0,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_FIELD"
+    ],
+    "abilities": [
+        "ABILITY_GUTS",
+        "ABILITY_NONE"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_GRAY",
+    "flip_sprite": false,
+    "icon_palette": 0,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_TACKLE"
+            ],
+            [
+                1,
+                "MOVE_LEER"
+            ],
+            [
+                5,
+                "MOVE_DEFENSE_CURL"
+            ],
+            [
+                9,
+                "MOVE_FOCUS_ENERGY"
+            ],
+            [
+                13,
+                "MOVE_ARM_THRUST"
+            ],
+            [
+                17,
+                "MOVE_ENDURE"
+            ],
+            [
+                21,
+                "MOVE_MACH_PUNCH"
+            ],
+            [
+                25,
+                "MOVE_BULK_UP"
+            ],
+            [
+                29,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                33,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                39,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                45,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                51,
+                "MOVE_BRICK_BREAK"
+            ],
+            [
+                57,
+                "MOVE_HELPING_HAND"
+            ]
+        ],
+        "by_tm": [
+            "HM06",
+            "TM01",
+            "TM05",
+            "TM08",
+            "TM10",
+            "TM17",
+            "TM21",
+            "TM23",
+            "TM27",
+            "TM28",
+            "TM31",
+            "TM32",
+            "TM39",
+            "TM40",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            18,
+            "SPECIES_FORGUARD"
+        ]
+    ],
+    "offspring": "SPECIES_EMBERREST",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_MEDIUM",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 31,
+        "weight_pounds": 43.0,
+        "body_shape": "SHAPE_BIPEDAL_TAILED",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 382,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 382,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 19,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 19,
+        "en": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "EMBERREST",
+            "category": "Brave Guard Pokémon",
+            "entry_text": [
+                "Emberrest refuses to abandon a friend\n",
+                "in danger.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 50,
+        "rarity": 30,
+        "unused": 2313
+    }
+}

@@ -997,7 +997,7 @@ static void PackDexData(int archive, const DexData *data)
         Archive_Pack(archive, list + start, (i - start) * sizeof(*list));
     }
 
-    // Files 27 through 44: species by type, without the Mystery type
+    // Files 27 onward: species by type, without the Mystery type
     for (u8 type = 0; type < NUM_POKEMON_TYPES; type++) {
         if (type == TYPE_MYSTERY) continue;
 
@@ -1008,7 +1008,7 @@ static void PackDexData(int archive, const DexData *data)
         Archive_Pack(archive, list, count * sizeof(*list));
     }
 
-    // Files 45 through 58: species by body shape
+    // The remaining files contain species by body shape.
     for (u8 shape = 0; shape < NUM_BODY_SHAPES; shape++) {
         size_t count = 0;
         for (u16 s = 1; IsNationalDex(s); s++) {

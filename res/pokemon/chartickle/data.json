@@ -1,0 +1,224 @@
+{
+    "base_stats": {
+        "hp": 72,
+        "attack": 48,
+        "defense": 70,
+        "speed": 75,
+        "special_attack": 92,
+        "special_defense": 88
+    },
+    "types": [
+        "TYPE_NORMAL",
+        "TYPE_PSYCHIC"
+    ],
+    "catch_rate": 90,
+    "base_exp_reward": 142,
+    "ev_yields": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "speed": 0,
+        "special_attack": 2,
+        "special_defense": 0
+    },
+    "held_items": {
+        "common": "ITEM_NONE",
+        "rare": "ITEM_NONE"
+    },
+    "gender_ratio": "GENDER_RATIO_FEMALE_50",
+    "hatch_cycles": 20,
+    "base_friendship": 70,
+    "exp_rate": "EXP_RATE_MEDIUM_FAST",
+    "egg_groups": [
+        "EGG_GROUP_HUMAN_LIKE",
+        "EGG_GROUP_FAIRY"
+    ],
+    "abilities": [
+        "ABILITY_SYNCHRONIZE",
+        "ABILITY_NONE"
+    ],
+    "safari_flee_rate": 0,
+    "body_color": "MON_COLOR_WHITE",
+    "flip_sprite": false,
+    "icon_palette": 1,
+    "learnset": {
+        "by_level": [
+            [
+                1,
+                "MOVE_SCRATCH"
+            ],
+            [
+                1,
+                "MOVE_GROWL"
+            ],
+            [
+                1,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                9,
+                "MOVE_CONFUSION"
+            ],
+            [
+                13,
+                "MOVE_FAKE_OUT"
+            ],
+            [
+                17,
+                "MOVE_SWIFT"
+            ],
+            [
+                18,
+                "MOVE_PSYBEAM"
+            ],
+            [
+                22,
+                "MOVE_HELPING_HAND"
+            ],
+            [
+                26,
+                "MOVE_LIGHT_SCREEN"
+            ],
+            [
+                30,
+                "MOVE_WISH"
+            ],
+            [
+                34,
+                "MOVE_RETURN"
+            ],
+            [
+                38,
+                "MOVE_PSYCHIC"
+            ],
+            [
+                42,
+                "MOVE_RETURN"
+            ],
+            [
+                48,
+                "MOVE_CALM_MIND"
+            ],
+            [
+                54,
+                "MOVE_HEAL_BELL"
+            ],
+            [
+                60,
+                "MOVE_SAFEGUARD"
+            ]
+        ],
+        "by_tm": [
+            "HM01",
+            "HM05",
+            "TM03",
+            "TM04",
+            "TM06",
+            "TM10",
+            "TM16",
+            "TM17",
+            "TM20",
+            "TM21",
+            "TM27",
+            "TM29",
+            "TM30",
+            "TM32",
+            "TM33",
+            "TM34",
+            "TM42",
+            "TM43",
+            "TM44",
+            "TM45",
+            "TM48"
+        ],
+        "by_tutor": [],
+        "egg_moves": []
+    },
+    "evolutions": [
+        [
+            "EVO_LEVEL",
+            36,
+            "SPECIES_SERMEDIC"
+        ]
+    ],
+    "offspring": "SPECIES_MEDIJEST",
+    "footprint": {
+        "has": true,
+        "size": "FOOTPRINT_SMALL",
+        "type": "FOOTPRINT_TYPE_CUTE"
+    },
+    "pokedex_data": {
+        "height_inches": 31,
+        "weight_pounds": 44.5,
+        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+        "trainer_scale_f": 272,
+        "pokemon_scale_f": 378,
+        "trainer_scale_m": 256,
+        "pokemon_scale_m": 378,
+        "trainer_pos_f": 8,
+        "pokemon_pos_f": 19,
+        "trainer_pos_m": 9,
+        "pokemon_pos_m": 19,
+        "en": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        },
+        "fr": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        },
+        "de": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        },
+        "it": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        },
+        "es": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        },
+        "jp": {
+            "name": "CHARTICKLE",
+            "category": "Comfort Pokémon",
+            "entry_text": [
+                "Chartickle helps lost Pokémon find\n",
+                "their bearings.\n",
+                ""
+            ]
+        }
+    },
+    "catching_show": {
+        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+        "catching_points": 70,
+        "rarity": 20,
+        "unused": 2570
+    }
+}

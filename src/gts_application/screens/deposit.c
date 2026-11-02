@@ -1061,15 +1061,15 @@ ListMenu *GTS_CreateCharpadMenu(GTSApplicationState *appState, StringList **stri
 
 static u16 sAlphabeticalSpeciesCharpadIndices[] = {
     0,
-    87, // ABC
-    136, // DEF
-    191, // GHI
-    235, // JKL
-    303, // MNO
-    360, // PQR
-    457, // STU
-    487, // VWX
-    493 // YZ
+    99, // ABC
+    155, // DEF
+    218, // GHI
+    264, // JKL
+    339, // MNO
+    400, // PQR
+    514, // STU
+    549, // VWX
+    556 // YZ
 };
 
 static int GTSDeposit_BuildSeenSpeciesList(StringList **stringList, MessageLoader *speciesMessageLoader, MessageLoader *gtsMessageLoader, u16 *species, u8 *unused1, int unused2, int charpad, Pokedex *pokedex)
