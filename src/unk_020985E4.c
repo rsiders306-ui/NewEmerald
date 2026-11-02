@@ -1,0 +1,85 @@
+#include "unk_020985E4.h"
+
+#include <nitro.h>
+#include <string.h>
+
+#include "struct_defs/struct_0209862C.h"
+
+#include "cutscenes/spear_pillar/main.h"
+#include "field/field_system.h"
+#include "overlay005/fieldmap.h"
+
+#include "field_system.h"
+#include "field_task.h"
+#include "heap.h"
+#include "save_player.h"
+#include "savedata.h"
+#include "screen_fade.h"
+#include "trainer_info.h"
+
+FS_EXTERN_OVERLAY(spear_pillar_cutscene);
+
+void sub_020985E4(FieldTask *param0, SaveData *saveData)
+{
+    UnkStruct_0209862C *v0 = Heap_Alloc(HEAP_ID_FIELD2, sizeof(UnkStruct_0209862C));
+    SpearPillarCutsceneArgs *args = Heap_Alloc(HEAP_ID_FIELD2, sizeof(SpearPillarCutsceneArgs));
+
+    args->options = SaveData_GetOptions(saveData);
+    args->trainerInfo = SaveData_GetTrainerInfo(saveData);
+    args->playerGender = TrainerInfo_Gender(args->trainerInfo);
+
+    v0->unk_00 = 0;
+    v0->unk_04 = args;
+
+    FieldTask_InitCall(param0, sub_0209862C, v0);
+}
+
+BOOL sub_0209862C(FieldTask *param0)
+{
+    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
+    UnkStruct_0209862C *v1 = FieldTask_GetEnv(param0);
+
+    switch (v1->unk_00) {
+    case 0:
+        FieldMap_FadeScreen(FADE_TYPE_BRIGHTNESS_OUT);
+        v1->unk_00++;
+    case 1:
+        if (IsScreenFadeDone() == FALSE) {
+            break;
+        }
+
+        {
+            static const ApplicationManagerTemplate v2 = {
+                SpearPillarCutscene_Init,
+                SpearPillarCutscene_Main,
+                SpearPillarCutscene_Exit,
+                FS_OVERLAY_ID(spear_pillar_cutscene)
+            };
+
+            FieldSystem_StartChildProcess(fieldSystem, &v2, v1->unk_04);
+            v1->unk_00++;
+        }
+        break;
+    case 2:
+        if (FieldSystem_IsRunningApplication(fieldSystem) == 0) {
+            FieldSystem_StartFieldMap(fieldSystem);
+            v1->unk_00++;
+        }
+        break;
+    case 3:
+        if (FieldSystem_IsRunningFieldMap(fieldSystem) == 0) {
+            v1->unk_00++;
+        }
+        break;
+    case 4:
+        v1->unk_00++;
+        break;
+    case 5:
+        Heap_Free(v1->unk_04);
+        Heap_Free(v1);
+        return 1;
+        break;
+    }
+
+    return 0;
+}
