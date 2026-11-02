@@ -1,0 +1,6 @@
+0862ec35b24de5c7e2dcb88c9eea0873110d755c  Pokemon-Platinum-US-Rev1-source.nds (SHA-1)
+fbce4c4def0c7797f8dd238a3d7a5e48b4a7e3abd86890ac65f6321cef781bdb  Pokemon-Platinum-US-Rev1-source.nds (SHA-256)
+97799e74e448431f3359cf7be879882826a26dec  BeaconDex-Platinum-v0.1.0.nds (SHA-1)
+9c54fe91735278fcc0efee2b26804bcc64d1060367ff310279494bae13b55f96  BeaconDex-Platinum-v0.1.0.nds (SHA-256)
+57cf2ad156b089417daebabf717ec9f4d55468cb  BeaconDex-Platinum-v0.1.0-US-Rev1.bps (SHA-1)
+9d6ce0c99ad5b59989c4d0349b848174869ba7f2eba538ce860286e65665724f  BeaconDex-Platinum-v0.1.0-US-Rev1.bps (SHA-256)
